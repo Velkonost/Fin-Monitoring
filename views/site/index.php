@@ -83,24 +83,21 @@ $today = date("d.m.y");
         background-color: #f1f2f3;
     }
 
-</style>
-
-<script>
-document.getElementById('selectType').innerHTML =  'Тип	⯆';
-
-var visible = false;
-
-function showFun() {
-    if(visible) {
-        document.getElementById('wrap_types' ).style.display = 'none';
-        visible = false;
-    } else {
-        document.getElementById('wrap_types' ).style.display = 'block';
-        visible = true;
+    #arrow {
+        display: inline-block;
     }
+
+    #arrow.rotated {
+    -webkit-transform : rotate(180deg); 
+    -moz-transform : rotate(180deg); 
+    -ms-transform : rotate(180deg); 
+    -o-transform : rotate(180deg); 
+    transform : rotate(180deg); 
 }
 
-</script>
+</style>
+
+
  <table class="inputTable" style="border-collapse: separate; border-spacing: 2px;margin-left:-3%">
 
     <tbody  style="min-width: 1170px">
@@ -108,7 +105,7 @@ function showFun() {
                     <td style="max-width: 58.5px; min-width: 58.5px;text-align: center; padding: 0"><?=$today?></td>
 
                     <td style="max-width: 58.5px; min-width: 58.5px;text-align: center; padding: 0"><?= strftime("%H:%M", time());?></td>
-                    <td><div class="testType" onclick="showFun()" id = "selectType" style= "width:117px;text-align: center">Тип&#9660;</div>
+                    <td><div class="testType" onclick="showFun()" id = "selectType" style= "width:117px;text-align: center;"><span style="display: inline-block;">Тип</span><div id="arrow">&#9660;</div></div>
 					<?php //$f->field($form, 'type')->textarea(['onclick'=>'showFun()','id' => "selectType", 'style' => 'width:175.5px', 'options' => ['0'=>['selected'=>true]]])->label('');?></td>
                     <td><?=$f->field($form, 'name')->dropDownList($allclothes, ['id' => "selectName", 'style' => 'width:175.5px', 'options' => ['0'=>['selected'=>true]]])->label('');?></td>
                     <td><?=$f->field($form, 'operation')->dropDownList($allclothes, ['onclick'=>"$('.types').hide();",'id' => "selectOperation", 'style' => 'width:117px', 'options' => ['0'=>['selected'=>true]]])->label('');?></td>
@@ -584,6 +581,26 @@ function showFun() {
             </tr>
         </table>
 </div>
+
+<script>
+var arrow = document.getElementById('arrow');
+
+var visible = false;
+
+function showFun() {
+    if(visible) {
+        document.getElementById('wrap_types' ).style.display = 'none';
+        visible = false;
+    } else {
+        document.getElementById('wrap_types' ).style.display = 'block';
+        visible = true;
+    }
+    arrow.classList.toggle('rotated');
+
+
+}
+
+</script>
 
 <?= Html::submitButton('Добавить', ['id'=>'future', 'name' => 'button_save']) ?>
 <?php ActiveForm::end(); ?>
