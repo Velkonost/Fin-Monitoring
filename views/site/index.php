@@ -104,7 +104,10 @@ $today = date("d.m.y");
                 <tr class='hidden-row'>
                     <td style="max-width: 58.5px; min-width: 58.5px;text-align: center; padding: 0"><?=$today?></td>
 
-                    <td style="max-width: 58.5px; min-width: 58.5px;text-align: center; padding: 0"><?= strftime("%H:%M", time());?></td>
+                    <td style="max-width: 58.5px; min-width: 58.5px;text-align: center; padding: 0"><div id="time"></div>
+                    <!-- <?= strftime("%H:%M", time());?> -->
+                        
+                    </td>
                     <td><div class="testType" onclick="showFun()" id = "selectType" style= "width:117px;text-align: center;"><span style="display: inline-block;">Тип</span><div id="arrow">&#9660;</div></div>
 					<?php //$f->field($form, 'type')->textarea(['onclick'=>'showFun()','id' => "selectType", 'style' => 'width:175.5px', 'options' => ['0'=>['selected'=>true]]])->label('');?></td>
                     <td><?=$f->field($form, 'name')->dropDownList($allclothes, ['id' => "selectName", 'style' => 'width:175.5px', 'options' => ['0'=>['selected'=>true]]])->label('');?></td>
@@ -583,6 +586,7 @@ $today = date("d.m.y");
 </div>
 
 <script>
+clock();
 var arrow = document.getElementById('arrow');
 
 var visible = false;
@@ -596,9 +600,25 @@ function showFun() {
         visible = true;
     }
     arrow.classList.toggle('rotated');
-
-
 }
+
+function clock() {
+    var d = new Date();
+    
+    var hours = d.getHours();
+    var minutes = d.getMinutes();
+    var seconds = d.getSeconds();
+
+   
+    if (hours <= 9) hours = "0" + hours;
+    if (minutes <= 9) minutes = "0" + minutes;
+    if (seconds <= 9) seconds = "0" + seconds;
+
+    date_time = hours + ":" + minutes;
+    document.getElementById("time").innerHTML = date_time;
+     setTimeout("clock()", 1000);
+}
+
 
 </script>
 
