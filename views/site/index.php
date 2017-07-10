@@ -1,4 +1,6 @@
-<meta charset="windows-1251">
+<head>
+	<meta charset="utf-8">
+</head>
 <?php
 
 
