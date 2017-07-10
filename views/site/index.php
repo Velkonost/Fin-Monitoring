@@ -27,9 +27,9 @@ $today = date("d.m.y");
     /* 58.5 */
 
     .inputTable {
-       margin: 0 auto; 
-    text-align: left;
-
+        margin-left: 8%;
+        position: absolute;
+        text-align: left;
 
     }
 
@@ -39,11 +39,11 @@ $today = date("d.m.y");
         padding-right: 10px;
     }
     .types td img {
-        max-width: 110px;
-        min-width: 110px;
+        max-width: 100px;
+        min-width: 100px;
 
-        min-height: 110px;
-        max-height: 110px;
+        min-height: 100px;
+        max-height: 100px;
 
         
     }
@@ -71,7 +71,7 @@ $today = date("d.m.y");
               
 		display: none;
 		
-        margin-top: 30px;
+        margin-top: 8%;
         width: 100%;
         position: absolute;
         left: 0;
@@ -604,7 +604,7 @@ function showFun() {
 
 function clock() {
     var d = new Date();
-    
+
     var hours = d.getHours();
     var minutes = d.getMinutes();
     var seconds = d.getSeconds();
@@ -616,7 +616,7 @@ function clock() {
 
     date_time = hours + ":" + minutes;
     document.getElementById("time").innerHTML = date_time;
-     setTimeout("clock()", 1000);
+    setTimeout("clock()", 1000);
 }
 
 
