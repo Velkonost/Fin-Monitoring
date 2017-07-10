@@ -14,7 +14,7 @@ use yii\web\helpers\CHtml;
 
 $this->title = 'My Yii Application';
 
-date_default_timezone_set('UTC + 3');
+date_default_timezone_set('Russia/Moscow');
 $today = date("d.m.y");
 
 ?>
@@ -106,7 +106,7 @@ function showFun() {
     <tbody  style="min-width: 1170px">
                 <tr class='hidden-row'>
                     <td style="max-width: 58.5px; min-width: 58.5px;text-align: center; padding: 0"><?=$today?></td>
-                    <td style="max-width: 58.5px; min-width: 58.5px;text-align: center; padding: 0"><?=date('h:i');?></td>
+                    <td style="max-width: 58.5px; min-width: 58.5px;text-align: center; padding: 0"><?= strftime("%H:%M", time());?></td>
                     <td><div class="testType" onclick="showFun()" id = "selectType" 'style: width:175.5px'>Тип	&#9660;</div>
 					<?php //$f->field($form, 'type')->textarea(['onclick'=>'showFun()','id' => "selectType", 'style' => 'width:175.5px', 'options' => ['0'=>['selected'=>true]]])->label('');?></td>
                     <td><?=$f->field($form, 'name')->dropDownList($allclothes, ['id' => "selectName", 'style' => 'width:175.5px', 'options' => ['0'=>['selected'=>true]]])->label('');?></td>
