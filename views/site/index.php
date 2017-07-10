@@ -17,6 +17,9 @@ $today = date("d.m.y");
 ?>
 <?php $f = ActiveForm::begin()?>
 
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+
 <style type="text/css">
     /* 58.5 */
 
@@ -65,19 +68,26 @@ $today = date("d.m.y");
         margin-left: 0px;
         padding-left: 0px;
         
+		display: none;
+		
         width: 100%;
         background-color: #F1F2F3;
     }
 
 </style>
-<script>
-	$(".selectType").click(function() {
-	e = $(this).closest('.types');
-		if(!e.is(':visible')) {
-		$('.types').hide();
-		e.show();
-	}
-	});
+
+<script>var visible = true;
+
+function showFun() {
+    if(visible) {
+        document.getElementById('wrap_types' ).style.display = 'none';
+        visible = false;
+    } else {
+        document.getElementById('wrap_types' ).style.display = 'block';
+        visible = true;
+    }
+}
+
 </script>
  <table class="inputTable" style="border-collapse: separate; border-spacing: 2px;margin-left:-3%">
 
@@ -85,7 +95,7 @@ $today = date("d.m.y");
                 <tr class='hidden-row'>
                     <td style="max-width: 58.5px; min-width: 58.5px;text-align: center; padding: 0"><?=$today?></td>
                     <td style="max-width: 58.5px; min-width: 58.5px;text-align: center; padding: 0"><?=date('h:i');?></td>
-                    <td><?=$f->field($form, 'type')->dropDownList($allarticles, ['id' => "selectType", 'style' => 'width:175.5px', 'options' => ['0'=>['selected'=>true]]])->label('');?></td>
+                    <td><?=$f->field($form, 'type')->dropDownList($allarticles, ['onclick'=>'showFun()','id' => "selectType", 'style' => 'width:175.5px', 'options' => ['0'=>['selected'=>true]]])->label('');?></td>
                     <td><?=$f->field($form, 'name')->dropDownList($allclothes, ['id' => "selectName", 'style' => 'width:175.5px', 'options' => ['0'=>['selected'=>true]]])->label('');?></td>
                     <td><?=$f->field($form, 'operation')->dropDownList($allclothes, ['onclick'=>"$('.types').hide();",'id' => "selectOperation", 'style' => 'width:117px', 'options' => ['0'=>['selected'=>true]]])->label('');?></td>
 
@@ -98,7 +108,7 @@ $today = date("d.m.y");
                 </tr>
     </tbody>
 </table>
-<div class="wrap_types">
+<div class="wrap_types" id = "wrap_types">
     <table class="types">
         <caption><h3>Металлы</h3></caption>
         
