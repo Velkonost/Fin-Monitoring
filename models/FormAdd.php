@@ -5,24 +5,22 @@
 	
 	class FormAdd extends Model
 	{
-		public $name, $m, $s, $l, $xl, $xxl, $xxxl, $price, $dropDownList;
-		public $names = [], $ss = [], $ms = [], $ls = [], $xls = [], $xxls = [], $xxxls = [], $prices = [], $article = [];
+		public $name, $type, $massa, $value, $status, $from, $to, $operation;
 		
 		public function rules(){
 			return [
 				// username and password are both required
-				[['ss', 'names', 'ms', 'ls', 'xls', 'xxls', 'xxxls', 'prices', 'dropDownList', 'article'], 'required', message => ''],
+				[['type','massa','value', 'status', 'from', 'to', 'operation', 'name'], 'required', message => ''],
 				// rememberMe must be a boolean value
+				['type', 'default', message => ''],
 				['name', 'default', message => ''],
-				['s', 'number', message => ''],
-				['m', 'number', message => ''],
-				['l', 'number', message => ''],
-				['xl', 'number', message => ''],
-				['xxl', 'number', message => ''],
-				['xxxl', 'number', message => ''],
-				['price', 'number', message => ''],
-				['article', 'default', message => ''],
-				['dropDownList','default', message=>'']
+				['value', 'default', message => ''],
+				['massa', 'default', message => ''],
+				['status', 'default', message => ''],
+				['from', 'default', message => ''],
+				['to', 'default', message => ''],
+				['operation', 'default', message => ''],
+				
 			];
 		}
 		
