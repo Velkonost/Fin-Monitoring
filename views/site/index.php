@@ -1,3 +1,4 @@
+<meta charset="windows-1251">
 <?php
 
 
