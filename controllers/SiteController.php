@@ -5,16 +5,10 @@ namespace app\controllers;
 use Yii;
 use yii\filters\AccessControl;
 use yii\web\Controller;
+use yii\web\Response;
 use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
-use app\models\MyForm;
-use app\models\Comments;
-
-use yii\helpers\Html;
-use yii\web\UploadedFile;
-use yii\data\Pagination;
-
 
 class SiteController extends Controller
 {
@@ -73,7 +67,7 @@ class SiteController extends Controller
     /**
      * Login action.
      *
-     * @return string
+     * @return Response|string
      */
     public function actionLogin()
     {
@@ -93,7 +87,7 @@ class SiteController extends Controller
     /**
      * Logout action.
      *
-     * @return string
+     * @return Response
      */
     public function actionLogout()
     {
@@ -105,7 +99,7 @@ class SiteController extends Controller
     /**
      * Displays contact page.
      *
-     * @return string
+     * @return Response|string
      */
     public function actionContact()
     {
@@ -128,54 +122,5 @@ class SiteController extends Controller
     public function actionAbout()
     {
         return $this->render('about');
-    }
-
-    public function actionHello($message = 'Hello World!') 
-    {
-        return $this->render('hello', 
-            ['message'=>$message]
-        );
-    }
-
-    public function actionForm() {
-        $form = new MyForm();
-
-        if ($form->load(Yii::$app->request->post()) && $form->validate()) {
-            $name = Html::encode($form->name);
-            $email = Html::encode($form->email);
-
-            $form->file = UploadedFIle::getInstance($form, 'file');
-            $form->file->saveAs('photo/'.$form->file->baseName.'.'.$form->file->extension);
-        } else {
-            $name = '';
-            $email = '';
-        }
-
-        return $this->render('form',
-            [
-            'form' => $form, 
-            'name' => $name,
-            'email' => $email
-            ]
-        );
-    }
-
-    public function actionComments() {
-
-        $comments = Comments::find();
-
-        $pagination = new Pagination([
-            'defaultPageSize' => 2,
-            'totalCount' => $comments->count()
-
-        ]);
-
-        $comments = $comments->offset($pagination->offset)->limit($pagination->limit)->all();
-
-        return $this->render('comments', [
-            'comments' => $comments,
-            'pagination' => $pagination
-        ]);
-
     }
 }
