@@ -10,6 +10,17 @@ use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
 
+use app\models\MyForm;
+use app\models\Comments;
+
+use yii\helpers\Html;
+use yii\web\UploadedFile;
+use yii\data\Pagination;
+
+use app\models\FormAdd;
+
+
+
 class SiteController extends Controller
 {
     /**
@@ -61,7 +72,12 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        return $this->render('index');
+        $form = new FormAdd();
+        if (($form->load(Yii::$app->request->post())) && ($form->validate())){
+        }
+
+        return $this->render('index',
+            [ 'form' => $form]);
     }
 
     /**
