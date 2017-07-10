@@ -33,23 +33,40 @@ $today = date("d.m.y");
         padding-right: 10px;
     }
     .types td img {
-        max-width: 75px;
-        min-width: 75px;
+        max-width: 110px;
+        min-width: 110px;
 
-        min-height: 75px;
-        max-height: 75px;
+        min-height: 110px;
+        max-height: 110px;
 
         
     }
+
+    .types {
+        margin-left: -3%;
+    }
+
     .types td{
-        font-size: 10px;
-        padding-bottom: 20px;
+        font-size: 12px;
+        line-height: 12px;
+        /* padding-bottom: 20px; */
     }
   
     h3{
         color: black;
         font-weight: normal;
         margin-bottom: 0px;
+    }
+    .type {
+        margin-bottom: 20px;
+    }
+
+    .wrap_types {
+        margin-left: 0px;
+        padding-left: 0px;
+        
+        width: 100%;
+        background-color: #F1F2F3;
     }
 
 </style>
@@ -81,148 +98,238 @@ $today = date("d.m.y");
                 </tr>
     </tbody>
 </table>
+<div class="wrap_types">
+    <table class="types">
+        <caption><h3>Металлы</h3></caption>
+        
+        <tr>
+            <td>
+                <table class="type">
+                    <tr><td><img src="../web/img/metall.jpeg"></td></tr>
+                    <tr><td>Металл</td></tr>
+                    <tr><td>Бронза</td></tr>
+                    <tr><td>Чистая</td></tr>
 
-<table class="types">
-    <caption><h3>Металлы</h3></caption>
-    <tr>
-        <td>
-            <img src="../web/img/metall.jpeg">
-            <br>Металл
-            <br>Бронза
-            <br>Чистая
-        </td>
-         <td>
-            <img src="../web/img/metall.jpeg">
-            <br>Металл
-            <br>Бронза
-            <br>Чистая
-        </td>
-         <td>
-            <img src="../web/img/metall.jpeg">
-            <br>Металл
-            <br>Бронза
-            <br>Чистая
-        </td>
-         <td>
-            <img src="../web/img/metall.jpeg">
-            <br>Металл
-            <br>Бронза
-            <br>Чистая
-        </td>
-         <td>
-            <img src="../web/img/metall.jpeg">
-            <br>Металл
-            <br>Бронза
-            <br>Чистая
-        </td>
-         <td>
-            <img src="../web/img/metall.jpeg">
-            <br>Металл
-            <br>Бронза
-            <br>Чистая
-        </td>
-         <td>
-            <img src="../web/img/metall.jpeg">
-            <br>Металл
-            <br>Бронза
-            <br>Чистая
-        </td>
-         <td>
-            <img src="../web/img/metall.jpeg">
-            <br>Металл
-            <br>Бронза
-            <br>Чистая
-        </td>
-         <td>
-            <img src="../web/img/metall.jpeg">
-            <br>Металл
-            <br>Бронза
-            <br>Чистая
-        </td>
-         <td>
-            <img src="../web/img/metall.jpeg">
-            <br>Металл
-            <br>Бронза
-            <br>Чистая
-        </td>
-         <td>
-            <img src="../web/img/metall.jpeg">
-            <br>Металл
-            <br>Бронза
-            <br>Чистая
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <img src="../web/img/metall.jpeg">
-            <br>Металл
-            <br>Бронза
-            <br>Чистая
-        </td>
-         <td>
-            <img src="../web/img/metall.jpeg">
-            <br>Металл
-            <br>Бронза
-            <br>Чистая
-        </td>
-         <td>
-            <img src="../web/img/metall.jpeg">
-            <br>Металл
-            <br>Бронза
-            <br>Чистая
-        </td>
-         <td>
-            <img src="../web/img/metall.jpeg">
-            <br>Металл
-            <br>Бронза
-            <br>Чистая
-        </td>
-         <td>
-            <img src="../web/img/metall.jpeg">
-            <br>Металл
-            <br>Бронза
-            <br>Чистая
-        </td>
-         <td>
-            <img src="../web/img/metall.jpeg">
-            <br>Металл
-            <br>Бронза
-            <br>Чистая
-        </td>
-         <td>
-            <img src="../web/img/metall.jpeg">
-            <br>Металл
-            <br>Бронза
-            <br>Чистая
-        </td>
-         <td>
-            <img src="../web/img/metall.jpeg">
-            <br>Металл
-            <br>Бронза
-            <br>Чистая
-        </td>
-         <td>
-            <img src="../web/img/metall.jpeg">
-            <br>Металл
-            <br>Бронза
-            <br>Чистая
-        </td>
-         <td>
-            <img src="../web/img/metall.jpeg">
-            <br>Металл
-            <br>Бронза
-            <br>Чистая
-        </td>
-         <td>
-            <img src="../web/img/metall.jpeg">
-            <br>Металл
-            <br>Бронза
-            <br>Чистая
-        </td>
-    </tr>
+                </table>
+               
+            </td>
+            <td>
+                <table class="type">
+                    <tr><td><img src="../web/img/metall.jpeg"></td></tr>
+                    <tr><td>Металл</td></tr>
+                    <tr><td>Бронза</td></tr>
+                    <tr><td>Чистая</td></tr>
+
+                </table>
+               
+            </td>
+            <td>
+                <table class="type">
+                    <tr><td><img src="../web/img/metall.jpeg"></td></tr>
+                    <tr><td>Металл</td></tr>
+                    <tr><td>Бронза</td></tr>
+                    <tr><td>Чистая</td></tr>
+
+                </table>
+               
+            </td>
+            <td>
+                <table class="type">
+                    <tr><td><img src="../web/img/metall.jpeg"></td></tr>
+                    <tr><td>Металл</td></tr>
+                    <tr><td>Бронза</td></tr>
+                    <tr><td>Чистая</td></tr>
+
+                </table>
+               
+            </td>
+            <td>
+                <table class="type">
+                    <tr><td><img src="../web/img/metall.jpeg"></td></tr>
+                    <tr><td>Металл</td></tr>
+                    <tr><td>Бронза</td></tr>
+                    <tr><td>Чистая</td></tr>
+
+                </table>
+               
+            </td>
+           <td>
+                <table class="type">
+                    <tr><td><img src="../web/img/metall.jpeg"></td></tr>
+                    <tr><td>Металл</td></tr>
+                    <tr><td>Бронза</td></tr>
+                    <tr><td>Чистая</td></tr>
+
+                </table>
+               
+            </td>
+            <td>
+                <table class="type">
+                    <tr><td><img src="../web/img/metall.jpeg"></td></tr>
+                    <tr><td>Металл</td></tr>
+                    <tr><td>Бронза</td></tr>
+                    <tr><td>Чистая</td></tr>
+
+                </table>
+               
+            </td>
+             <td>
+                <table class="type">
+                    <tr><td><img src="../web/img/metall.jpeg"></td></tr>
+                    <tr><td>Металл</td></tr>
+                    <tr><td>Бронза</td></tr>
+                    <tr><td>Чистая</td></tr>
+
+                </table>
+               
+            </td>
+            <td>
+                <table class="type">
+                    <tr><td><img src="../web/img/metall.jpeg"></td></tr>
+                    <tr><td>Металл</td></tr>
+                    <tr><td>Бронза</td></tr>
+                    <tr><td>Чистая</td></tr>
+
+                </table>
+               
+            </td>
+           <td>
+                <table class="type">
+                    <tr><td><img src="../web/img/metall.jpeg"></td></tr>
+                    <tr><td>Металл</td></tr>
+                    <tr><td>Бронза</td></tr>
+                    <tr><td>Чистая</td></tr>
+
+                </table>
+               
+            </td>
+             <td>
+                <table class="type">
+                    <tr><td><img src="../web/img/metall.jpeg"></td></tr>
+                    <tr><td>Металл</td></tr>
+                    <tr><td>Бронза</td></tr>
+                    <tr><td>Чистая</td></tr>
+
+                </table>
+               
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <table class="type">
+                    <tr><td><img src="../web/img/metall.jpeg"></td></tr>
+                    <tr><td>Металл</td></tr>
+                    <tr><td>Бронза</td></tr>
+                    <tr><td>Чистая</td></tr>
+
+                </table>
+               
+            </td>
+            <td>
+                <table class="type">
+                    <tr><td><img src="../web/img/metall.jpeg"></td></tr>
+                    <tr><td>Металл</td></tr>
+                    <tr><td>Бронза</td></tr>
+                    <tr><td>Чистая</td></tr>
+
+                </table>
+               
+            </td>
+            <td>
+                <table class="type">
+                    <tr><td><img src="../web/img/metall.jpeg"></td></tr>
+                    <tr><td>Металл</td></tr>
+                    <tr><td>Бронза</td></tr>
+                    <tr><td>Чистая</td></tr>
+
+                </table>
+               
+            </td>
+            <td>
+                <table class="type">
+                    <tr><td><img src="../web/img/metall.jpeg"></td></tr>
+                    <tr><td>Металл</td></tr>
+                    <tr><td>Бронза</td></tr>
+                    <tr><td>Чистая</td></tr>
+
+                </table>
+               
+            </td>
+            <td>
+                <table class="type">
+                    <tr><td><img src="../web/img/metall.jpeg"></td></tr>
+                    <tr><td>Металл</td></tr>
+                    <tr><td>Бронза</td></tr>
+                    <tr><td>Чистая</td></tr>
+
+                </table>
+               
+            </td>
+           <td>
+                <table class="type">
+                    <tr><td><img src="../web/img/metall.jpeg"></td></tr>
+                    <tr><td>Металл</td></tr>
+                    <tr><td>Бронза</td></tr>
+                    <tr><td>Чистая</td></tr>
+
+                </table>
+               
+            </td>
+            <td>
+                <table class="type">
+                    <tr><td><img src="../web/img/metall.jpeg"></td></tr>
+                    <tr><td>Металл</td></tr>
+                    <tr><td>Бронза</td></tr>
+                    <tr><td>Чистая</td></tr>
+
+                </table>
+               
+            </td>
+             <td>
+                <table class="type">
+                    <tr><td><img src="../web/img/metall.jpeg"></td></tr>
+                    <tr><td>Металл</td></tr>
+                    <tr><td>Бронза</td></tr>
+                    <tr><td>Чистая</td></tr>
+
+                </table>
+               
+            </td>
+            <td>
+                <table class="type">
+                    <tr><td><img src="../web/img/metall.jpeg"></td></tr>
+                    <tr><td>Металл</td></tr>
+                    <tr><td>Бронза</td></tr>
+                    <tr><td>Чистая</td></tr>
+
+                </table>
+               
+            </td>
+           <td>
+                <table class="type">
+                    <tr><td><img src="../web/img/metall.jpeg"></td></tr>
+                    <tr><td>Металл</td></tr>
+                    <tr><td>Бронза</td></tr>
+                    <tr><td>Чистая</td></tr>
+
+                </table>
+               
+            </td>
+             <td>
+                <table class="type">
+                    <tr><td><img src="../web/img/metall.jpeg"></td></tr>
+                    <tr><td>Металл</td></tr>
+                    <tr><td>Бронза</td></tr>
+                    <tr><td>Чистая</td></tr>
+
+                </table>
+               
+            </td>
+        </tr>
 
 
-</table>
+    </table>
+</div>
 
 <?= Html::submitButton('Добавить', ['id'=>'future', 'name' => 'button_save']) ?>
 <?php ActiveForm::end(); ?>
