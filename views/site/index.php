@@ -12,9 +12,10 @@ use yii\helpers;
 use yii\web\helpers\CHtml;
 /* @var $this yii\web\View */
 
-$this->title = 'My Yii Application';
+$this->title = 'Metals';
 
-date_default_timezone_set('Russia/Moscow');
+date_default_timezone_set('Europe/Moscow + 3');
+
 $today = date("d.m.y");
 
 ?>
