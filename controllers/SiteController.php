@@ -18,6 +18,7 @@ use yii\web\UploadedFile;
 use yii\data\Pagination;
 
 use app\models\FormAdd;
+use app\models\Models;
 
 
 
@@ -74,6 +75,8 @@ class SiteController extends Controller
     {
         $form = new FormAdd();
         if (($form->load(Yii::$app->request->post())) && ($form->validate())){
+			$post = new Models;
+			$post->type=$form->type;
         }
 
         return $this->render('index',
