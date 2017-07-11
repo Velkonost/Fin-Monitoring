@@ -1104,11 +1104,11 @@ var type_selected = false;
 
 
 function showFun() {
-    if(visible && !visibleNames) {
+    if(visible) {
         document.getElementById('wrap_types' ).style.display = 'none';
         visible = false;
 		arrow.classList.toggle('rotated');
-    } else if(!visible && !visibleNames) {
+    } else {
         document.getElementById('wrap_types' ).style.display = 'block';
         visible = true;
 		arrow.classList.toggle('rotated');
@@ -1116,11 +1116,12 @@ function showFun() {
 }
 
 function showNames() {
-    if(visibleNames && !visible) {
+    if(visibleNames && selected_type) {
+		document.getElementById('wrap_types' ).style.display = 'none';
 		arrowName.classList.toggle('rotated');
         document.getElementById('wrap_names' ).style.display = 'none';
         visibleNames = false;
-    } else if(!visibleNames && !visible){
+    } else if(!visibleNames  && selected_type){
 		arrowName.classList.toggle('rotated');
         document.getElementById('wrap_names' ).style.display = 'block';
         visibleNames = true;
