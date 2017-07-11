@@ -256,9 +256,9 @@ $today = date("d.m.y");
                     <td><?=$f->field($form, 'massa')->textInput(['style' => 'width:70px', 'type'=>'text', 'placeholder' => 'Грамм'])->label('')?></td>
                     <td><?= $f->field($form, 'value')->textInput(['style' => 'width:70px', 'type'=>'text', 'placeholder' => 'Штук'])->label('')?></td>
 
-                    <td><?=$f->field($form, 'status')->dropDownList($items, ['id' => "selectStatus", 'style' => 'width:100px; background-color: #fff8ca', 'options' => ['0'=>['selected'=>true]]])->label('');?></td>
-                    <td><?=$f->field($form, 'from')->dropDownList($items, ['id' => "selectFrom", 'style' => 'width:100px; background-color: #fff8ca', 'options' => ['0'=>['selected'=>true]]])->label('');?></td>
-                    <td><?=$f->field($form, 'to')->dropDownList($items, ['id' => "selectTo", 'style' => 'width:100px; background-color: #fff8ca', 'options' => ['0'=>['selected'=>true]]])->label('');?></td>
+                    <td><?=$f->field($form, 'status')->dropDownList($items, ['id' => "selectStatus", 'style' => 'width:100px; background-color: #fff8ca', 'options' => [''=>['selected'=>true]]])->label('');?></td>
+                    <td><?=$f->field($form, 'from')->dropDownList($items, ['id' => "selectFrom", 'style' => 'width:100px; background-color: #fff8ca', 'options' => [''=>['selected'=>true]]])->label('');?></td>
+                    <td><?=$f->field($form, 'to')->dropDownList($items, ['id' => "selectTo", 'style' => 'width:100px; background-color: #fff8ca', 'options' => [''=>['selected'=>true]]])->label('');?></td>
                 </tr>
     </tbody>
 </table>
