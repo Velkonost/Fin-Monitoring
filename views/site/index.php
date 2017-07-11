@@ -106,8 +106,8 @@ $today = date("d.m.y");
     -ms-transform : rotate(180deg); 
     -o-transform : rotate(180deg); 
     transform : rotate(180deg); 
-<<<<<<< HEAD
-	
+	}
+
 	#arroww {
         display: inline-block;
     }
@@ -118,10 +118,8 @@ $today = date("d.m.y");
     -ms-transform : rotate(180deg); 
     -o-transform : rotate(180deg); 
     transform : rotate(180deg); 
-}
-=======
     }
->>>>>>> 25a667375474f33a62ebed3ca5d0f770e955ebed
+
 
     .hidden {
         display: none;
@@ -130,8 +128,9 @@ $today = date("d.m.y");
     .select_tp {
         padding-left: 0;
         padding-right: 0;
-        width: 200px;
-        min-width: 200px
+        width: 210px;
+        min-width: 210px;
+        max-width: 210px;
     }
 </style>
 
@@ -148,7 +147,7 @@ $today = date("d.m.y");
                     </td>
 
                    
-                    <td id="nonselected_type" style="width:200px; min-width: 200px;max-width: 200px"><div class="testType" onclick="showFun()" id = "selectType" style= "width:200px;text-align: center;"><span style="display: inline-block;">Тип</span><div id="arrow">&#9660;</div></div></td>
+                    <td id="nonselected_type" style="width:210px; min-width: 210px;max-width: 210px"><div class="testType" onclick="showFun()" id = "selectType" style= "width:200px;text-align: center;"><span style="display: inline-block;">Тип</span><div id="arrow">&#9660;</div></div></td>
 
                     <td id="selected_type" class="hidden"><div style="display: inline-block;max-height: 73px; width: 100%"><img src="../web/img/metall.jpeg" style="height: 73px; width: 73px; display: inline-block; vertical-align: top"><div id="type_selected" style="display: inline-block; font-size: 12px;
         line-height: 12px;"><p><h5 id="type_selected_title">Полуфабрикат</h3></p><p id="type_selected_desc"> золото розовое 585пр</p> </div></div></td>
@@ -166,7 +165,6 @@ $today = date("d.m.y");
                 </tr>
     </tbody>
 </table>
-<!----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 <div class="wrap_types" id = "wrap_types">
     <div class="grey_table_types">
         <table class="types">
@@ -628,7 +626,8 @@ $today = date("d.m.y");
             </tr>
         </table>
 </div>
-<!------------------------------------------------------------------------------------------------------------------------------------------------------------------------>
+
+
 <div class="wrap_names" id = "wrap_names">
     <div class="grey_table_types">
         <table class="types">
@@ -1090,7 +1089,7 @@ $today = date("d.m.y");
             </tr>
         </table>
 </div>
-<!-------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
 <script>
 clock();
 var arrow = document.getElementById('arrow');
@@ -1150,6 +1149,7 @@ function selectType(name) {
 
     document.getElementById('nonselected_type').setAttribute('class', 'hidden');
     document.getElementById('selected_type').setAttribute('class', 'select_tp');
+    document.getElementById('selected_type').setAttribute('style', 'padding:0');
 
     type_selected = true;
 }
