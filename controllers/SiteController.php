@@ -89,6 +89,7 @@ class SiteController extends Controller
         }
 		
 		$items = [
+			'' => 'Операция',
 			'0' => 'Активный',
 			'1' => 'Отключен',
 			'2'=>'Удален'
