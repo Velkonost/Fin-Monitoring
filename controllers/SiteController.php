@@ -76,11 +76,26 @@ class SiteController extends Controller
         $form = new FormAdd();
         if (($form->load(Yii::$app->request->post())) && ($form->validate())){
 			$post = new Models;
-			$post->type=$form->type;
+			$post->type="AKBAR";
+			$post->gram=Html::encode($form->massa);
+			$post->pieces=Html::encode($form->value);
+			$post->status=Html::encode($form->status);
+			$post->from=Html::encode($form->from);
+			$post->to=Html::encode($form->to);
+			$post->operation=Html::encode($form->operation);
+			$post->name="ALLAHU";
+			
+			$post->save();
         }
-
+		
+		$items = [
+			'0' => 'Активный',
+			'1' => 'Отключен',
+			'2'=>'Удален'
+		];
+	
         return $this->render('index',
-            [ 'form' => $form]);
+            [ 'form' => $form, 'items'=>$items]);
     }
 
     /**

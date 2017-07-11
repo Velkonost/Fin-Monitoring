@@ -10,7 +10,8 @@
 		public function rules(){
 			return [
 				// username and password are both required
-				[['type','massa','value', 'status', 'from', 'to', 'operation', 'name'], 'required', message => ''],
+				//[['type','massa','value', 'status', 'from', 'to', 'operation', 'name'], 'required', message => ''],
+				[['massa','value', 'status', 'from', 'to', 'operation'], 'required', message => ''],
 				// rememberMe must be a boolean value
 				['type', 'default', message => ''],
 				['name', 'default', message => ''],
