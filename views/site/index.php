@@ -38,6 +38,9 @@ $today = date("d.m.y");
         background-color: #fff8ca;
         padding-left: 10px;
         padding-right: 10px;
+
+        min-height: 73px;
+        max-height: 73px;
     }
     .types td img {
         max-width: 110px;
@@ -94,8 +97,18 @@ $today = date("d.m.y");
     -ms-transform : rotate(180deg); 
     -o-transform : rotate(180deg); 
     transform : rotate(180deg); 
-}
+    }
 
+    .hidden {
+        display: none;
+    }
+
+    .select_tp {
+        padding-left: 0;
+        padding-right: 0;
+        width: 200px;
+        min-width: 200px
+    }
 </style>
 
 
@@ -109,7 +122,10 @@ $today = date("d.m.y");
                     <!-- <?= strftime("%H:%M", time());?> -->
                         
                     </td>
-                    <td><div class="testType" onclick="showFun()" id = "selectType" style= "width:117px;text-align: center;"><span style="display: inline-block;">Тип</span><div id="arrow">&#9660;</div></div>
+                    <td id="nonselected_type" style="width:200px; min-width: 200px;max-width: 200px"><div class="testType" onclick="showFun()" id = "selectType" style= "width:200px;text-align: center;"><span style="display: inline-block;">Тип</span><div id="arrow">&#9660;</div></div></td>
+
+                    <td id="selected_type" class="hidden"><div style="display: inline-block;max-height: 73px; width: 100%"><img src="../web/img/metall.jpeg" style="height: 73px; width: 73px; display: inline-block; vertical-align: top"><div id="type_selected" style="display: inline-block; font-size: 12px;
+        line-height: 12px;"><p><h5 id="type_selected_title">Полуфабрикат</h3></p><p id="type_selected_desc"> золото розовое 585пр</p> </div></div></td>
 					<?php //$f->field($form, 'type')->textarea(['onclick'=>'showFun()','id' => "selectType", 'style' => 'width:175.5px', 'options' => ['0'=>['selected'=>true]]])->label('');?></td>
                     <td><?=$f->field($form, 'name')->dropDownList($allclothes, ['id' => "selectName", 'style' => 'width:175.5px', 'options' => ['0'=>['selected'=>true]]])->label('');?></td>
                     <td><?=$f->field($form, 'operation')->dropDownList($allclothes, ['onclick'=>"$('.types').hide();",'id' => "selectOperation", 'style' => 'width:117px', 'options' => ['0'=>['selected'=>true]]])->label('');?></td>
@@ -131,7 +147,7 @@ $today = date("d.m.y");
             
             <tr>
                 <td>
-                    <table class="type">
+                    <table class="type" onclick="selectType('test')">
                         <tr><td><img src="../web/img/metall.jpeg"></td></tr>
                         <tr><td>Металл</td></tr>
                         <tr><td>Бронза</td></tr>
@@ -591,6 +607,7 @@ clock();
 var arrow = document.getElementById('arrow');
 
 var visible = false;
+var type_selected = false;
 
 function showFun() {
     if(visible) {
@@ -618,6 +635,15 @@ function clock() {
     date_time = hours + ":" + minutes;
     document.getElementById("time").innerHTML = date_time;
      setTimeout("clock()", 1000);
+}
+
+function selectType(name) {
+    console.log(name);
+
+    document.getElementById('nonselected_type').setAttribute('class', 'hidden');
+    document.getElementById('selected_type').setAttribute('class', 'select_tp');
+
+    type_selected = true;
 }
 
 
