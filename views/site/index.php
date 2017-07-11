@@ -247,7 +247,7 @@ $today = date("d.m.y");
                    
                     <td id="nonselected_type"><div class="testType" onclick="showFun()" id = "selectType"><span style="display: inline-block;">Тип</span><div id="arrow">&#9660;</div></div></td>
 
-                    <td id="selected_type" class="hidden"><div class="in_selected_type"><img src="../web/img/metall.jpeg" class="selected_type_img"><div id="type_selected"><h6 id="type_selected_title" style="margin-top: 0px">Полуфабрикат</h6><p id="type_selected_desc"> золото розовое 585пр</p> </div></div></td>
+                    <td id="selected_type" class="hidden"><div class="in_selected_type"><img src="../web/img/metall.jpeg" class="selected_type_img"><div id="type_selected"><h6 id="type_selected_title" style="margin-top: 0px"></h6><p id="type_selected_desc"></p> </div></div></td>
 					
 
 					<td id="nonselected_name"><div onclick="showNames()" id = "selectName"><span style="display: inline-block;">Наименование</span><div id="arroww">&#9660;</div></div></td>
@@ -280,7 +280,7 @@ $today = date("d.m.y");
                 
                 <tr>
                     <td>
-                        <table class="type" onclick="selectType('test')">
+                        <table class="type" onclick="selectType('Металл', 'Бронза чистая')">
                             <tr><td><img src="../web/img/metall.jpeg"></td></tr>
                             <tr><td>Металл</td></tr>
                             <tr><td>Бронза</td></tr>
@@ -290,7 +290,7 @@ $today = date("d.m.y");
                        
                     </td>
                     <td>
-                        <table class="type">
+                        <table class="type" onclick="selectType('Металл', 'Бронза вторичная')">
                             <tr><td><img src="../web/img/metall.jpeg"></td></tr>
                             <tr><td>Металл</td></tr>
                             <tr><td>Бронза</td></tr>
@@ -300,7 +300,7 @@ $today = date("d.m.y");
                        
                     </td>
                     <td>
-                        <table class="type">
+                        <table class="type" onclick="selectType('Металл', 'Серебро 999 чистое')">
                             <tr><td><img src="../web/img/metall.jpeg"></td></tr>
                             <tr><td>Металл</td></tr>
                             <tr><td>Серебро 999</td></tr>
@@ -310,7 +310,7 @@ $today = date("d.m.y");
                        
                     </td>
                     <td>
-                        <table class="type">
+                        <table class="type" onclick="selectType('Металл', 'Серебро 925 вторичное')">
                             <tr><td><img src="../web/img/metall.jpeg"></td></tr>
                             <tr><td>Металл</td></tr>
                             <tr><td>Серебро 925</td></tr>
@@ -320,7 +320,7 @@ $today = date("d.m.y");
                        
                     </td>
                     <td>
-                        <table class="type">
+                        <table class="type" onclick="selectType('Металл', 'Золото 999 чистое')">
                             <tr><td><img src="../web/img/metall.jpeg"></td></tr>
                             <tr><td>Металл</td></tr>
                             <tr><td>Золото 999</td></tr>
@@ -330,7 +330,7 @@ $today = date("d.m.y");
                        
                     </td>
                    <td>
-                        <table class="type">
+                        <table class="type" onclick="selectType('Металл', 'Золото белое 585 вторичное')">
                             <tr><td><img src="../web/img/metall.jpeg"></td></tr>
                             <tr><td>Металл</td></tr>
                             <tr><td>Золото белое 585</td></tr>
@@ -340,7 +340,7 @@ $today = date("d.m.y");
                        
                     </td>
                     <td>
-                        <table class="type">
+                        <table class="type" onclick="selectType('Металл', 'Золото желтое 585 вторичное')">
                             <tr><td><img src="../web/img/metall.jpeg"></td></tr>
                             <tr><td>Металл</td></tr>
                             <tr><td>Золото желтое 585</td></tr>
@@ -350,7 +350,7 @@ $today = date("d.m.y");
                        
                     </td>
                      <td>
-                        <table class="type">
+                        <table class="type" onclick="selectType('Металл', 'Золото розовое 585 вторичное')">
                             <tr><td><img src="../web/img/metall.jpeg"></td></tr>
                             <tr><td>Металл</td></tr>
                             <tr><td>Золото розовое 585</td></tr>
@@ -360,7 +360,7 @@ $today = date("d.m.y");
                        
                     </td>
                     <td>
-                        <table class="type">
+                        <table class="type" onclick="selectType('Металл', 'Золото белое 750 вторичное')">
                             <tr><td><img src="../web/img/metall.jpeg"></td></tr>
                             <tr><td>Металл</td></tr>
                             <tr><td>Золото белое 750</td></tr>
@@ -370,7 +370,7 @@ $today = date("d.m.y");
                        
                     </td>
                    <td>
-                        <table class="type">
+                        <table class="type" onclick="selectType('Металл', 'Золото желтое 750 вторичное')">
                             <tr><td><img src="../web/img/metall.jpeg"></td></tr>
                             <tr><td>Металл</td></tr>
                             <tr><td>Золото желтое 750</td></tr>
@@ -380,7 +380,7 @@ $today = date("d.m.y");
                        
                     </td>
                      <td>
-                        <table class="type">
+                        <table class="type" onclick="selectType('Металл', 'Золото розовое 750 вторичное')">
                             <tr><td><img src="../web/img/metall.jpeg"></td></tr>
                             <tr><td>Металл</td></tr>
                             <tr><td>Золото розовое 750</td></tr>
@@ -392,16 +392,17 @@ $today = date("d.m.y");
                 </tr>
                 <tr>
                     <td>
-                        <table class="type" onclick="selectType('test')">
+                        <table class="type" onclick="selectType('Металл', 'Бронза чистая')">
                             <tr><td><img src="../web/img/metall.jpeg"></td></tr>
                             <tr><td>Металл</td></tr>
                             <tr><td>Бронза</td></tr>
                             <tr><td>чистая</td></tr>
 
-                        </table>         
+                        </table>
+                       
                     </td>
                     <td>
-                        <table class="type">
+                        <table class="type" onclick="selectType('Металл', 'Бронза вторичная')">
                             <tr><td><img src="../web/img/metall.jpeg"></td></tr>
                             <tr><td>Металл</td></tr>
                             <tr><td>Бронза</td></tr>
@@ -411,7 +412,7 @@ $today = date("d.m.y");
                        
                     </td>
                     <td>
-                        <table class="type">
+                        <table class="type" onclick="selectType('Металл', 'Серебро 999 чистое')">
                             <tr><td><img src="../web/img/metall.jpeg"></td></tr>
                             <tr><td>Металл</td></tr>
                             <tr><td>Серебро 999</td></tr>
@@ -421,7 +422,7 @@ $today = date("d.m.y");
                        
                     </td>
                     <td>
-                        <table class="type">
+                        <table class="type" onclick="selectType('Металл', 'Серебро 925 вторичное')">
                             <tr><td><img src="../web/img/metall.jpeg"></td></tr>
                             <tr><td>Металл</td></tr>
                             <tr><td>Серебро 925</td></tr>
@@ -431,7 +432,7 @@ $today = date("d.m.y");
                        
                     </td>
                     <td>
-                        <table class="type">
+                        <table class="type" onclick="selectType('Металл', 'Золото 999 чистое')">
                             <tr><td><img src="../web/img/metall.jpeg"></td></tr>
                             <tr><td>Металл</td></tr>
                             <tr><td>Золото 999</td></tr>
@@ -441,7 +442,7 @@ $today = date("d.m.y");
                        
                     </td>
                    <td>
-                        <table class="type">
+                        <table class="type" onclick="selectType('Металл', 'Золото белое 585 вторичное')">
                             <tr><td><img src="../web/img/metall.jpeg"></td></tr>
                             <tr><td>Металл</td></tr>
                             <tr><td>Золото белое 585</td></tr>
@@ -451,7 +452,7 @@ $today = date("d.m.y");
                        
                     </td>
                     <td>
-                        <table class="type">
+                        <table class="type" onclick="selectType('Металл', 'Золото желтое 585 вторичное')">
                             <tr><td><img src="../web/img/metall.jpeg"></td></tr>
                             <tr><td>Металл</td></tr>
                             <tr><td>Золото желтое 585</td></tr>
@@ -461,7 +462,7 @@ $today = date("d.m.y");
                        
                     </td>
                      <td>
-                        <table class="type">
+                        <table class="type" onclick="selectType('Металл', 'Золото розовое 585 вторичное')">
                             <tr><td><img src="../web/img/metall.jpeg"></td></tr>
                             <tr><td>Металл</td></tr>
                             <tr><td>Золото розовое 585</td></tr>
@@ -471,7 +472,7 @@ $today = date("d.m.y");
                        
                     </td>
                     <td>
-                        <table class="type">
+                        <table class="type" onclick="selectType('Металл', 'Золото белое 750 вторичное')">
                             <tr><td><img src="../web/img/metall.jpeg"></td></tr>
                             <tr><td>Металл</td></tr>
                             <tr><td>Золото белое 750</td></tr>
@@ -481,7 +482,7 @@ $today = date("d.m.y");
                        
                     </td>
                    <td>
-                        <table class="type">
+                        <table class="type" onclick="selectType('Металл', 'Золото желтое 750 вторичное')">
                             <tr><td><img src="../web/img/metall.jpeg"></td></tr>
                             <tr><td>Металл</td></tr>
                             <tr><td>Золото желтое 750</td></tr>
@@ -491,7 +492,7 @@ $today = date("d.m.y");
                        
                     </td>
                      <td>
-                        <table class="type">
+                        <table class="type" onclick="selectType('Металл', 'Золото розовое 750 вторичное')">
                             <tr><td><img src="../web/img/metall.jpeg"></td></tr>
                             <tr><td>Металл</td></tr>
                             <tr><td>Золото розовое 750</td></tr>
@@ -509,7 +510,7 @@ $today = date("d.m.y");
                 
                 <tr>
                     <td>
-                        <table class="type">
+                        <table class="type" onclick="selectType('Лигатура', 'серебро')">
                             <tr><td><img src="../web/img/metall.jpeg"></td></tr>
                             <tr><td>Лигатура</td></tr>
                             <tr><td>серебро</td></tr>
@@ -517,7 +518,7 @@ $today = date("d.m.y");
                        
                     </td>
                     <td>
-                        <table class="type">
+                        <table class="type" onclick="selectType('Лигатура', 'белое золото')">
                             <tr><td><img src="../web/img/metall.jpeg"></td></tr>
                             <tr><td>Лигатура</td></tr>
                             <tr><td>белое золото</td></tr>
@@ -525,7 +526,7 @@ $today = date("d.m.y");
                        
                     </td>
                     <td>
-                        <table class="type">
+                        <table class="type" onclick="selectType('Лигатура', 'желтое золото')">
                             <tr><td><img src="../web/img/metall.jpeg"></td></tr>
                             <tr><td>Лигатура</td></tr>
                             <tr><td>желтое золото</td></tr>
@@ -534,7 +535,7 @@ $today = date("d.m.y");
                        
                     </td>
                     <td>
-                        <table class="type">
+                        <table class="type" onclick="selectType('Лигатура', 'розовое золото')">
                             <tr><td><img src="../web/img/metall.jpeg"></td></tr>
                             <tr><td>Лигатура</td></tr>
                             <tr><td>розовое золото</td></tr>
@@ -548,7 +549,7 @@ $today = date("d.m.y");
                 
                 <tr>
                     <td>
-                        <table class="type">
+                        <table class="type" onclick="selectType('Деталь', 'Бронза')">
                             <tr><td><img src="../web/img/metall.jpeg"></td></tr>
                             <tr><td>Деталь</td></tr>
                             <tr><td>Бронза</td></tr>
@@ -556,7 +557,7 @@ $today = date("d.m.y");
                        
                     </td>
                     <td>
-                        <table class="type">
+                        <table class="type" onclick="selectType('Деталь', 'Серебро 925')">
                             <tr><td><img src="../web/img/metall.jpeg"></td></tr>
                             <tr><td>Деталь</td></tr>
                             <tr><td>Серебро 925</td></tr>
@@ -564,7 +565,7 @@ $today = date("d.m.y");
                        
                     </td>
                     <td>
-                        <table class="type">
+                        <table class="type" onclick="selectType('Деталь', 'Золото белое 585')">
                             <tr><td><img src="../web/img/metall.jpeg"></td></tr>
                             <tr><td>Деталь</td></tr>
                             <tr><td>Золото белое 585</td></tr>
@@ -573,35 +574,35 @@ $today = date("d.m.y");
                        
                     </td>
                     <td>
-                        <table class="type">
+                        <table class="type" onclick="selectType('Деталь', 'Золото желтое 585')">
                             <tr><td><img src="../web/img/metall.jpeg"></td></tr>
                             <tr><td>Деталь</td></tr>
                             <tr><td>Золото желтое 585</td></tr>
                         </table>
                     </td>
                     <td>
-                        <table class="type">
+                        <table class="type" onclick="selectType('Деталь', 'Золото розовое 585')">
                             <tr><td><img src="../web/img/metall.jpeg"></td></tr>
                             <tr><td>Деталь</td></tr>
                             <tr><td>Золото розовое 585</td></tr>
                         </table>
                     </td>
                     <td>
-                        <table class="type">
+                        <table class="type" onclick="selectType('Деталь', 'Золото белое 750')">
                             <tr><td><img src="../web/img/metall.jpeg"></td></tr>
                             <tr><td>Деталь</td></tr>
                             <tr><td>Золото белое 750</td></tr>
                         </table>
                     </td>
                     <td>
-                        <table class="type">
+                        <table class="type" onclick="selectType('Деталь', 'Золото желтое 750')">
                             <tr><td><img src="../web/img/metall.jpeg"></td></tr>
                             <tr><td>Деталь</td></tr>
                             <tr><td>Золото желтое 750</td></tr>
                         </table>
                     </td>
                     <td>
-                        <table class="type">
+                        <table class="type" onclick="selectType('Деталь', 'Золото розовое 750')">
                             <tr><td><img src="../web/img/metall.jpeg"></td></tr>
                             <tr><td>Деталь</td></tr>
                             <tr><td>Золото розовое 750</td></tr>
@@ -615,7 +616,7 @@ $today = date("d.m.y");
                 
                 <tr>
                     <td>
-                        <table class="type">
+                        <table class="type" onclick="selectType('Полуфабрикат', 'Бронза')">
                             <tr><td><img src="../web/img/metall.jpeg"></td></tr>
                             <tr><td>Полуфабрикат</td></tr>
                             <tr><td>Бронза</td></tr>
@@ -623,7 +624,7 @@ $today = date("d.m.y");
                        
                     </td>
                     <td>
-                        <table class="type">
+                        <table class="type" onclick="selectType('Полуфабрикат', 'Серебро 925')">
                             <tr><td><img src="../web/img/metall.jpeg"></td></tr>
                             <tr><td>Полуфабрикат</td></tr>
                             <tr><td>Серебро 925</td></tr>
@@ -631,7 +632,7 @@ $today = date("d.m.y");
                        
                     </td>
                     <td>
-                        <table class="type">
+                        <table class="type" onclick="selectType('Полуфабрикат', 'Золото белое 585')">
                             <tr><td><img src="../web/img/metall.jpeg"></td></tr>
                             <tr><td>Полуфабрикат</td></tr>
                             <tr><td>Золото белое 585</td></tr>
@@ -640,35 +641,35 @@ $today = date("d.m.y");
                        
                     </td>
                     <td>
-                        <table class="type">
+                        <table class="type" onclick="selectType('Полуфабрикат', 'Золото желтое 585')">
                             <tr><td><img src="../web/img/metall.jpeg"></td></tr>
                             <tr><td>Полуфабрикат</td></tr>
                             <tr><td>Золото желтое 585</td></tr>
                         </table>
                     </td>
                     <td>
-                        <table class="type">
+                        <table class="type" onclick="selectType('Полуфабрикат', 'Золото розовое 585')">
                             <tr><td><img src="../web/img/metall.jpeg"></td></tr>
                             <tr><td>Полуфабрикат</td></tr>
                             <tr><td>Золото розовое 585</td></tr>
                         </table>
                     </td>
                     <td>
-                        <table class="type">
+                        <table class="type" onclick="selectType('Полуфабрикат', 'Золото белое 750')">
                             <tr><td><img src="../web/img/metall.jpeg"></td></tr>
                             <tr><td>Деталь</td></tr>
                             <tr><td>Золото белое 750</td></tr>
                         </table>
                     </td>
                     <td>
-                        <table class="type">
+                        <table class="type" onclick="selectType('Полуфабрикат', 'Золото желтое 750')">
                             <tr><td><img src="../web/img/metall.jpeg"></td></tr>
                             <tr><td>Полуфабрикат</td></tr>
                             <tr><td>Золото желтое 750</td></tr>
                         </table>
                     </td>
                     <td>
-                        <table class="type">
+                        <table class="type" onclick="selectType('Полуфабрикат', 'Золото розовое 750')">
                             <tr><td><img src="../web/img/metall.jpeg"></td></tr>
                             <tr><td>Полуфабрикат</td></tr>
                             <tr><td>Золото розовое 750</td></tr>
@@ -1222,11 +1223,10 @@ function clock() {
      setTimeout("clock()", 1000);
 }
 
-function selectType(name) {
-    console.log(name);
+function selectType(name, desc) {
 
-    document.getElementById('type_selected_title').innerText = '123';
-
+    document.getElementById('type_selected_title').innerText = name;
+    document.getElementById('type_selected_desc').innerText = desc;
 
 	document.getElementById('wrap_types' ).style.display = 'none';
 	document.getElementById('wrap_names' ).style.display = 'block';
