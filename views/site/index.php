@@ -120,7 +120,6 @@ $today = date("d.m.y");
     transform : rotate(180deg); 
     }
 
-
     .hidden {
         display: none;
     }
@@ -132,6 +131,7 @@ $today = date("d.m.y");
         min-width: 210px;
         max-width: 210px;
     }
+    
 </style>
 
 
