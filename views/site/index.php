@@ -1116,12 +1116,12 @@ function showFun() {
 }
 
 function showNames() {
-    if(visibleNames && selected_type) {
+    if(visibleNames) {
 		document.getElementById('wrap_types' ).style.display = 'none';
 		arrowName.classList.toggle('rotated');
         document.getElementById('wrap_names' ).style.display = 'none';
         visibleNames = false;
-    } else if(!visibleNames  && selected_type){
+    } else if(!visibleNames  &&type_selected){
 		arrowName.classList.toggle('rotated');
         document.getElementById('wrap_names' ).style.display = 'block';
         visibleNames = true;
@@ -1147,7 +1147,8 @@ function clock() {
 
 function selectType(name) {
     console.log(name);
-
+	document.getElementById('wrap_types' ).style.display = 'none';
+	document.getElementById('wrap_names' ).style.display = 'block';
     document.getElementById('nonselected_type').setAttribute('class', 'hidden');
     document.getElementById('selected_type').setAttribute('class', 'select_tp');
 
