@@ -66,10 +66,12 @@ $today = date("d.m.y");
         /* padding-bottom: 20px; */
     }
   
-    h3 {
+    h2 {
         color: black;
         font-weight: normal;
-        margin-bottom: 0px;
+        margin-bottom: 5px;
+        letter-spacing: 3px;
+        font-style: normal;
     }
     .type {
         margin-bottom: 20px;
@@ -250,15 +252,21 @@ $today = date("d.m.y");
 
                     <td id="selected_name" class="hidden"><div class="in_selected_name"><img src="../web/img/metall.jpeg" class="selected_name_img"><div id="name_selected"><h6 id="name_selected_title" style="margin-top: 0px">Накладка геральдика</h6><p id="name_selected_desc"> под эмаль со сферами по периметру, Детали Бронза</p> </div></div></td>
 					
-                    <td><?=$f->field($form, 'operation')->dropDownList($items, ['id' => "selectOperation", 'style' => 'width:100px; background-color: #fff8ca', 'options' => ['0'=>['selected'=>true]]])->label('');?></td>
+                    <td><?=$f->field($form, 'operation')->dropDownList($items, ['id' => "selectOperation", 'style' => 'width:100px', 'options' => ['0'=>['selected'=>true]]])->label('');?></td>
 
 
                     <td><?=$f->field($form, 'massa')->textInput(['style' => 'width:70px', 'type'=>'text', 'placeholder' => 'Грамм'])->label('')?></td>
                     <td><?= $f->field($form, 'value')->textInput(['style' => 'width:70px', 'type'=>'text', 'placeholder' => 'Штук'])->label('')?></td>
 
+<<<<<<< Updated upstream
                     <td><?=$f->field($form, 'status')->dropDownList($items, ['id' => "selectStatus", 'style' => 'width:100px; background-color: #fff8ca', 'options' => [''=>['selected'=>true]]])->label('');?></td>
                     <td><?=$f->field($form, 'from')->dropDownList($items, ['id' => "selectFrom", 'style' => 'width:100px; background-color: #fff8ca', 'options' => [''=>['selected'=>true]]])->label('');?></td>
                     <td><?=$f->field($form, 'to')->dropDownList($items, ['id' => "selectTo", 'style' => 'width:100px; background-color: #fff8ca', 'options' => [''=>['selected'=>true]]])->label('');?></td>
+=======
+                    <td><?=$f->field($form, 'status')->dropDownList($items, ['id' => "selectStatus", 'style' => 'width:100px', 'options' => ['0'=>['selected'=>true]]])->label('');?></td>
+                    <td><?=$f->field($form, 'from')->dropDownList($items, ['id' => "selectFrom", 'style' => 'width:100px', 'options' => ['0'=>['selected'=>true]]])->label('');?></td>
+                    <td><?=$f->field($form, 'to')->dropDownList($items, ['id' => "selectTo", 'style' => 'width:100px', 'options' => ['0'=>['selected'=>true]]])->label('');?></td>
+>>>>>>> Stashed changes
                 </tr>
     </tbody>
 </table>
@@ -270,7 +278,7 @@ $today = date("d.m.y");
     <div class="wrap_types" id = "wrap_types">
         <div class="">
             <table class="types">
-                <caption><h3>Металлы</h3></caption>
+                <caption><h2>Металлы</h2></caption>
                 
                 <tr>
                     <td>
@@ -278,7 +286,7 @@ $today = date("d.m.y");
                             <tr><td><img src="../web/img/metall.jpeg"></td></tr>
                             <tr><td>Металл</td></tr>
                             <tr><td>Бронза</td></tr>
-                            <tr><td>Чистая</td></tr>
+                            <tr><td>чистая</td></tr>
 
                         </table>
                        
@@ -288,7 +296,7 @@ $today = date("d.m.y");
                             <tr><td><img src="../web/img/metall.jpeg"></td></tr>
                             <tr><td>Металл</td></tr>
                             <tr><td>Бронза</td></tr>
-                            <tr><td>Чистая</td></tr>
+                            <tr><td>вторичная</td></tr>
 
                         </table>
                        
@@ -297,8 +305,8 @@ $today = date("d.m.y");
                         <table class="type">
                             <tr><td><img src="../web/img/metall.jpeg"></td></tr>
                             <tr><td>Металл</td></tr>
-                            <tr><td>Бронза</td></tr>
-                            <tr><td>Чистая</td></tr>
+                            <tr><td>Серебро 999</td></tr>
+                            <tr><td>чистое</td></tr>
 
                         </table>
                        
@@ -307,8 +315,8 @@ $today = date("d.m.y");
                         <table class="type">
                             <tr><td><img src="../web/img/metall.jpeg"></td></tr>
                             <tr><td>Металл</td></tr>
-                            <tr><td>Бронза</td></tr>
-                            <tr><td>Чистая</td></tr>
+                            <tr><td>Серебро 925</td></tr>
+                            <tr><td>вторичное</td></tr>
 
                         </table>
                        
@@ -317,8 +325,8 @@ $today = date("d.m.y");
                         <table class="type">
                             <tr><td><img src="../web/img/metall.jpeg"></td></tr>
                             <tr><td>Металл</td></tr>
-                            <tr><td>Бронза</td></tr>
-                            <tr><td>Чистая</td></tr>
+                            <tr><td>Золото 999</td></tr>
+                            <tr><td>чистое</td></tr>
 
                         </table>
                        
@@ -327,8 +335,8 @@ $today = date("d.m.y");
                         <table class="type">
                             <tr><td><img src="../web/img/metall.jpeg"></td></tr>
                             <tr><td>Металл</td></tr>
-                            <tr><td>Бронза</td></tr>
-                            <tr><td>Чистая</td></tr>
+                            <tr><td>Золото белое 585</td></tr>
+                            <tr><td>вторичное</td></tr>
 
                         </table>
                        
@@ -337,8 +345,8 @@ $today = date("d.m.y");
                         <table class="type">
                             <tr><td><img src="../web/img/metall.jpeg"></td></tr>
                             <tr><td>Металл</td></tr>
-                            <tr><td>Бронза</td></tr>
-                            <tr><td>Чистая</td></tr>
+                            <tr><td>Золото желтое 585</td></tr>
+                            <tr><td>вторичное</td></tr>
 
                         </table>
                        
@@ -347,8 +355,8 @@ $today = date("d.m.y");
                         <table class="type">
                             <tr><td><img src="../web/img/metall.jpeg"></td></tr>
                             <tr><td>Металл</td></tr>
-                            <tr><td>Бронза</td></tr>
-                            <tr><td>Чистая</td></tr>
+                            <tr><td>Золото розовое 585</td></tr>
+                            <tr><td>вторичное</td></tr>
 
                         </table>
                        
@@ -357,8 +365,8 @@ $today = date("d.m.y");
                         <table class="type">
                             <tr><td><img src="../web/img/metall.jpeg"></td></tr>
                             <tr><td>Металл</td></tr>
-                            <tr><td>Бронза</td></tr>
-                            <tr><td>Чистая</td></tr>
+                            <tr><td>Золото белое 750</td></tr>
+                            <tr><td>вторичное</td></tr>
 
                         </table>
                        
@@ -367,8 +375,8 @@ $today = date("d.m.y");
                         <table class="type">
                             <tr><td><img src="../web/img/metall.jpeg"></td></tr>
                             <tr><td>Металл</td></tr>
-                            <tr><td>Бронза</td></tr>
-                            <tr><td>Чистая</td></tr>
+                            <tr><td>Золото желтое 750</td></tr>
+                            <tr><td>вторичное</td></tr>
 
                         </table>
                        
@@ -377,8 +385,8 @@ $today = date("d.m.y");
                         <table class="type">
                             <tr><td><img src="../web/img/metall.jpeg"></td></tr>
                             <tr><td>Металл</td></tr>
-                            <tr><td>Бронза</td></tr>
-                            <tr><td>Чистая</td></tr>
+                            <tr><td>Золото розовое 750</td></tr>
+                            <tr><td>вторичное</td></tr>
 
                         </table>
                        
@@ -386,11 +394,20 @@ $today = date("d.m.y");
                 </tr>
                 <tr>
                     <td>
+                        <table class="type" onclick="selectType('test')">
+                            <tr><td><img src="../web/img/metall.jpeg"></td></tr>
+                            <tr><td>Металл</td></tr>
+                            <tr><td>Бронза</td></tr>
+                            <tr><td>чистая</td></tr>
+
+                        </table>         
+                    </td>
+                    <td>
                         <table class="type">
                             <tr><td><img src="../web/img/metall.jpeg"></td></tr>
                             <tr><td>Металл</td></tr>
                             <tr><td>Бронза</td></tr>
-                            <tr><td>Чистая</td></tr>
+                            <tr><td>вторичная</td></tr>
 
                         </table>
                        
@@ -399,8 +416,8 @@ $today = date("d.m.y");
                         <table class="type">
                             <tr><td><img src="../web/img/metall.jpeg"></td></tr>
                             <tr><td>Металл</td></tr>
-                            <tr><td>Бронза</td></tr>
-                            <tr><td>Чистая</td></tr>
+                            <tr><td>Серебро 999</td></tr>
+                            <tr><td>чистое</td></tr>
 
                         </table>
                        
@@ -409,8 +426,8 @@ $today = date("d.m.y");
                         <table class="type">
                             <tr><td><img src="../web/img/metall.jpeg"></td></tr>
                             <tr><td>Металл</td></tr>
-                            <tr><td>Бронза</td></tr>
-                            <tr><td>Чистая</td></tr>
+                            <tr><td>Серебро 925</td></tr>
+                            <tr><td>вторичное</td></tr>
 
                         </table>
                        
@@ -419,18 +436,8 @@ $today = date("d.m.y");
                         <table class="type">
                             <tr><td><img src="../web/img/metall.jpeg"></td></tr>
                             <tr><td>Металл</td></tr>
-                            <tr><td>Бронза</td></tr>
-                            <tr><td>Чистая</td></tr>
-
-                        </table>
-                       
-                    </td>
-                    <td>
-                        <table class="type">
-                            <tr><td><img src="../web/img/metall.jpeg"></td></tr>
-                            <tr><td>Металл</td></tr>
-                            <tr><td>Бронза</td></tr>
-                            <tr><td>Чистая</td></tr>
+                            <tr><td>Золото 999</td></tr>
+                            <tr><td>чистое</td></tr>
 
                         </table>
                        
@@ -439,8 +446,8 @@ $today = date("d.m.y");
                         <table class="type">
                             <tr><td><img src="../web/img/metall.jpeg"></td></tr>
                             <tr><td>Металл</td></tr>
-                            <tr><td>Бронза</td></tr>
-                            <tr><td>Чистая</td></tr>
+                            <tr><td>Золото белое 585</td></tr>
+                            <tr><td>вторичное</td></tr>
 
                         </table>
                        
@@ -449,8 +456,8 @@ $today = date("d.m.y");
                         <table class="type">
                             <tr><td><img src="../web/img/metall.jpeg"></td></tr>
                             <tr><td>Металл</td></tr>
-                            <tr><td>Бронза</td></tr>
-                            <tr><td>Чистая</td></tr>
+                            <tr><td>Золото желтое 585</td></tr>
+                            <tr><td>вторичное</td></tr>
 
                         </table>
                        
@@ -459,8 +466,8 @@ $today = date("d.m.y");
                         <table class="type">
                             <tr><td><img src="../web/img/metall.jpeg"></td></tr>
                             <tr><td>Металл</td></tr>
-                            <tr><td>Бронза</td></tr>
-                            <tr><td>Чистая</td></tr>
+                            <tr><td>Золото розовое 585</td></tr>
+                            <tr><td>вторичное</td></tr>
 
                         </table>
                        
@@ -469,8 +476,8 @@ $today = date("d.m.y");
                         <table class="type">
                             <tr><td><img src="../web/img/metall.jpeg"></td></tr>
                             <tr><td>Металл</td></tr>
-                            <tr><td>Бронза</td></tr>
-                            <tr><td>Чистая</td></tr>
+                            <tr><td>Золото белое 750</td></tr>
+                            <tr><td>вторичное</td></tr>
 
                         </table>
                        
@@ -479,8 +486,8 @@ $today = date("d.m.y");
                         <table class="type">
                             <tr><td><img src="../web/img/metall.jpeg"></td></tr>
                             <tr><td>Металл</td></tr>
-                            <tr><td>Бронза</td></tr>
-                            <tr><td>Чистая</td></tr>
+                            <tr><td>Золото желтое 750</td></tr>
+                            <tr><td>вторичное</td></tr>
 
                         </table>
                        
@@ -489,26 +496,42 @@ $today = date("d.m.y");
                         <table class="type">
                             <tr><td><img src="../web/img/metall.jpeg"></td></tr>
                             <tr><td>Металл</td></tr>
-                            <tr><td>Бронза</td></tr>
-                            <tr><td>Чистая</td></tr>
+                            <tr><td>Золото розовое 750</td></tr>
+                            <tr><td>вторичное</td></tr>
 
                         </table>
                        
                     </td>
                 </tr>
+              
             </table>
         </div>
 
         <table class="types">
-                <caption><h3>Лигатуры</h3></caption>
+                <caption><h2>Лигатуры</h2></caption>
                 
                 <tr>
                     <td>
                         <table class="type">
                             <tr><td><img src="../web/img/metall.jpeg"></td></tr>
-                            <tr><td>Металл</td></tr>
-                            <tr><td>Бронза</td></tr>
-                            <tr><td>Чистая</td></tr>
+                            <tr><td>Лигатура</td></tr>
+                            <tr><td>серебро</td></tr>
+                        </table>
+                       
+                    </td>
+                    <td>
+                        <table class="type">
+                            <tr><td><img src="../web/img/metall.jpeg"></td></tr>
+                            <tr><td>Лигатура</td></tr>
+                            <tr><td>белое золото</td></tr>
+                        </table>
+                       
+                    </td>
+                    <td>
+                        <table class="type">
+                            <tr><td><img src="../web/img/metall.jpeg"></td></tr>
+                            <tr><td>Лигатура</td></tr>
+                            <tr><td>желтое золото</td></tr>
 
                         </table>
                        
@@ -516,222 +539,18 @@ $today = date("d.m.y");
                     <td>
                         <table class="type">
                             <tr><td><img src="../web/img/metall.jpeg"></td></tr>
-                            <tr><td>Металл</td></tr>
-                            <tr><td>Бронза</td></tr>
-                            <tr><td>Чистая</td></tr>
-
+                            <tr><td>Лигатура</td></tr>
+                            <tr><td>розовое золото</td></tr>
                         </table>
-                       
                     </td>
-                    <td>
-                        <table class="type">
-                            <tr><td><img src="../web/img/metall.jpeg"></td></tr>
-                            <tr><td>Металл</td></tr>
-                            <tr><td>Бронза</td></tr>
-                            <tr><td>Чистая</td></tr>
-
-                        </table>
-                       
-                    </td>
-                    <td>
-                        <table class="type">
-                            <tr><td><img src="../web/img/metall.jpeg"></td></tr>
-                            <tr><td>Металл</td></tr>
-                            <tr><td>Бронза</td></tr>
-                            <tr><td>Чистая</td></tr>
-
-                        </table>
-                       
-                    </td>
-                    <td>
-                        <table class="type">
-                            <tr><td><img src="../web/img/metall.jpeg"></td></tr>
-                            <tr><td>Металл</td></tr>
-                            <tr><td>Бронза</td></tr>
-                            <tr><td>Чистая</td></tr>
-
-                        </table>
-                       
-                    </td>
-                   <td>
-                        <table class="type">
-                            <tr><td><img src="../web/img/metall.jpeg"></td></tr>
-                            <tr><td>Металл</td></tr>
-                            <tr><td>Бронза</td></tr>
-                            <tr><td>Чистая</td></tr>
-
-                        </table>
-                       
-                    </td>
-                    <td>
-                        <table class="type">
-                            <tr><td><img src="../web/img/metall.jpeg"></td></tr>
-                            <tr><td>Металл</td></tr>
-                            <tr><td>Бронза</td></tr>
-                            <tr><td>Чистая</td></tr>
-
-                        </table>
-                       
-                    </td>
-                     <td>
-                        <table class="type">
-                            <tr><td><img src="../web/img/metall.jpeg"></td></tr>
-                            <tr><td>Металл</td></tr>
-                            <tr><td>Бронза</td></tr>
-                            <tr><td>Чистая</td></tr>
-
-                        </table>
-                       
-                    </td>
-                    <td>
-                        <table class="type">
-                            <tr><td><img src="../web/img/metall.jpeg"></td></tr>
-                            <tr><td>Металл</td></tr>
-                            <tr><td>Бронза</td></tr>
-                            <tr><td>Чистая</td></tr>
-
-                        </table>
-                       
-                    </td>
-                   <td>
-                        <table class="type">
-                            <tr><td><img src="../web/img/metall.jpeg"></td></tr>
-                            <tr><td>Металл</td></tr>
-                            <tr><td>Бронза</td></tr>
-                            <tr><td>Чистая</td></tr>
-
-                        </table>
-                       
-                    </td>
-                     <td>
-                        <table class="type">
-                            <tr><td><img src="../web/img/metall.jpeg"></td></tr>
-                            <tr><td>Металл</td></tr>
-                            <tr><td>Бронза</td></tr>
-                            <tr><td>Чистая</td></tr>
-
-                        </table>
-                       
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <table class="type">
-                            <tr><td><img src="../web/img/metall.jpeg"></td></tr>
-                            <tr><td>Металл</td></tr>
-                            <tr><td>Бронза</td></tr>
-                            <tr><td>Чистая</td></tr>
-
-                        </table>
-                       
-                    </td>
-                    <td>
-                        <table class="type">
-                            <tr><td><img src="../web/img/metall.jpeg"></td></tr>
-                            <tr><td>Металл</td></tr>
-                            <tr><td>Бронза</td></tr>
-                            <tr><td>Чистая</td></tr>
-
-                        </table>
-                       
-                    </td>
-                    <td>
-                        <table class="type">
-                            <tr><td><img src="../web/img/metall.jpeg"></td></tr>
-                            <tr><td>Металл</td></tr>
-                            <tr><td>Бронза</td></tr>
-                            <tr><td>Чистая</td></tr>
-
-                        </table>
-                       
-                    </td>
-                    <td>
-                        <table class="type">
-                            <tr><td><img src="../web/img/metall.jpeg"></td></tr>
-                            <tr><td>Металл</td></tr>
-                            <tr><td>Бронза</td></tr>
-                            <tr><td>Чистая</td></tr>
-
-                        </table>
-                       
-                    </td>
-                    <td>
-                        <table class="type">
-                            <tr><td><img src="../web/img/metall.jpeg"></td></tr>
-                            <tr><td>Металл</td></tr>
-                            <tr><td>Бронза</td></tr>
-                            <tr><td>Чистая</td></tr>
-
-                        </table>
-                       
-                    </td>
-                   <td>
-                        <table class="type">
-                            <tr><td><img src="../web/img/metall.jpeg"></td></tr>
-                            <tr><td>Металл</td></tr>
-                            <tr><td>Бронза</td></tr>
-                            <tr><td>Чистая</td></tr>
-
-                        </table>
-                       
-                    </td>
-                    <td>
-                        <table class="type">
-                            <tr><td><img src="../web/img/metall.jpeg"></td></tr>
-                            <tr><td>Металл</td></tr>
-                            <tr><td>Бронза</td></tr>
-                            <tr><td>Чистая</td></tr>
-
-                        </table>
-                       
-                    </td>
-                     <td>
-                        <table class="type">
-                            <tr><td><img src="../web/img/metall.jpeg"></td></tr>
-                            <tr><td>Металл</td></tr>
-                            <tr><td>Бронза</td></tr>
-                            <tr><td>Чистая</td></tr>
-
-                        </table>
-                       
-                    </td>
-                    <td>
-                        <table class="type">
-                            <tr><td><img src="../web/img/metall.jpeg"></td></tr>
-                            <tr><td>Металл</td></tr>
-                            <tr><td>Бронза</td></tr>
-                            <tr><td>Чистая</td></tr>
-
-                        </table>
-                       
-                    </td>
-                   <td>
-                        <table class="type">
-                            <tr><td><img src="../web/img/metall.jpeg"></td></tr>
-                            <tr><td>Металл</td></tr>
-                            <tr><td>Бронза</td></tr>
-                            <tr><td>Чистая</td></tr>
-
-                        </table>
-                       
-                    </td>
-                     <td>
-                        <table class="type">
-                            <tr><td><img src="../web/img/metall.jpeg"></td></tr>
-                            <tr><td>Металл</td></tr>
-                            <tr><td>Бронза</td></tr>
-                            <tr><td>Чистая</td></tr>
-
-                        </table>
-                       
-                    </td>
+                   
                 </tr>
         </table>
     </div>
     <div class="wrap_names" id = "wrap_names">
         <div class="grey_table_types">
             <table class="types">
-                <caption><h3>ЧТО ТО ДРУГОЕ</h3></caption>
+                <caption><h2>ЧТО ТО ДРУГОЕ</h2></caption>
                 
                 <tr>
                     <td>
@@ -961,7 +780,7 @@ $today = date("d.m.y");
         </div>
 
         <table class="types">
-                <caption><h3>Лигатуры</h3></caption>
+                <caption><h2>Лигатуры</h2></caption>
                 
                 <tr>
                     <td>
