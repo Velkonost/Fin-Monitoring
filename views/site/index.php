@@ -169,6 +169,8 @@ $today = date("d.m.y");
     }
 
     #type_selected{
+        margin: 5px;
+
         width: 130px;
         display: inline-block; 
         font-size: 14px;
@@ -210,6 +212,7 @@ $today = date("d.m.y");
     }
 
     #name_selected{
+        margin: 2px;
         width: 135px;
         display: inline-block; 
         font-size: 12px;
