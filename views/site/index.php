@@ -247,7 +247,7 @@ $today = date("d.m.y");
                    
                     <td id="nonselected_type"><div class="testType" onclick="showFun()" id = "selectType"><span style="display: inline-block;">Тип</span><div id="arrow">&#9660;</div></div></td>
 
-                    <td id="selected_type" class="hidden"><div class="in_selected_type"><img src="../web/img/metall.jpeg" class="selected_type_img"><div id="type_selected"><h6 id="type_selected_title" style="margin-top: 0px"></h6><p id="type_selected_desc"></p> </div></div></td>
+                    <td id="selected_type" class="hidden"><div class="in_selected_type"><img id="img_type" src="../web/img/metall.jpeg" class="selected_type_img"><div id="type_selected"><h6 id="type_selected_title" style="margin-top: 0px"></h6><p id="type_selected_desc"></p> </div></div></td>
 					
 
 					<td id="nonselected_name"><div onclick="showNames()" id = "selectName"><span style="display: inline-block;">Наименование</span><div id="arroww">&#9660;</div></div></td>
@@ -1223,7 +1223,9 @@ function clock() {
      setTimeout("clock()", 1000);
 }
 
-function selectType(name, desc) {
+function selectType(name, desc, src) {
+
+    $("#img_type").attr("src", "../web/img/" + src);
 
     document.getElementById('type_selected_title').innerText = name;
     document.getElementById('type_selected_desc').innerText = desc;
