@@ -245,9 +245,9 @@ $today = date("d.m.y");
                     <td style="max-width: 58.5px; min-width: 58.5px;text-align: center; padding: 0"><div id="time"></div></td>
 
                    
-                    <td id="nonselected_type"><div class="testType" onclick="showFun()" id = "selectType"><span style="display: inline-block;">Тип</span><div id="arrow">&#9660;</div></div></td>
+                    <td id="nonselected_type"><div  class="testType" onclick="showFun()" id = "selectType"><span style="display: inline-block;">Тип</span><div id="arrow">&#9660;</div></div></td>
 
-                    <td id="selected_type" class="hidden"><div class="in_selected_type"><img id="img_type" src="../web/img/metall.jpeg" class="selected_type_img"><div id="type_selected"><h6 id="type_selected_title" style="margin-top: 0px"></h6><p id="type_selected_desc"></p> </div></div></td>
+                    <td id="selected_type" class="hidden"><div   onclick="showFun()" class="in_selected_type"><img id="img_type" src="../web/img/metall.jpeg" class="selected_type_img"><div id="type_selected"><h6 id="type_selected_title" style="margin-top: 0px"></h6><p id="type_selected_desc"></p> </div></div></td>
 					
 
 					<td id="nonselected_name"><div onclick="showNames()" id = "selectName"><span style="display: inline-block;">Наименование</span><div id="arroww">&#9660;</div></div></td>
@@ -1231,12 +1231,11 @@ function selectType(name, desc, src) {
     document.getElementById('type_selected_desc').innerText = desc;
 
 	document.getElementById('wrap_types' ).style.display = 'none';
-	document.getElementById('wrap_names' ).style.display = 'block';
 
     document.getElementById('nonselected_type').setAttribute('class', 'hidden');
     document.getElementById('selected_type').setAttribute('class', 'select_tp');
     document.getElementById('selected_type').setAttribute('style', 'padding:0');
-
+	visible = false;
     type_selected = true;
 }
 
