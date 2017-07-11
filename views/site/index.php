@@ -28,10 +28,11 @@ $today = date("d.m.y");
     /* 58.5 */
 
     .inputTable {
-       margin: 0 auto; 
-    text-align: left;
-
-
+        margin: 0 auto; 
+        text-align: left;
+        border-collapse: separate; 
+        border-spacing: 2px;
+        margin-left:-9%
     }
 
     .inputTable td {
@@ -41,6 +42,7 @@ $today = date("d.m.y");
 
         min-height: 73px;
         max-height: 73px;
+        height: 73px;
     }
     .types td img {
         max-width: 110px;
@@ -127,15 +129,103 @@ $today = date("d.m.y");
     .select_tp {
         padding-left: 0;
         padding-right: 0;
-        width: 210px;
-        min-width: 210px;
-        max-width: 210px;
+        width: 240px;
+        min-width: 240px;
+        max-width: 240px;
+    }
+
+    #nonselected_type {
+        width:240px; 
+        min-width: 240px;
+        max-width: 240px;
     }
     
+    #selectType {
+        width:200px;
+        text-align: center;
+    }
+
+    .in_selected_type {
+        display: inline-block;
+        max-height: 73px; 
+        width: 100%;
+    }
+    .selected_type_img {
+        height: 73px; 
+        width: 73px; 
+        display: inline-block; 
+        vertical-align: top;
+    }
+
+    #type_selected{
+        width: 155px;
+        display: inline-block; 
+        font-size: 14px;
+        margin-left: 5px;
+        line-height: 14px;
+    }
+
+    #nonselected_name {
+        width:240px; 
+        min-width: 240px;
+        max-width: 240px;
+        text-align: center;
+    }
+
+
+    .select_nm {
+        padding-left: 0;
+        padding-right: 0;
+        width: 240px;
+        min-width: 240px;
+        max-width: 240px;
+    }
+    
+    #selectName {
+        width:200px;
+        text-align: center;
+    }
+
+    .in_selected_name {
+        display: inline-block;
+        max-height: 73px; 
+        width: 100%;
+    }
+    .selected_name_img {
+        height: 73px; 
+        width: 73px; 
+        display: inline-block; 
+        vertical-align: top;
+    }
+
+    #name_selected{
+        width: 155px;
+        display: inline-block; 
+        font-size: 14px;
+        margin-left: 5px;
+        line-height: 14px;
+    }
+
+    .btn_submit {
+        margin-left: 45%;
+        margin-top: 45px;
+        font-family: inherit;
+        font-size: 18px;
+        background-color: #FCDA33;
+        width: 150px;
+        height: 50px;
+        text-align: center;
+        display: inline-block;
+
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
 </style>
 
 
- <table class="inputTable" style="border-collapse: separate; border-spacing: 2px;margin-left:-3%">
+ <table class="inputTable" >
 
     <tbody  style="min-width: 1170px">
                 <tr class='hidden-row'>
@@ -147,13 +237,17 @@ $today = date("d.m.y");
                     </td>
 
                    
-                    <td id="nonselected_type" style="width:210px; min-width: 210px;max-width: 210px"><div class="testType" onclick="showFun()" id = "selectType" style= "width:200px;text-align: center;"><span style="display: inline-block;">Тип</span><div id="arrow">&#9660;</div></div></td>
+                    <td id="nonselected_type"><div class="testType" onclick="showFun()" id = "selectType"><span style="display: inline-block;">Тип</span><div id="arrow">&#9660;</div></div></td>
 
-                    <td id="selected_type" class="hidden"><div style="display: inline-block;max-height: 73px; width: 100%"><img src="../web/img/metall.jpeg" style="height: 73px; width: 73px; display: inline-block; vertical-align: top"><div id="type_selected" style="display: inline-block; font-size: 12px;
-        line-height: 12px;"><p><h5 id="type_selected_title">Полуфабрикат</h3></p><p id="type_selected_desc"> золото розовое 585пр</p> </div></div></td>
-					<?php //$f->field($form, 'type')->textarea(['onclick'=>'showFun()','id' => "selectType", 'style' => 'width:175.5px', 'options' => ['0'=>['selected'=>true]]])->label('');?></td>
-					<td><div class="testName" onclick="showNames()" id = "selectName" style= "width:117px;text-align: center;"><span style="display: inline-block;">tt</span><div id="arroww">&#9660;</div></div></td>
-                    <!--<td><?php //$f->field($form, 'name')->dropDownList($allclothes, ['id' => "selectName", 'style' => 'width:175.5px', 'options' => ['0'=>['selected'=>true]]])->label('');?></td>-->
+                    <td id="selected_type" class="hidden"><div class="in_selected_type"><img src="../web/img/metall.jpeg" class="selected_type_img"><div id="type_selected"><h5 id="type_selected_title" style="margin-top: 0px">Полуфабрикат</h5><p id="type_selected_desc"> золото розовое 585пр</p> </div></div></td>
+					
+
+
+					<td id="nonselected_name"><div onclick="showNames()" id = "selectName"><span style="display: inline-block;">Наименование</span><div id="arroww">&#9660;</div></div></td>
+
+                    <td id="selected_name" class="hidden"><div class="in_selected_name"><img src="../web/img/metall.jpeg" class="selected_name_img"><div id="name_selected"><h5 id="name_selected_title" style="margin-top: 0px">Накладка геральдика</h5><p id="name_selected_desc"> под эмаль со сферами по периметру, Детали Бронза</p> </div></div></td>
+
+
                     <td><?=$f->field($form, 'operation')->dropDownList($allclothes, ['id' => "selectOperation", 'style' => 'width:117px', 'options' => ['0'=>['selected'=>true]]])->label('');?></td>
 
                     <td><?=$f->field($form, 'massa')->textInput(['style' => 'width:70px', 'type'=>'text', 'placeholder' => 'Грамм'])->label('')?></td>
@@ -165,6 +259,9 @@ $today = date("d.m.y");
                 </tr>
     </tbody>
 </table>
+
+<?= Html::submitButton('Ввод', ['id'=>'future', 'name' => 'button_save', 'class' => 'btn_submit']) ?>
+<?php ActiveForm::end(); ?>
 <div class="wrap_types" id = "wrap_types">
     <div class="grey_table_types">
         <table class="types">
@@ -635,7 +732,7 @@ $today = date("d.m.y");
             
             <tr>
                 <td>
-                    <table class="type">
+                    <table class="type" onclick="selectName()">
                         <tr><td><img src="../web/img/metall.jpeg"></td></tr>
                         <tr><td>Металл</td></tr>
                         <tr><td>Бронза</td></tr>
@@ -1100,6 +1197,7 @@ var visible = false;
 var visibleNames = false;
 
 var type_selected = false;
+var name_selected = false;
 
 
 function showFun() {
@@ -1148,6 +1246,7 @@ function selectType(name) {
     console.log(name);
 	document.getElementById('wrap_types' ).style.display = 'none';
 	document.getElementById('wrap_names' ).style.display = 'block';
+
     document.getElementById('nonselected_type').setAttribute('class', 'hidden');
     document.getElementById('selected_type').setAttribute('class', 'select_tp');
     document.getElementById('selected_type').setAttribute('style', 'padding:0');
@@ -1155,8 +1254,15 @@ function selectType(name) {
     type_selected = true;
 }
 
+function selectName(name) {
+    console.log(name);
+
+    document.getElementById('nonselected_name').setAttribute('class', 'hidden');
+    document.getElementById('selected_name').setAttribute('class', 'select_nm');
+    document.getElementById('selected_name').setAttribute('style', 'padding:0');
+
+    type_selected = true;
+}
+
 
 </script>
-
-<?= Html::submitButton('Добавить', ['id'=>'future', 'name' => 'button_save']) ?>
-<?php ActiveForm::end(); ?>
