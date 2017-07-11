@@ -251,8 +251,7 @@ $today = date("d.m.y");
                     <td id="selected_type" class="hidden"><div style="display: inline-block;max-height: 73px; width: 100%"><img src="../web/img/metall.jpeg" style="height: 73px; width: 73px; display: inline-block; vertical-align: top"><div id="type_selected" style="display: inline-block; font-size: 12px;
         line-height: 12px;"><p><h5 id="type_selected_title">Полуфабрикат</h3></p><p id="type_selected_desc"> золото розовое 585пр</p> </div></div></td>
 					<?php //$f->field($form, 'type')->textarea(['onclick'=>'showFun()','id' => "selectType", 'style' => 'width:175.5px', 'options' => ['0'=>['selected'=>true]]])->label('');?></td>
-					<td><div class="testName" onclick="showNames()" id = "selectName" style= "width:117px;text-align: center;"><span style="display: inline-block;">tt</span><div id="arroww">&#9660;</div></div></td>
-                    <!--<td><?php //$f->field($form, 'name')->dropDownList($allclothes, ['id' => "selectName", 'style' => 'width:175.5px', 'options' => ['0'=>['selected'=>true]]])->label('');?></td>-->
+					<!--<td><?php //$f->field($form, 'name')->dropDownList($allclothes, ['id' => "selectName", 'style' => 'width:175.5px', 'options' => ['0'=>['selected'=>true]]])->label('');?></td>-->
                     <td><?=$f->field($form, 'operation')->dropDownList($items, ['id' => "selectOperation", 'style' => 'width:117px', 'options' => ['0'=>['selected'=>true]]])->label('');?></td>
 
 
