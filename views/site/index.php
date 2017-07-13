@@ -103,7 +103,7 @@ $today = date("d.m.y");
         left: 0;
     }
 
-    div[name="grey_table_types"] {
+    div[name="grey_table_types"], div[name="grey_table_names"] {
 
         /* width: 100%; */
         background-color: #f1f2f3;
@@ -111,9 +111,12 @@ $today = date("d.m.y");
 
     td[name="name"], td[name="type_of_name"] {
         max-width: 100px;
-        height: 37px;
+        
     }
 
+    td[name="name"] {
+        height: 37px;
+    }
 
     #arrow {
         display: inline-block;
@@ -286,6 +289,10 @@ $today = date("d.m.y");
 
     <div name="grey_table_types" style="left:0; margin-top:30px;width: 100%; position: absolute; height:260px; z-index: -1"></div>
     <div name="grey_table_types" style="left:0; margin-top:530px;width: 100%; position: absolute; height:260px; z-index: -1"></div>
+
+    <div name="grey_table_names" style="left:0; margin-top:30px;width: 100%; position: absolute; height:260px; z-index: -1"></div>
+    <div name="grey_table_names" style="left:0; margin-top:950px;width: 100%; position: absolute; height:680px; z-index: -1"></div>
+    <div name="grey_table_names" style="left:0; margin-top:1915px;width: 100%; position: absolute; height:300px; z-index: -1"></div>
     <div class="wrap_types" id = "wrap_types">
         <div class="">
             <table class="types">
@@ -582,7 +589,7 @@ $today = date("d.m.y");
         </table>
     </div>
     <div class="wrap_names" id = "wrap_names">
-              <table class="types">
+            <table class="types">
                 <tr>
                     <td>
                         <table class="type" style="margin-top: 75px">
@@ -593,10 +600,8 @@ $today = date("d.m.y");
 
                         </table>
                     </td>
-                </tr>
-             
+                </tr>          
             </table>
-
             <table class="types" valign="top">
                 <caption><h2>Основы</h2></caption>
                 <tr>
@@ -1200,10 +1205,36 @@ var usingName = true;
 var type_selected = false;
 var name_selected = false;
 
-var greys = document.getElementsByName('grey_table_types');
+var greys_types = document.getElementsByName('grey_table_types');
+var greys_names = document.getElementsByName('grey_table_names');
     
-for (var i = 0; i <= greys.length - 1; i++) {
-    greys[i].style.display = 'none';
+hide_greys_types();
+hide_greys_names();
+
+function hide_greys_types() {
+    for (var i = 0; i <= greys_types.length - 1; i++) {
+        greys_types[i].style.display = 'none';
+    }
+
+}
+
+function show_greys_types() {
+    for (var i = 0; i <= greys_types.length - 1; i++) {
+        greys_types[i].style.display = 'block';
+    }
+}
+
+function hide_greys_names() {
+    for (var i = 0; i <= greys_names.length - 1; i++) {
+        greys_names[i].style.display = 'none';
+    }
+
+}
+
+function show_greys_names() {
+    for (var i = 0; i <= greys_names.length - 1; i++) {
+        greys_names[i].style.display = 'block';
+    }
 }
 
 
@@ -1211,9 +1242,7 @@ function showFun() {
     if(visible) {
         document.getElementById('wrap_types' ).style.display = 'none';
     
-        for (var i = 0; i <= greys.length - 1; i++) {
-            greys[i].style.display = 'none';
-        }
+        hide_greys_types();
 
         visible = false;
 		arrow.classList.toggle('rotated');
@@ -1225,9 +1254,7 @@ function showFun() {
 
         }
         
-        for (var i = 0; i <= greys.length - 1; i++) {
-            greys[i].style.display = 'block';
-        }
+        show_greys_types();
 
         visible = true;
 		arrow.classList.toggle('rotated');
@@ -1240,10 +1267,7 @@ function showNames() {
 		arrowName.classList.toggle('rotated');
         document.getElementById('wrap_names' ).style.display = 'none';
 
-        for (var i = 0; i <= greys.length - 1; i++) {
-            greys[i].style.display = 'none';
-        }
-
+        hide_greys_names();
 
         visibleNames = false;
     } else if(!visibleNames  && type_selected && usingName){
@@ -1255,9 +1279,8 @@ function showNames() {
             visible = false;
         }
 
-        for (var i = 0; i <= greys.length - 1; i++) {
-            greys[i].style.display = 'block';
-        }
+        show_greys_names();
+
         visibleNames = true;
     }
 }
@@ -1289,16 +1312,14 @@ function selectType(type, name, desc, src) {
 	if(name == "Металл" || name == "Лигатура"){
 		document.getElementById('selectName').style.color = "#CCCCCC";
 		usingName = false;
-	}else{
+	} else {
 		usingName = true;
 		document.getElementById('selectName').style.color = "#3d3d3d";
 	}
 	
 	document.getElementById('wrap_types' ).style.display = 'none';
 
-     for (var i = 0; i <= greys.length - 1; i++) {
-            greys[i].style.display = 'none';
-        }
+    hide_greys_types();
 
     document.getElementById('nonselected_type').setAttribute('class', 'hidden');
     document.getElementById('selected_type').setAttribute('class', 'select_tp');
@@ -1314,12 +1335,12 @@ function selectType(type, name, desc, src) {
     
 }
 
-function selectName(name) {
-    
+function selectName(name, desc, type) {
 
     document.getElementById('nonselected_name').setAttribute('class', 'hidden');
     document.getElementById('selected_name').setAttribute('class', 'select_nm');
     document.getElementById('selected_name').setAttribute('style', 'padding:0');
+    hide_greys_names();
 
     type_selected = true;
 }
@@ -1360,9 +1381,6 @@ function generateNames(selected_type_title) {
     for (var i = 0; i < name.length; i++) {
         name[i].innerHTML= names[i];
     }
-    
-
-
 }
 
 
