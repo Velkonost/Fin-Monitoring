@@ -271,7 +271,7 @@ $today = date("d.m.y");
 
 					<td id="nonselected_name"><div onclick="showNames()" id = "selectName"><span style="display: inline-block;">Наименование</span><div id="arroww">&#9660;</div></div></td>
 
-                    <td id="selected_name" class="hidden"><div onclick="showNames()" class="in_selected_name"><img id="img_name" class="selected_name_img"><div id="name_selected"><h6 id="name_selected_title" style="margin-top: 0px"></h6><p id="name_selected_desc"></p><p id="name_selected_type"></p> </div></div></td>
+                    <td id="selected_name" class="hidden"><div onclick="showNames()" class="in_selected_name"><img id="img_name" class="selected_name_img"><div id="name_selected"><h6 id="name_selected_title" style="margin-top: 0px"></h6><p style="margin-bottom: 3px; font-size: 11px" id="name_selected_desc"></p><p style="margin: 0;font-size: 11px" id="name_selected_type"></p> </div></div></td>
 					
                     <td><?=$f->field($form, 'operation')->dropDownList($operations, ['id' => "selectOperation", 'style' => 'box-shadow: inset 0px 0px 0px 0px black;border: 0px;width:100px;background-color: #fff8ca', 'options' => [''=>['selected'=>true]]])->label('');?></td>
 
@@ -292,8 +292,8 @@ $today = date("d.m.y");
     <div name="grey_table_types" style="left:0; margin-top:530px;width: 100%; position: absolute; height:260px; z-index: -1"></div>
 
     <div name="grey_table_names" style="left:0; margin-top:30px;width: 100%; position: absolute; height:260px; z-index: -1"></div>
-    <div name="grey_table_names" style="left:0; margin-top:950px;width: 100%; position: absolute; height:700px; z-index: -1"></div>
-    <div name="grey_table_names" style="left:0; margin-top:1915px;width: 100%; position: absolute; height:300px; z-index: -1"></div>
+    <div name="grey_table_names" style="left:0; margin-top:1000px;width: 100%; position: absolute; height:710px; z-index: -1"></div>
+    <div name="grey_table_names" style="left:0; margin-top:2000px;width: 100%; position: absolute; height:300px; z-index: -1"></div>
     <div class="wrap_types" id = "wrap_types">
         <div class="">
             <table class="types">
@@ -1412,7 +1412,7 @@ function selectType(type, name, desc, src) {
     document.getElementById('select_title_in_name').innerText = name;
     document.getElementById('select_desc_in_name').innerText = desc;
     $("#select_img_in_name").attr("src", "../web/img/" + src);
-    generateNames(name, name + " " + desc);
+    generateNames(name, name + "<br>" + desc);
     
 }
 
@@ -1422,9 +1422,9 @@ function selectName(number, number_img) {
     $("#img_name").attr("src", "../web/img/" + number_img + '.jpg');
     number--;
 
-    document.getElementById('name_selected_title').innerText = names_short[number];
-    document.getElementById('name_selected_desc').innerText = descs[number];
-    document.getElementById('name_selected_type').innerText = document.getElementById('select_title_in_name').innerHTML + " " + document.getElementById('select_desc_in_name').innerHTML;
+    document.getElementById('name_selected_title').innerText = number < 30 ? "Основы" : number < 56 ? "Накладки" : number < 61 ? "Задние части" : "Ножки";
+    document.getElementById('name_selected_desc').innerHTML = names[number];
+    document.getElementById('name_selected_type').innerHTML = document.getElementById('select_title_in_name').innerHTML + " " + document.getElementById('select_desc_in_name').innerHTML;
 
     document.getElementById('nonselected_name').setAttribute('class', 'hidden');
     document.getElementById('selected_name').setAttribute('class', 'select_nm');
@@ -1470,7 +1470,7 @@ function generateNames(type, selected_type_title) {
         }
 
         for (var i = 0; i < type_of_name.length; i++) {
-            type_of_name[i].innerText = selected_type_title;
+            type_of_name[i].innerHTML = selected_type_title;
         }
 
         for (var i = 0; i < name.length; i++) {
