@@ -889,8 +889,8 @@ $today = date("d.m.y");
                 <caption><h2>Накладки</h2></caption>
                 <tr>
                     <td>
-                        <table class="type" onclick="selectName()">
-                            <tr><td><img src="../web/img/27.jpeg"></td></tr>
+                        <table class="type" onclick="selectName('27.jpg')">
+                            <tr><td><img src="../web/img/27.jpg"></td></tr>
                             <tr><td name="kind_of_name"></td></tr>
                             <tr><td name="name"></td></tr>
                             <tr><td name="desc"></td></tr>
@@ -898,8 +898,8 @@ $today = date("d.m.y");
                         </table>
                     </td>
                     <td>
-                        <table class="type" onclick="selectName()">
-                            <tr><td><img src="../web/img/28.jpeg"></td></tr>
+                        <table class="type" onclick="selectName('28.jpg')">
+                            <tr><td><img src="../web/img/28.jpg"></td></tr>
                             <tr><td name="kind_of_name"></td></tr>
                             <tr><td name="name"></td></tr>
                             <tr><td name="desc"></td></tr>
@@ -909,8 +909,8 @@ $today = date("d.m.y");
                        
                     </td>
                     <td>
-                        <table class="type" onclick="selectName()">
-                            <tr><td><img src="../web/img/29.jpeg"></td></tr>
+                        <table class="type" onclick="selectName('29.jpg')">
+                            <tr><td><img src="../web/img/29.jpg"></td></tr>
                             <tr><td name="kind_of_name"></td></tr>
                             <tr><td name="name"></td></tr>
                             <tr><td name="desc"></td></tr>
@@ -918,8 +918,8 @@ $today = date("d.m.y");
                         </table>
                     </td>
                     <td>
-                        <table class="type" onclick="selectName()">
-                            <tr><td><img src="../web/img/30.jpeg"></td></tr>
+                        <table class="type" onclick="selectName('30.jpg')">
+                            <tr><td><img src="../web/img/30.jpg"></td></tr>
                             <tr><td name="kind_of_name"></td></tr>
                             <tr><td name="name"></td></tr>
                             <tr><td name="desc"></td></tr>
@@ -927,8 +927,8 @@ $today = date("d.m.y");
                         </table>
                     </td>
                    <td>
-                        <table class="type" onclick="selectName()">
-                            <tr><td><img src="../web/img/31.jpeg"></td></tr>
+                        <table class="type" onclick="selectName('31.jpg')">
+                            <tr><td><img src="../web/img/31.jpg"></td></tr>
                             <tr><td name="kind_of_name"></td></tr>
                             <tr><td name="name"></td></tr>
                             <tr><td name="desc"></td></tr>
@@ -936,8 +936,8 @@ $today = date("d.m.y");
                         </table>
                     </td>
                    <td>
-                        <table class="type" onclick="selectName()">
-                            <tr><td><img src="../web/img/32.jpeg"></td></tr>
+                        <table class="type" onclick="selectName('32.jpg')">
+                            <tr><td><img src="../web/img/32.jpg"></td></tr>
                             <tr><td name="kind_of_name"></td></tr>
                             <tr><td name="name"></td></tr>
                             <tr><td name="desc"></td></tr>
@@ -945,8 +945,8 @@ $today = date("d.m.y");
                         </table>
                     </td>
                     <td>
-                        <table class="type" onclick="selectName()">
-                            <tr><td><img src="../web/img/33.jpeg"></td></tr>
+                        <table class="type" onclick="selectName('33.jpg')">
+                            <tr><td><img src="../web/img/33.jpg"></td></tr>
                             <tr><td name="kind_of_name"></td></tr>
                             <tr><td name="name"></td></tr>
                             <tr><td name="desc"></td></tr>
@@ -954,8 +954,8 @@ $today = date("d.m.y");
                         </table>
                     </td>
                      <td>
-                        <table class="type" onclick="selectName()">
-                            <tr><td><img src="../web/img/34.jpeg"></td></tr>
+                        <table class="type" onclick="selectName('34.jpg')">
+                            <tr><td><img src="../web/img/34.jpg"></td></tr>
                             <tr><td name="kind_of_name"></td></tr>
                             <tr><td name="name"></td></tr>
                             <tr><td name="desc"></td></tr>
@@ -963,8 +963,8 @@ $today = date("d.m.y");
                         </table>
                     </td>
                     <td>
-                        <table class="type" onclick="selectName()">
-                            <tr><td><img src="../web/img/35.jpeg"></td></tr>
+                        <table class="type" onclick="selectName('35.jpg')">
+                            <tr><td><img src="../web/img/35.jpg"></td></tr>
                             <tr><td name="kind_of_name"></td></tr>
                             <tr><td name="name"></td></tr>
                             <tr><td name="desc"></td></tr>
@@ -972,8 +972,8 @@ $today = date("d.m.y");
                         </table>
                     </td>
                    <td>
-                        <table class="type" onclick="selectName()">
-                            <tr><td><img src="../web/img/36.jpeg"></td></tr>
+                        <table class="type" onclick="selectName('36.jpg')">
+                            <tr><td><img src="../web/img/36.jpg"></td></tr>
                             <tr><td name="kind_of_name"></td></tr>
                             <tr><td name="name"></td></tr>
                             <tr><td name="desc"></td></tr>
@@ -981,8 +981,8 @@ $today = date("d.m.y");
                         </table>
                     </td>
                      <td>
-                        <table class="type" onclick="selectName()">
-                            <tr><td><img src="../web/img/37.jpeg"></td></tr>
+                        <table class="type" onclick="selectName('37.jpg')">
+                            <tr><td><img src="../web/img/37.jpg"></td></tr>
                             <tr><td name="kind_of_name"></td></tr>
                             <tr><td name="name"></td></tr>
                             <tr><td name="desc"></td></tr>
@@ -1138,8 +1138,8 @@ $today = date("d.m.y");
                 <caption><h2>Задние части</h2></caption>  
                 <tr>
                     <td>
-                        <table class="type" onclick="selectName()">
-                            <tr><td><img src="../web/img/metall.jpeg"></td></tr>
+                        <table class="type" onclick="selectName('38.jpg')">
+                            <tr><td><img src="../web/img/38.jpg"></td></tr>
                             <tr><td name="kind_of_name"></td></tr>
                             <tr><td name="name"></td></tr>
                             <tr><td name="desc"></td></tr>
@@ -1147,8 +1147,8 @@ $today = date("d.m.y");
                         </table>
                     </td>
                     <td>
-                        <table class="type" onclick="selectName()">
-                            <tr><td><img src="../web/img/metall.jpeg"></td></tr>
+                        <table class="type" onclick="selectName('39.jpg')">
+                            <tr><td><img src="../web/img/39.jpg"></td></tr>
                             <tr><td name="kind_of_name"></td></tr>
                             <tr><td name="name"></td></tr>
                             <tr><td name="desc"></td></tr>
@@ -1158,8 +1158,8 @@ $today = date("d.m.y");
                        
                     </td>
                     <td>
-                        <table class="type" onclick="selectName()">
-                            <tr><td><img src="../web/img/metall.jpeg"></td></tr>
+                        <table class="type" onclick="selectName('40.jpg')">
+                            <tr><td><img src="../web/img/40.jpg"></td></tr>
                             <tr><td name="kind_of_name"></td></tr>
                             <tr><td name="name"></td></tr>
                             <tr><td name="desc"></td></tr>
@@ -1167,8 +1167,8 @@ $today = date("d.m.y");
                         </table>
                     </td>
                     <td>
-                        <table class="type" onclick="selectName()">
-                            <tr><td><img src="../web/img/metall.jpeg"></td></tr>
+                        <table class="type" onclick="selectName('41.jpg')">
+                            <tr><td><img src="../web/img/41.jpg"></td></tr>
                             <tr><td name="kind_of_name"></td></tr>
                             <tr><td name="name"></td></tr>
                             <tr><td name="desc"></td></tr>
@@ -1176,8 +1176,8 @@ $today = date("d.m.y");
                         </table>
                     </td>
                      <td>
-                        <table class="type" onclick="selectName()">
-                            <tr><td><img src="../web/img/metall.jpeg"></td></tr>
+                        <table class="type" onclick="selectName('42.jpg')">
+                            <tr><td><img src="../web/img/42.jpg"></td></tr>
                             <tr><td name="kind_of_name"></td></tr>
                             <tr><td name="name"></td></tr>
                             <tr><td name="desc"></td></tr>
@@ -1190,8 +1190,8 @@ $today = date("d.m.y");
                 <caption><h2>Ножки</h2></caption>  
                 <tr>
                     <td>
-                        <table class="type" onclick="selectName()">
-                            <tr><td><img src="../web/img/metall.jpeg"></td></tr>
+                        <table class="type" onclick="selectName('43.jpg')">
+                            <tr><td><img src="../web/img/43.jpg"></td></tr>
                             <tr><td name="kind_of_name"></td></tr>
                             <tr><td name="name"></td></tr>
                             <tr><td name="desc"></td></tr>
@@ -1199,8 +1199,8 @@ $today = date("d.m.y");
                         </table>
                     </td>
                     <td>
-                        <table class="type" onclick="selectName()">
-                            <tr><td><img src="../web/img/metall.jpeg"></td></tr>
+                        <table class="type" onclick="selectName('44.jpg')">
+                            <tr><td><img src="../web/img/44.jpg"></td></tr>
                             <tr><td name="kind_of_name"></td></tr>
                             <tr><td name="name"></td></tr>
                             <tr><td name="desc"></td></tr>
@@ -1210,8 +1210,8 @@ $today = date("d.m.y");
                        
                     </td>
                     <td>
-                        <table class="type" onclick="selectName()">
-                            <tr><td><img src="../web/img/metall.jpeg"></td></tr>
+                        <table class="type" onclick="selectName('45.jpg')">
+                            <tr><td><img src="../web/img/45.jpg"></td></tr>
                             <tr><td name="kind_of_name"></td></tr>
                             <tr><td name="name"></td></tr>
                             <tr><td name="desc"></td></tr>
@@ -1228,8 +1228,8 @@ $today = date("d.m.y");
                         </table>
                     </td>
                      <td>
-                        <table class="type" onclick="selectName()">
-                            <tr><td><img src="../web/img/metall.jpeg"></td></tr>
+                        <table class="type" onclick="selectName('46.jpg')">
+                            <tr><td><img src="../web/img/46.jpg"></td></tr>
                             <tr><td name="kind_of_name"></td></tr>
                             <tr><td name="name"></td></tr>
                             <tr><td name="desc"></td></tr>
@@ -1237,8 +1237,8 @@ $today = date("d.m.y");
                         </table>
                     </td>
                     <td>
-                        <table class="type" onclick="selectName()">
-                            <tr><td><img src="../web/img/metall.jpeg"></td></tr>
+                        <table class="type" onclick="selectName('47.jpg')">
+                            <tr><td><img src="../web/img/47.jpg"></td></tr>
                             <tr><td name="kind_of_name"></td></tr>
                             <tr><td name="name"></td></tr>
                             <tr><td name="desc"></td></tr>
