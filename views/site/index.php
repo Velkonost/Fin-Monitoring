@@ -268,7 +268,7 @@ $today = date("d.m.y");
 
 					<td id="nonselected_name"><div onclick="showNames()" id = "selectName"><span style="display: inline-block;">Наименование</span><div id="arroww">&#9660;</div></div></td>
 
-                    <td id="selected_name" class="hidden"><div class="in_selected_name"><img src="../web/img/metall.jpeg" class="selected_name_img"><div id="name_selected"><h6 id="name_selected_title" style="margin-top: 0px">Накладка геральдика</h6><p id="name_selected_desc"> под эмаль со сферами по периметру, Детали Бронза</p> </div></div></td>
+                    <td id="selected_name" class="hidden"><div onclick="showNames()" class="in_selected_name"><img id="img_name" src="../web/img/metall.jpeg" class="selected_name_img"><div id="name_selected"><h6 id="name_selected_title" style="margin-top: 0px">Накладка геральдика</h6><p id="name_selected_desc"> под эмаль со сферами по периметру, Детали Бронза</p><p id="name_selected_type"></p> </div></div></td>
 					
                     <td><?=$f->field($form, 'operation')->dropDownList($items, ['id' => "selectOperation", 'style' => 'box-shadow: inset 0px 0px 0px 0px black;border: 0px;width:100px;background-color: #fff8ca', 'options' => [''=>['selected'=>true]]])->label('');?></td>
 
@@ -1401,11 +1401,17 @@ function selectType(type, name, desc, src) {
     
 }
 
-function selectName(name, desc, type) {
+function selectName(name, desc, type, src) {
+
+    $("#img_name").attr("src", "../web/img/" + 'metall.jpeg');
+
+    document.getElementById('name_selected_title').innerText = name;
+    document.getElementById('name_selected_desc').innerText = desc;
 
     document.getElementById('nonselected_name').setAttribute('class', 'hidden');
     document.getElementById('selected_name').setAttribute('class', 'select_nm');
     document.getElementById('selected_name').setAttribute('style', 'padding:0');
+    document.getElementById('wrap_names' ).style.display = 'none';
     hide_greys_names();
 
     type_selected = true;
