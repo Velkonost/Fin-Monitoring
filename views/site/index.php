@@ -1240,7 +1240,7 @@ function selectType(name, desc, src) {
 		usingName = false;
 	}else{
 		usingName = true;
-		document.getElementById('selectName').style.color = "#000000";
+		document.getElementById('selectName').style.color = "#3d3d3d";
 	}
 	
 	document.getElementById('wrap_types' ).style.display = 'none';
