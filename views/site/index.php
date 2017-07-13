@@ -247,7 +247,7 @@ $today = date("d.m.y");
 
                     <td style="max-width: 58.5px; min-width: 58.5px;text-align: center; padding: 0"><div id="time"></div></td>
 
-                   
+
                     <td id="nonselected_type"><div  class="testType" onclick="showFun()" id = "selectType"><span style="display: inline-block;">Тип</span><div id="arrow">&#9660;</div></div></td>
 
                     <td id="selected_type" class="hidden"><div   onclick="showFun()" class="in_selected_type"><img id="img_type" src="../web/img/metall.jpeg" class="selected_type_img"><div id="type_selected"><h6 id="type_selected_title" style="margin-top: 0px"></h6><p id="type_selected_desc"></p> </div></div></td>
@@ -1154,6 +1154,8 @@ var visible = false;
 
 var visibleNames = false;
 
+var usingName = true;
+
 var type_selected = false;
 var name_selected = false;
 
@@ -1187,7 +1189,7 @@ function showFun() {
 }
 
 function showNames() {
-    if(visibleNames) {
+    if(visibleNames && usingName) {
 		document.getElementById('wrap_types' ).style.display = 'none';
 		arrowName.classList.toggle('rotated');
         document.getElementById('wrap_names' ).style.display = 'none';
@@ -1198,7 +1200,7 @@ function showNames() {
 
 
         visibleNames = false;
-    } else if(!visibleNames  &&type_selected){
+    } else if(!visibleNames  && type_selected && usingName){
 		arrowName.classList.toggle('rotated');
         document.getElementById('wrap_names' ).style.display = 'block';
 
@@ -1232,7 +1234,15 @@ function selectType(name, desc, src) {
 
     document.getElementById('type_selected_title').innerText = name;
     document.getElementById('type_selected_desc').innerText = desc;
-
+	
+	if(name == "Металл" || name == "Лигатура"){
+		document.getElementById('selectName').style.color = "#CCCCCC";
+		usingName = false;
+	}else{
+		usingName = true;
+		document.getElementById('selectName').style.color = "#000000";
+	}
+	
 	document.getElementById('wrap_types' ).style.display = 'none';
 
      for (var i = 0; i <= greys.length - 1; i++) {
