@@ -109,6 +109,12 @@ $today = date("d.m.y");
         background-color: #f1f2f3;
     }
 
+    td[name="name"], td[name="type_of_name"] {
+        max-width: 100px;
+        height: 37px;
+    }
+
+
     #arrow {
         display: inline-block;
     }
@@ -236,6 +242,10 @@ $today = date("d.m.y");
         cursor: pointer;
     }
 
+    .name_td {
+        height: 38px;
+    }
+
 </style>
 <section>
 
@@ -274,8 +284,8 @@ $today = date("d.m.y");
 <?= Html::submitButton('Ввод', ['id'=>'future', 'name' => 'button_save', 'class' => 'btn_submit']) ?>
 <?php ActiveForm::end(); ?>
 
-    <div name="grey_table_types" style="left:0; margin-top:30px;width: 100%; position: absolute; height:440px; z-index: -1"></div>
-    <div name="grey_table_types" style="left:0; margin-top:710px;width: 100%; position: absolute; height:260px; z-index: -1"></div>
+    <div name="grey_table_types" style="left:0; margin-top:30px;width: 100%; position: absolute; height:260px; z-index: -1"></div>
+    <div name="grey_table_types" style="left:0; margin-top:530px;width: 100%; position: absolute; height:260px; z-index: -1"></div>
     <div class="wrap_types" id = "wrap_types">
         <div class="">
             <table class="types">
@@ -283,7 +293,7 @@ $today = date("d.m.y");
                 
                 <tr>
                     <td>
-                        <table class="type" onclick="selectType('Металл', 'Бронза чистая', 'мбч.png')">
+                        <table class="type" onclick="selectType('Металлы', 'Металл', 'Бронза чистая', 'мбч.png')">
                             <tr><td><img src="../web/img/мбч.png"></td></tr>
                             <tr><td>Металл</td></tr>
                             <tr><td>Бронза</td></tr>
@@ -293,7 +303,7 @@ $today = date("d.m.y");
                        
                     </td>
                     <td>
-                        <table class="type" onclick="selectType('Металл', 'Бронза вторичная', 'мбв.png')">
+                        <table class="type" onclick="selectType('Металлы', 'Металл', 'Бронза вторичная', 'мбв.png')">
                             <tr><td><img src="../web/img/мбв.png"></td></tr>
                             <tr><td>Металл</td></tr>
                             <tr><td>Бронза</td></tr>
@@ -303,7 +313,7 @@ $today = date("d.m.y");
                        
                     </td>
                     <td>
-                        <table class="type" onclick="selectType('Металл', 'Серебро 999 чистое', 'мс999ч.png')">
+                        <table class="type" onclick="selectType('Металлы', 'Металл', 'Серебро 999 чистое', 'мс999ч.png')">
                             <tr><td><img src="../web/img/мс999ч.png"></td></tr>
                             <tr><td>Металл</td></tr>
                             <tr><td>Серебро 999</td></tr>
@@ -313,7 +323,7 @@ $today = date("d.m.y");
                        
                     </td>
                     <td>
-                        <table class="type" onclick="selectType('Металл', 'Серебро 925 вторичное', 'мс925в.png')">
+                        <table class="type" onclick="selectType('Металлы', 'Металл', 'Серебро 925 вторичное', 'мс925в.png')">
                             <tr><td><img src="../web/img/мс925в.png"></td></tr>
                             <tr><td>Металл</td></tr>
                             <tr><td>Серебро 925</td></tr>
@@ -323,7 +333,7 @@ $today = date("d.m.y");
                        
                     </td>
                     <td>
-                        <table class="type" onclick="selectType('Металл', 'Золото 999 чистое', 'мз999ч.png')">
+                        <table class="type" onclick="selectType('Металлы', 'Металл', 'Золото 999 чистое', 'мз999ч.png')">
                             <tr><td><img src="../web/img/мз999ч.png"></td></tr>
                             <tr><td>Металл</td></tr>
                             <tr><td>Золото 999</td></tr>
@@ -333,7 +343,7 @@ $today = date("d.m.y");
                        
                     </td>
                    <td>
-                        <table class="type" onclick="selectType('Металл', 'Золото белое 585 вторичное', 'мзб585в.png')">
+                        <table class="type" onclick="selectType('Металлы', 'Металл', 'Золото белое 585 вторичное', 'мзб585в.png')">
                             <tr><td><img src="../web/img/мзб585в.png"></td></tr>
                             <tr><td>Металл</td></tr>
                             <tr><td>Золото белое 585</td></tr>
@@ -343,7 +353,7 @@ $today = date("d.m.y");
                        
                     </td>
                     <td>
-                        <table class="type" onclick="selectType('Металл', 'Золото желтое 585 вторичное', 'мзж585в.png')">
+                        <table class="type" onclick="selectType('Металлы', 'Металл', 'Золото желтое 585 вторичное', 'мзж585в.png')">
                             <tr><td><img src="../web/img/мзж585в.png"></td></tr>
                             <tr><td>Металл</td></tr>
                             <tr><td>Золото желтое 585</td></tr>
@@ -353,7 +363,7 @@ $today = date("d.m.y");
                        
                     </td>
                      <td>
-                        <table class="type" onclick="selectType('Металл', 'Золото розовое 585 вторичное', 'мзр585в.png')">
+                        <table class="type" onclick="selectType('Металлы', 'Металл', 'Золото розовое 585 вторичное', 'мзр585в.png')">
                             <tr><td><img src="../web/img/мзр585в.png"></td></tr>
                             <tr><td>Металл</td></tr>
                             <tr><td>Золото розовое 585</td></tr>
@@ -363,7 +373,7 @@ $today = date("d.m.y");
                        
                     </td>
                     <td>
-                        <table class="type" onclick="selectType('Металл', 'Золото белое 750 вторичное', 'мзб750в.png')">
+                        <table class="type" onclick="selectType('Металлы', 'Металл', 'Золото белое 750 вторичное', 'мзб750в.png')">
                             <tr><td><img src="../web/img/мзб750в.png"></td></tr>
                             <tr><td>Металл</td></tr>
                             <tr><td>Золото белое 750</td></tr>
@@ -373,7 +383,7 @@ $today = date("d.m.y");
                        
                     </td>
                    <td>
-                        <table class="type" onclick="selectType('Металл', 'Золото желтое 750 вторичное', 'мзж750в.png')">
+                        <table class="type" onclick="selectType('Металлы', 'Металл', 'Золото желтое 750 вторичное', 'мзж750в.png')">
                             <tr><td><img src="../web/img/мзж750в.png"></td></tr>
                             <tr><td>Металл</td></tr>
                             <tr><td>Золото желтое 750</td></tr>
@@ -383,7 +393,7 @@ $today = date("d.m.y");
                        
                     </td>
                      <td>
-                        <table class="type" onclick="selectType('Металл', 'Золото розовое 750 вторичное', 'мзр750в.png')">
+                        <table class="type" onclick="selectType('Металлы', 'Металл', 'Золото розовое 750 вторичное', 'мзр750в.png')">
                             <tr><td><img src="../web/img/мзр750в.png"></td></tr>
                             <tr><td>Металл</td></tr>
                             <tr><td>Золото розовое 750</td></tr>
@@ -393,118 +403,7 @@ $today = date("d.m.y");
                        
                     </td>
                 </tr>
-                <tr>
-                    <td>
-                        <table class="type" onclick="selectType('Металл', 'Бронза чистая', 'мбч.png')">
-                            <tr><td><img src="../web/img/мбч.png"></td></tr>
-                            <tr><td>Металл</td></tr>
-                            <tr><td>Бронза</td></tr>
-                            <tr><td>чистая</td></tr>
-
-                        </table>
-                       
-                    </td>
-                    <td>
-                        <table class="type" onclick="selectType('Металл', 'Бронза вторичная', 'мбв.png')">
-                            <tr><td><img src="../web/img/мбв.png"></td></tr>
-                            <tr><td>Металл</td></tr>
-                            <tr><td>Бронза</td></tr>
-                            <tr><td>вторичная</td></tr>
-
-                        </table>
-                       
-                    </td>
-                    <td>
-                        <table class="type" onclick="selectType('Металл', 'Серебро 999 чистое', 'мс999ч.png')">
-                            <tr><td><img src="../web/img/мс999ч.png"></td></tr>
-                            <tr><td>Металл</td></tr>
-                            <tr><td>Серебро 999</td></tr>
-                            <tr><td>чистое</td></tr>
-
-                        </table>
-                       
-                    </td>
-                    <td>
-                        <table class="type" onclick="selectType('Металл', 'Серебро 925 вторичное', 'мс925в.png')">
-                            <tr><td><img src="../web/img/мс925в.png"></td></tr>
-                            <tr><td>Металл</td></tr>
-                            <tr><td>Серебро 925</td></tr>
-                            <tr><td>вторичное</td></tr>
-
-                        </table>
-                       
-                    </td>
-                    <td>
-                        <table class="type" onclick="selectType('Металл', 'Золото 999 чистое', 'мз999ч.png')">
-                            <tr><td><img src="../web/img/мз999ч.png"></td></tr>
-                            <tr><td>Металл</td></tr>
-                            <tr><td>Золото 999</td></tr>
-                            <tr><td>чистое</td></tr>
-
-                        </table>
-                       
-                    </td>
-                   <td>
-                        <table class="type" onclick="selectType('Металл', 'Золото белое 585 вторичное', 'мзб585в.png')">
-                            <tr><td><img src="../web/img/мзб585в.png"></td></tr>
-                            <tr><td>Металл</td></tr>
-                            <tr><td>Золото белое 585</td></tr>
-                            <tr><td>вторичное</td></tr>
-
-                        </table>
-                       
-                    </td>
-                    <td>
-                        <table class="type" onclick="selectType('Металл', 'Золото желтое 585 вторичное', 'мзж585в.png')">
-                            <tr><td><img src="../web/img/мзж585в.png"></td></tr>
-                            <tr><td>Металл</td></tr>
-                            <tr><td>Золото желтое 585</td></tr>
-                            <tr><td>вторичное</td></tr>
-
-                        </table>
-                       
-                    </td>
-                     <td>
-                        <table class="type" onclick="selectType('Металл', 'Золото розовое 585 вторичное', 'мзр585в.png')">
-                            <tr><td><img src="../web/img/мзр585в.png"></td></tr>
-                            <tr><td>Металл</td></tr>
-                            <tr><td>Золото розовое 585</td></tr>
-                            <tr><td>вторичное</td></tr>
-
-                        </table>
-                       
-                    </td>
-                    <td>
-                        <table class="type" onclick="selectType('Металл', 'Золото белое 750 вторичное', 'мзб750в.png')">
-                            <tr><td><img src="../web/img/мзб750в.png"></td></tr>
-                            <tr><td>Металл</td></tr>
-                            <tr><td>Золото белое 750</td></tr>
-                            <tr><td>вторичное</td></tr>
-
-                        </table>
-                       
-                    </td>
-                   <td>
-                        <table class="type" onclick="selectType('Металл', 'Золото желтое 750 вторичное', 'мзж750в.png')">
-                            <tr><td><img src="../web/img/мзж750в.png"></td></tr>
-                            <tr><td>Металл</td></tr>
-                            <tr><td>Золото желтое 750</td></tr>
-                            <tr><td>вторичное</td></tr>
-
-                        </table>
-                       
-                    </td>
-                     <td>
-                        <table class="type" onclick="selectType('Металл', 'Золото розовое 750 вторичное', 'мзр750в.png')">
-                            <tr><td><img src="../web/img/мзр750в.png"></td></tr>
-                            <tr><td>Металл</td></tr>
-                            <tr><td>Золото розовое 750</td></tr>
-                            <tr><td>вторичное</td></tr>
-
-                        </table>
-                       
-                    </td>
-                </tr>
+               
             </table>
         </div>
 
@@ -513,7 +412,7 @@ $today = date("d.m.y");
                 
                 <tr>
                     <td>
-                        <table class="type" onclick="selectType('Лигатура', 'серебро', 'лс.png')">
+                        <table class="type" onclick="selectType('Лигатуры', 'Лигатура', 'серебро', 'лс.png')">
                             <tr><td><img src="../web/img/лс.png"></td></tr>
                             <tr><td>Лигатура</td></tr>
                             <tr><td>серебро</td></tr>
@@ -521,7 +420,7 @@ $today = date("d.m.y");
                        
                     </td>
                     <td>
-                        <table class="type" onclick="selectType('Лигатура', 'белое золото', 'лбз.png')">
+                        <table class="type" onclick="selectType('Лигатуры', 'Лигатура', 'белое золото', 'лбз.png')">
                             <tr><td><img src="../web/img/лбз.png"></td></tr>
                             <tr><td>Лигатура</td></tr>
                             <tr><td>белое золото</td></tr>
@@ -529,7 +428,7 @@ $today = date("d.m.y");
                        
                     </td>
                     <td>
-                        <table class="type" onclick="selectType('Лигатура', 'желтое золото', 'лжз.png')">
+                        <table class="type" onclick="selectType('Лигатуры', 'Лигатура', 'желтое золото', 'лжз.png')">
                             <tr><td><img src="../web/img/лжз.png"></td></tr>
                             <tr><td>Лигатура</td></tr>
                             <tr><td>желтое золото</td></tr>
@@ -538,7 +437,7 @@ $today = date("d.m.y");
                        
                     </td>
                     <td>
-                        <table class="type" onclick="selectType('Лигатура', 'розовое золото', 'лрз.png')">
+                        <table class="type" onclick="selectType('Лигатуры', 'Лигатура', 'розовое золото', 'лрз.png')">
                             <tr><td><img src="../web/img/лрз.png"></td></tr>
                             <tr><td>Лигатура</td></tr>
                             <tr><td>розовое золото</td></tr>
@@ -552,7 +451,7 @@ $today = date("d.m.y");
                 
                 <tr>
                     <td>
-                        <table class="type" onclick="selectType('Деталь', 'Бронза', 'дб.png')">
+                        <table class="type" onclick="selectType('Детали', 'Деталь', 'Бронза', 'дб.png')">
                             <tr><td><img src="../web/img/дб.png"></td></tr>
                             <tr><td>Деталь</td></tr>
                             <tr><td>Бронза</td></tr>
@@ -560,7 +459,7 @@ $today = date("d.m.y");
                        
                     </td>
                     <td>
-                        <table class="type" onclick="selectType('Деталь', 'Серебро 925', 'дс925.png')">
+                        <table class="type" onclick="selectType('Детали', 'Деталь', 'Серебро 925', 'дс925.png')">
                             <tr><td><img src="../web/img/дс925.png"></td></tr>
                             <tr><td>Деталь</td></tr>
                             <tr><td>Серебро 925</td></tr>
@@ -568,7 +467,7 @@ $today = date("d.m.y");
                        
                     </td>
                     <td>
-                        <table class="type" onclick="selectType('Деталь', 'Золото белое 585', 'дзб585.png')">
+                        <table class="type" onclick="selectType('Детали', 'Деталь', 'Золото белое 585', 'дзб585.png')">
                             <tr><td><img src="../web/img/дзб585.png"></td></tr>
                             <tr><td>Деталь</td></tr>
                             <tr><td>Золото белое 585</td></tr>
@@ -577,35 +476,35 @@ $today = date("d.m.y");
                        
                     </td>
                     <td>
-                        <table class="type" onclick="selectType('Деталь', 'Золото желтое 585', 'дзж585.png')">
+                        <table class="type" onclick="selectType('Детали', 'Деталь', 'Золото желтое 585', 'дзж585.png')">
                             <tr><td><img src="../web/img/дзж585.png"></td></tr>
                             <tr><td>Деталь</td></tr>
                             <tr><td>Золото желтое 585</td></tr>
                         </table>
                     </td>
                     <td>
-                        <table class="type" onclick="selectType('Деталь', 'Золото розовое 585', 'дзр585.png')">
+                        <table class="type" onclick="selectType('Детали', 'Деталь', 'Золото розовое 585', 'дзр585.png')">
                             <tr><td><img src="../web/img/дзр585.png"></td></tr>
                             <tr><td>Деталь</td></tr>
                             <tr><td>Золото розовое 585</td></tr>
                         </table>
                     </td>
                     <td>
-                        <table class="type" onclick="selectType('Деталь', 'Золото белое 750', 'дзб750.png')">
+                        <table class="type" onclick="selectType('Детали', 'Деталь', 'Золото белое 750', 'дзб750.png')">
                             <tr><td><img src="../web/img/дзб750.png"></td></tr>
                             <tr><td>Деталь</td></tr>
                             <tr><td>Золото белое 750</td></tr>
                         </table>
                     </td>
                     <td>
-                        <table class="type" onclick="selectType('Деталь', 'Золото желтое 750', 'дзж750.png')">
+                        <table class="type" onclick="selectType('Детали', 'Деталь', 'Золото желтое 750', 'дзж750.png')">
                             <tr><td><img src="../web/img/дзж750.png"></td></tr>
                             <tr><td>Деталь</td></tr>
                             <tr><td>Золото желтое 750</td></tr>
                         </table>
                     </td>
                     <td>
-                        <table class="type" onclick="selectType('Деталь', 'Золото розовое 750', 'дзр750.png')">
+                        <table class="type" onclick="selectType('Детали', 'Деталь', 'Золото розовое 750', 'дзр750.png')">
                             <tr><td><img src="../web/img/дзр750.png"></td></tr>
                             <tr><td>Деталь</td></tr>
                             <tr><td>Золото розовое 750</td></tr>
@@ -619,7 +518,7 @@ $today = date("d.m.y");
                 
                 <tr>
                     <td>
-                        <table class="type" onclick="selectType('Полуфабрикат', 'Бронза', 'пб.png')">
+                        <table class="type" onclick="selectType('Полуфабрикаты', 'Полуфабрикат', 'Бронза', 'пб.png')">
                             <tr><td><img src="../web/img/пб.png"></td></tr>
                             <tr><td>Полуфабрикат</td></tr>
                             <tr><td>Бронза</td></tr>
@@ -627,7 +526,7 @@ $today = date("d.m.y");
                        
                     </td>
                     <td>
-                        <table class="type" onclick="selectType('Полуфабрикат', 'Серебро 925', 'пc925.png')">
+                        <table class="type" onclick="selectType('Полуфабрикаты', 'Полуфабрикат', 'Серебро 925', 'пc925.png')">
                             <tr><td><img src="../web/img/пc925.png"></td></tr>
                             <tr><td>Полуфабрикат</td></tr>
                             <tr><td>Серебро 925</td></tr>
@@ -635,7 +534,7 @@ $today = date("d.m.y");
                        
                     </td>
                     <td>
-                        <table class="type" onclick="selectType('Полуфабрикат', 'Золото белое 585', 'пзб585.png')">
+                        <table class="type" onclick="selectType('Полуфабрикаты', 'Полуфабрикат', 'Золото белое 585', 'пзб585.png')">
                             <tr><td><img src="../web/img/пзб585.png"></td></tr>
                             <tr><td>Полуфабрикат</td></tr>
                             <tr><td>Золото белое 585</td></tr>
@@ -644,35 +543,35 @@ $today = date("d.m.y");
                        
                     </td>
                     <td>
-                        <table class="type" onclick="selectType('Полуфабрикат', 'Золото желтое 585', 'пзж585.png')">
+                        <table class="type" onclick="selectType('Полуфабрикаты', 'Полуфабрикат', 'Золото желтое 585', 'пзж585.png')">
                             <tr><td><img src="../web/img/пзж585.png"></td></tr>
                             <tr><td>Полуфабрикат</td></tr>
                             <tr><td>Золото желтое 585</td></tr>
                         </table>
                     </td>
                     <td>
-                        <table class="type" onclick="selectType('Полуфабрикат', 'Золото розовое 585', 'пзр585.png')">
+                        <table class="type" onclick="selectType('Полуфабрикаты', 'Полуфабрикат', 'Золото розовое 585', 'пзр585.png')">
                             <tr><td><img src="../web/img/пзр585.png"></td></tr>
                             <tr><td>Полуфабрикат</td></tr>
                             <tr><td>Золото розовое 585</td></tr>
                         </table>
                     </td>
                     <td>
-                        <table class="type" onclick="selectType('Полуфабрикат', 'Золото белое 750', 'пзб750.png')">
+                        <table class="type" onclick="selectType('Полуфабрикаты', 'Полуфабрикат', 'Золото белое 750', 'пзб750.png')">
                             <tr><td><img src="../web/img/пзб750.png"></td></tr>
                             <tr><td>Полуфабрикат</td></tr>
                             <tr><td>Золото белое 750</td></tr>
                         </table>
                     </td>
                     <td>
-                        <table class="type" onclick="selectType('Полуфабрикат', 'Золото желтое 750', 'пзж750.png')">
+                        <table class="type" onclick="selectType('Полуфабрикаты', 'Полуфабрикат', 'Золото желтое 750', 'пзж750.png')">
                             <tr><td><img src="../web/img/пзж750.png"></td></tr>
                             <tr><td>Полуфабрикат</td></tr>
                             <tr><td>Золото желтое 750</td></tr>
                         </table>
                     </td>
                     <td>
-                        <table class="type" onclick="selectType('Полуфабрикат', 'Золото розовое 750', 'пзр750.png')">
+                        <table class="type" onclick="selectType('Полуфабрикаты', 'Полуфабрикат', 'Золото розовое 750', 'пзр750.png')">
                             <tr><td><img src="../web/img/пзр750.png"></td></tr>
                             <tr><td>Полуфабрикат</td></tr>
                             <tr><td>Золото розовое 750</td></tr>
@@ -683,465 +582,607 @@ $today = date("d.m.y");
         </table>
     </div>
     <div class="wrap_names" id = "wrap_names">
-        <div class="grey_table_types">
+              <table class="types">
+                <tr>
+                    <td>
+                        <table class="type" style="margin-top: 75px">
+                            <tr><td><img id="select_img_in_name"></td></tr>
+                            <tr><td id="select_type_in_name"></td></tr>
+                            <tr><td id="select_title_in_name"></td></tr>
+                            <tr><td id="select_desc_in_name"></td></tr>
+
+                        </table>
+                    </td>
+                </tr>
+             
+            </table>
+
+            <table class="types" valign="top">
+                <caption><h2>Основы</h2></caption>
+                <tr>
+                    <td class="name_td">
+                        <table class="type" onclick="selectName()">
+                            <tr><td><img src="../web/img/metall.jpeg"></td></tr>
+                            <tr><td name="kind_of_name"></td></tr>
+                            <tr><td name="name"></td></tr>
+                            <tr><td name="type_of_name"></td></tr>
+                        </table>
+                    </td>
+                    <td class="name_td">
+                        <table class="type" onclick="selectName()">
+                            <tr><td><img src="../web/img/metall.jpeg"></td></tr>
+                            <tr><td name="kind_of_name"></td></tr>
+                            <tr><td name="name"></td></tr>
+                            <tr><td name="type_of_name"></td></tr>
+
+                        </table>
+                       
+                    </td>
+                    <td class="name_td">
+                        <table class="type" onclick="selectName()">
+                            <tr><td><img src="../web/img/metall.jpeg"></td></tr>
+                            <tr><td name="kind_of_name"></td></tr>
+                            <tr><td name="name"></td></tr>
+                            <tr><td name="type_of_name"></td></tr>
+                        </table>
+                    </td>
+                    <td class="name_td">
+                        <table class="type" onclick="selectName()">
+                            <tr><td><img src="../web/img/metall.jpeg"></td></tr>
+                            <tr><td name="kind_of_name"></td></tr>
+                            <tr><td name="name"></td></tr>
+                            <tr><td name="type_of_name"></td></tr>
+                        </table>
+                    </td>
+                   <td class="name_td">
+                        <table class="type" onclick="selectName()">
+                            <tr><td><img src="../web/img/metall.jpeg"></td></tr>
+                            <tr><td name="kind_of_name"></td></tr>
+                            <tr><td name="name"></td></tr>
+                            <tr><td name="type_of_name"></td></tr>
+                        </table>
+                    </td>
+                   <td class="name_td">
+                        <table class="type" onclick="selectName()">
+                            <tr><td><img src="../web/img/metall.jpeg"></td></tr>
+                            <tr><td name="kind_of_name"></td></tr>
+                            <tr><td name="name"></td></tr>
+                            <tr><td name="type_of_name"></td></tr>
+                        </table>
+                    </td>
+                    <td class="name_td">
+                        <table class="type" onclick="selectName()">
+                            <tr><td><img src="../web/img/metall.jpeg"></td></tr>
+                            <tr><td name="kind_of_name"></td></tr>
+                            <tr><td name="name"></td></tr>
+                            <tr><td name="type_of_name"></td></tr>
+                        </table>
+                    </td>
+                     <td class="name_td">
+                        <table class="type" onclick="selectName()">
+                            <tr><td><img src="../web/img/metall.jpeg"></td></tr>
+                            <tr><td name="kind_of_name"></td></tr>
+                            <tr><td name="name"></td></tr>
+                            <tr><td name="type_of_name"></td></tr>
+                        </table>
+                    </td>
+                    <td class="name_td">
+                        <table class="type" onclick="selectName()">
+                            <tr><td><img src="../web/img/metall.jpeg"></td></tr>
+                            <tr><td name="kind_of_name"></td></tr>
+                            <tr><td name="name"></td></tr>
+                            <tr><td name="type_of_name"></td></tr>
+                        </table>
+                    </td>
+                   <td class="name_td">
+                        <table class="type" onclick="selectName()">
+                            <tr><td><img src="../web/img/metall.jpeg"></td></tr>
+                            <tr><td name="kind_of_name"></td></tr>
+                            <tr><td name="name"></td></tr>
+                            <tr><td name="type_of_name"></td></tr>
+                        </table>
+                    </td>
+                     <td class="name_td">
+                        <table class="type" onclick="selectName()">
+                            <tr><td><img src="../web/img/metall.jpeg"></td></tr>
+                            <tr><td name="kind_of_name"></td></tr>
+                            <tr><td name="name"></td></tr>
+                            <tr><td name="type_of_name"></td></tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="name_td">
+                        <table class="type" onclick="selectName()">
+                            <tr><td><img src="../web/img/metall.jpeg"></td></tr>
+                            <tr><td name="kind_of_name"></td></tr>
+                            <tr><td name="name"></td></tr>
+                            <tr><td name="type_of_name"></td></tr>
+                        </table>
+                    </td>
+                    <td class="name_td">
+                        <table class="type" onclick="selectName()">
+                            <tr><td><img src="../web/img/metall.jpeg"></td></tr>
+                            <tr><td name="kind_of_name"></td></tr>
+                            <tr><td name="name"></td></tr>
+                            <tr><td name="type_of_name"></td></tr>
+
+                        </table>
+                       
+                    </td>
+                    <td class="name_td">
+                        <table class="type" onclick="selectName()">
+                            <tr><td><img src="../web/img/metall.jpeg"></td></tr>
+                            <tr><td name="kind_of_name"></td></tr>
+                            <tr><td name="name"></td></tr>
+                            <tr><td name="type_of_name"></td></tr>
+                        </table>
+                    </td>
+                    <td class="name_td">
+                        <table class="type" onclick="selectName()">
+                            <tr><td><img src="../web/img/metall.jpeg"></td></tr>
+                            <tr><td name="kind_of_name"></td></tr>
+                            <tr><td name="name"></td></tr>
+                            <tr><td name="type_of_name"></td></tr>
+                        </table>
+                    </td>
+                   <td class="name_td">
+                        <table class="type" onclick="selectName()">
+                            <tr><td><img src="../web/img/metall.jpeg"></td></tr>
+                            <tr><td name="kind_of_name"></td></tr>
+                            <tr><td name="name"></td></tr>
+                            <tr><td name="type_of_name"></td></tr>
+                        </table>
+                    </td>
+                   <td class="name_td">
+                        <table class="type" onclick="selectName()">
+                            <tr><td><img src="../web/img/metall.jpeg"></td></tr>
+                            <tr><td name="kind_of_name"></td></tr>
+                            <tr><td name="name"></td></tr>
+                            <tr><td name="type_of_name"></td></tr>
+                        </table>
+                    </td>
+                    <td class="name_td">
+                        <table class="type" onclick="selectName()">
+                            <tr><td><img src="../web/img/metall.jpeg"></td></tr>
+                            <tr><td name="kind_of_name"></td></tr>
+                            <tr><td name="name"></td></tr>
+                            <tr><td name="type_of_name"></td></tr>
+                        </table>
+                    </td>
+                     <td class="name_td">
+                        <table class="type" onclick="selectName()">
+                            <tr><td><img src="../web/img/metall.jpeg"></td></tr>
+                            <tr><td name="kind_of_name"></td></tr>
+                            <tr><td name="name"></td></tr>
+                            <tr><td name="type_of_name"></td></tr>
+                        </table>
+                    </td>
+                    <td class="name_td">
+                        <table class="type" onclick="selectName()">
+                            <tr><td><img src="../web/img/metall.jpeg"></td></tr>
+                            <tr><td name="kind_of_name"></td></tr>
+                            <tr><td name="name"></td></tr>
+                            <tr><td name="type_of_name"></td></tr>
+                        </table>
+                    </td>
+                   <td class="name_td">
+                        <table class="type" onclick="selectName()">
+                            <tr><td><img src="../web/img/metall.jpeg"></td></tr>
+                            <tr><td name="kind_of_name"></td></tr>
+                            <tr><td name="name"></td></tr>
+                            <tr><td name="type_of_name"></td></tr>
+                        </table>
+                    </td>
+                     <td class="name_td">
+                        <table class="type" onclick="selectName()">
+                            <tr><td><img src="../web/img/metall.jpeg"></td></tr>
+                            <tr><td name="kind_of_name"></td></tr>
+                            <tr><td name="name"></td></tr>
+                            <tr><td name="type_of_name"></td></tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="name_td">
+                        <table class="type" onclick="selectName()">
+                            <tr><td><img src="../web/img/metall.jpeg"></td></tr>
+                            <tr><td name="kind_of_name"></td></tr>
+                            <tr><td name="name"></td></tr>
+                            <tr><td name="type_of_name"></td></tr>
+                        </table>
+                    </td>
+                    <td class="name_td">
+                        <table class="type" onclick="selectName()">
+                            <tr><td><img src="../web/img/metall.jpeg"></td></tr>
+                            <tr><td name="kind_of_name"></td></tr>
+                            <tr><td name="name"></td></tr>
+                            <tr><td name="type_of_name"></td></tr>
+                        </table>
+                    </td>
+                    <td class="name_td">
+                        <table class="type" onclick="selectName()">
+                            <tr><td><img src="../web/img/metall.jpeg"></td></tr>
+                            <tr><td name="kind_of_name"></td></tr>
+                            <tr><td name="name"></td></tr>
+                            <tr><td name="type_of_name"></td></tr>
+                        </table>
+                    </td>
+                    <td class="name_td">
+                        <table class="type" onclick="selectName()">
+                            <tr><td><img src="../web/img/metall.jpeg"></td></tr>
+                            <tr><td name="kind_of_name"></td></tr>
+                            <tr><td name="name"></td></tr>
+                            <tr><td name="type_of_name"></td></tr>
+                        </table>
+                    </td>
+                   <td class="name_td">
+                        <table class="type" onclick="selectName()">
+                            <tr><td><img src="../web/img/metall.jpeg"></td></tr>
+                            <tr><td name="kind_of_name"></td></tr>
+                            <tr><td name="name"></td></tr>
+                            <tr><td name="type_of_name"></td></tr>
+                        </table>
+                    </td>
+                   <td class="name_td">
+                        <table class="type" onclick="selectName()">
+                            <tr><td><img src="../web/img/metall.jpeg"></td></tr>
+                            <tr><td name="kind_of_name"></td></tr>
+                            <tr><td name="name"></td></tr>
+                            <tr><td name="type_of_name"></td></tr>
+                        </table>
+                    </td>
+                    <td class="name_td">
+                        <table class="type" onclick="selectName()">
+                            <tr><td><img src="../web/img/metall.jpeg"></td></tr>
+                            <tr><td name="kind_of_name"></td></tr>
+                            <tr><td name="name"></td></tr>
+                            <tr><td name="type_of_name"></td></tr>
+                        </table>
+                    </td>
+                     <td class="name_td">
+                        <table class="type" onclick="selectName()">
+                            <tr><td><img src="../web/img/metall.jpeg"></td></tr>
+                            <tr><td name="kind_of_name"></td></tr>
+                            <tr><td name="name"></td></tr>
+                            <tr><td name="type_of_name"></td></tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
             <table class="types">
-                <caption><h2>ЧТО ТО ДРУГОЕ</h2></caption>
-                
+                <caption><h2>Накладки</h2></caption>
                 <tr>
                     <td>
                         <table class="type" onclick="selectName()">
                             <tr><td><img src="../web/img/metall.jpeg"></td></tr>
-                            <tr><td>Металл</td></tr>
-                            <tr><td>Бронза</td></tr>
-                            <tr><td>Чистая</td></tr>
+                            <tr><td name="kind_of_name"></td></tr>
+                            <tr><td name="name"></td></tr>
+                            <tr><td name="type_of_name"></td></tr>
+                        </table>
+                    </td>
+                    <td>
+                        <table class="type" onclick="selectName()">
+                            <tr><td><img src="../web/img/metall.jpeg"></td></tr>
+                            <tr><td name="kind_of_name"></td></tr>
+                            <tr><td name="name"></td></tr>
+                            <tr><td name="type_of_name"></td></tr>
 
                         </table>
                        
                     </td>
                     <td>
-                        <table class="type">
+                        <table class="type" onclick="selectName()">
                             <tr><td><img src="../web/img/metall.jpeg"></td></tr>
-                            <tr><td>Металл</td></tr>
-                            <tr><td>Бронза</td></tr>
-                            <tr><td>Чистая</td></tr>
-
+                            <tr><td name="kind_of_name"></td></tr>
+                            <tr><td name="name"></td></tr>
+                            <tr><td name="type_of_name"></td></tr>
                         </table>
-                       
                     </td>
                     <td>
-                        <table class="type">
+                        <table class="type" onclick="selectName()">
                             <tr><td><img src="../web/img/metall.jpeg"></td></tr>
-                            <tr><td>Металл</td></tr>
-                            <tr><td>Бронза</td></tr>
-                            <tr><td>Чистая</td></tr>
-
+                            <tr><td name="kind_of_name"></td></tr>
+                            <tr><td name="name"></td></tr>
+                            <tr><td name="type_of_name"></td></tr>
                         </table>
-                       
-                    </td>
-                    <td>
-                        <table class="type">
-                            <tr><td><img src="../web/img/metall.jpeg"></td></tr>
-                            <tr><td>Металл</td></tr>
-                            <tr><td>Бронза</td></tr>
-                            <tr><td>Чистая</td></tr>
-
-                        </table>
-                       
-                    </td>
-                    <td>
-                        <table class="type">
-                            <tr><td><img src="../web/img/metall.jpeg"></td></tr>
-                            <tr><td>Металл</td></tr>
-                            <tr><td>Бронза</td></tr>
-                            <tr><td>Чистая</td></tr>
-
-                        </table>
-                       
                     </td>
                    <td>
-                        <table class="type">
+                        <table class="type" onclick="selectName()">
                             <tr><td><img src="../web/img/metall.jpeg"></td></tr>
-                            <tr><td>Металл</td></tr>
-                            <tr><td>Бронза</td></tr>
-                            <tr><td>Чистая</td></tr>
-
+                            <tr><td name="kind_of_name"></td></tr>
+                            <tr><td name="name"></td></tr>
+                            <tr><td name="type_of_name"></td></tr>
                         </table>
-                       
-                    </td>
-                    <td>
-                        <table class="type">
-                            <tr><td><img src="../web/img/metall.jpeg"></td></tr>
-                            <tr><td>Металл</td></tr>
-                            <tr><td>Бронза</td></tr>
-                            <tr><td>Чистая</td></tr>
-
-                        </table>
-                       
-                    </td>
-                     <td>
-                        <table class="type">
-                            <tr><td><img src="../web/img/metall.jpeg"></td></tr>
-                            <tr><td>Металл</td></tr>
-                            <tr><td>Бронза</td></tr>
-                            <tr><td>Чистая</td></tr>
-
-                        </table>
-                       
-                    </td>
-                    <td>
-                        <table class="type">
-                            <tr><td><img src="../web/img/metall.jpeg"></td></tr>
-                            <tr><td>Металл</td></tr>
-                            <tr><td>Бронза</td></tr>
-                            <tr><td>Чистая</td></tr>
-
-                        </table>
-                       
                     </td>
                    <td>
-                        <table class="type">
+                        <table class="type" onclick="selectName()">
                             <tr><td><img src="../web/img/metall.jpeg"></td></tr>
-                            <tr><td>Металл</td></tr>
-                            <tr><td>Бронза</td></tr>
-                            <tr><td>Чистая</td></tr>
-
+                            <tr><td name="kind_of_name"></td></tr>
+                            <tr><td name="name"></td></tr>
+                            <tr><td name="type_of_name"></td></tr>
                         </table>
-                       
+                    </td>
+                    <td>
+                        <table class="type" onclick="selectName()">
+                            <tr><td><img src="../web/img/metall.jpeg"></td></tr>
+                            <tr><td name="kind_of_name"></td></tr>
+                            <tr><td name="name"></td></tr>
+                            <tr><td name="type_of_name"></td></tr>
+                        </table>
                     </td>
                      <td>
-                        <table class="type">
+                        <table class="type" onclick="selectName()">
                             <tr><td><img src="../web/img/metall.jpeg"></td></tr>
-                            <tr><td>Металл</td></tr>
-                            <tr><td>Бронза</td></tr>
-                            <tr><td>Чистая</td></tr>
-
+                            <tr><td name="kind_of_name"></td></tr>
+                            <tr><td name="name"></td></tr>
+                            <tr><td name="type_of_name"></td></tr>
                         </table>
-                       
+                    </td>
+                    <td>
+                        <table class="type" onclick="selectName()">
+                            <tr><td><img src="../web/img/metall.jpeg"></td></tr>
+                            <tr><td name="kind_of_name"></td></tr>
+                            <tr><td name="name"></td></tr>
+                            <tr><td name="type_of_name"></td></tr>
+                        </table>
+                    </td>
+                   <td>
+                        <table class="type" onclick="selectName()">
+                            <tr><td><img src="../web/img/metall.jpeg"></td></tr>
+                            <tr><td name="kind_of_name"></td></tr>
+                            <tr><td name="name"></td></tr>
+                            <tr><td name="type_of_name"></td></tr>
+                        </table>
+                    </td>
+                     <td>
+                        <table class="type" onclick="selectName()">
+                            <tr><td><img src="../web/img/metall.jpeg"></td></tr>
+                            <tr><td name="kind_of_name"></td></tr>
+                            <tr><td name="name"></td></tr>
+                            <tr><td name="type_of_name"></td></tr>
+                        </table>
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <table class="type">
+                        <table class="type" onclick="selectName()">
                             <tr><td><img src="../web/img/metall.jpeg"></td></tr>
-                            <tr><td>Металл</td></tr>
-                            <tr><td>Бронза</td></tr>
-                            <tr><td>Чистая</td></tr>
+                            <tr><td name="kind_of_name"></td></tr>
+                            <tr><td name="name"></td></tr>
+                            <tr><td name="type_of_name"></td></tr>
+                        </table>
+                    </td>
+                    <td>
+                        <table class="type" onclick="selectName()">
+                            <tr><td><img src="../web/img/metall.jpeg"></td></tr>
+                            <tr><td name="kind_of_name"></td></tr>
+                            <tr><td name="name"></td></tr>
+                            <tr><td name="type_of_name"></td></tr>
 
                         </table>
                        
                     </td>
                     <td>
-                        <table class="type">
+                        <table class="type" onclick="selectName()">
                             <tr><td><img src="../web/img/metall.jpeg"></td></tr>
-                            <tr><td>Металл</td></tr>
-                            <tr><td>Бронза</td></tr>
-                            <tr><td>Чистая</td></tr>
-
+                            <tr><td name="kind_of_name"></td></tr>
+                            <tr><td name="name"></td></tr>
+                            <tr><td name="type_of_name"></td></tr>
                         </table>
-                       
                     </td>
                     <td>
-                        <table class="type">
+                        <table class="type" onclick="selectName()">
                             <tr><td><img src="../web/img/metall.jpeg"></td></tr>
-                            <tr><td>Металл</td></tr>
-                            <tr><td>Бронза</td></tr>
-                            <tr><td>Чистая</td></tr>
-
+                            <tr><td name="kind_of_name"></td></tr>
+                            <tr><td name="name"></td></tr>
+                            <tr><td name="type_of_name"></td></tr>
                         </table>
-                       
-                    </td>
-                    <td>
-                        <table class="type">
-                            <tr><td><img src="../web/img/metall.jpeg"></td></tr>
-                            <tr><td>Металл</td></tr>
-                            <tr><td>Бронза</td></tr>
-                            <tr><td>Чистая</td></tr>
-
-                        </table>
-                       
-                    </td>
-                    <td>
-                        <table class="type">
-                            <tr><td><img src="../web/img/metall.jpeg"></td></tr>
-                            <tr><td>Металл</td></tr>
-                            <tr><td>Бронза</td></tr>
-                            <tr><td>Чистая</td></tr>
-
-                        </table>
-                       
                     </td>
                    <td>
-                        <table class="type">
+                        <table class="type" onclick="selectName()">
                             <tr><td><img src="../web/img/metall.jpeg"></td></tr>
-                            <tr><td>Металл</td></tr>
-                            <tr><td>Бронза</td></tr>
-                            <tr><td>Чистая</td></tr>
-
+                            <tr><td name="kind_of_name"></td></tr>
+                            <tr><td name="name"></td></tr>
+                            <tr><td name="type_of_name"></td></tr>
                         </table>
-                       
-                    </td>
-                    <td>
-                        <table class="type">
-                            <tr><td><img src="../web/img/metall.jpeg"></td></tr>
-                            <tr><td>Металл</td></tr>
-                            <tr><td>Бронза</td></tr>
-                            <tr><td>Чистая</td></tr>
-
-                        </table>
-                       
-                    </td>
-                     <td>
-                        <table class="type">
-                            <tr><td><img src="../web/img/metall.jpeg"></td></tr>
-                            <tr><td>Металл</td></tr>
-                            <tr><td>Бронза</td></tr>
-                            <tr><td>Чистая</td></tr>
-
-                        </table>
-                       
-                    </td>
-                    <td>
-                        <table class="type">
-                            <tr><td><img src="../web/img/metall.jpeg"></td></tr>
-                            <tr><td>Металл</td></tr>
-                            <tr><td>Бронза</td></tr>
-                            <tr><td>Чистая</td></tr>
-
-                        </table>
-                       
                     </td>
                    <td>
-                        <table class="type">
+                        <table class="type" onclick="selectName()">
                             <tr><td><img src="../web/img/metall.jpeg"></td></tr>
-                            <tr><td>Металл</td></tr>
-                            <tr><td>Бронза</td></tr>
-                            <tr><td>Чистая</td></tr>
+                            <tr><td name="kind_of_name"></td></tr>
+                            <tr><td name="name"></td></tr>
+                            <tr><td name="type_of_name"></td></tr>
+                        </table>
+                    </td>
+                    <td>
+                        <table class="type" onclick="selectName()">
+                            <tr><td><img src="../web/img/metall.jpeg"></td></tr>
+                            <tr><td name="kind_of_name"></td></tr>
+                            <tr><td name="name"></td></tr>
+                            <tr><td name="type_of_name"></td></tr>
+                        </table>
+                    </td>
+                     <td>
+                        <table class="type" onclick="selectName()">
+                            <tr><td><img src="../web/img/metall.jpeg"></td></tr>
+                            <tr><td name="kind_of_name"></td></tr>
+                            <tr><td name="name"></td></tr>
+                            <tr><td name="type_of_name"></td></tr>
+                        </table>
+                    </td>
+                    <td>
+                        <table class="type" onclick="selectName()">
+                            <tr><td><img src="../web/img/metall.jpeg"></td></tr>
+                            <tr><td name="kind_of_name"></td></tr>
+                            <tr><td name="name"></td></tr>
+                            <tr><td name="type_of_name"></td></tr>
+                        </table>
+                    </td>
+                   <td>
+                        <table class="type" onclick="selectName()">
+                            <tr><td><img src="../web/img/metall.jpeg"></td></tr>
+                            <tr><td name="kind_of_name"></td></tr>
+                            <tr><td name="name"></td></tr>
+                            <tr><td name="type_of_name"></td></tr>
+                        </table>
+                    </td>
+                     <td>
+                        <table class="type" onclick="selectName()">
+                            <tr><td><img src="../web/img/metall.jpeg"></td></tr>
+                            <tr><td name="kind_of_name"></td></tr>
+                            <tr><td name="name"></td></tr>
+                            <tr><td name="type_of_name"></td></tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <table class="type" onclick="selectName()">
+                            <tr><td><img src="../web/img/metall.jpeg"></td></tr>
+                            <tr><td name="kind_of_name"></td></tr>
+                            <tr><td name="name"></td></tr>
+                            <tr><td name="type_of_name"></td></tr>
+                        </table>
+                    </td>
+                    <td>
+                        <table class="type" onclick="selectName()">
+                            <tr><td><img src="../web/img/metall.jpeg"></td></tr>
+                            <tr><td name="kind_of_name"></td></tr>
+                            <tr><td name="name"></td></tr>
+                            <tr><td name="type_of_name"></td></tr>
 
                         </table>
                        
                     </td>
-                     <td>
-                        <table class="type">
+                    <td>
+                        <table class="type" onclick="selectName()">
                             <tr><td><img src="../web/img/metall.jpeg"></td></tr>
-                            <tr><td>Металл</td></tr>
-                            <tr><td>Бронза</td></tr>
-                            <tr><td>Чистая</td></tr>
-
+                            <tr><td name="kind_of_name"></td></tr>
+                            <tr><td name="name"></td></tr>
+                            <tr><td name="type_of_name"></td></tr>
                         </table>
-                       
+                    </td>
+                    <td>
+                        <table class="type" onclick="selectName()">
+                            <tr><td><img src="../web/img/metall.jpeg"></td></tr>
+                            <tr><td name="kind_of_name"></td></tr>
+                            <tr><td name="name"></td></tr>
+                            <tr><td name="type_of_name"></td></tr>
+                        </table>
                     </td>
                 </tr>
             </table>
-        </div>
-
-        <table class="types">
-                <caption><h2>Лигатуры</h2></caption>
-                
+            <table class="types">
+                <caption><h2>Задние части</h2></caption>  
                 <tr>
                     <td>
-                        <table class="type">
+                        <table class="type" onclick="selectName()">
                             <tr><td><img src="../web/img/metall.jpeg"></td></tr>
-                            <tr><td>Металл</td></tr>
-                            <tr><td>Бронза</td></tr>
-                            <tr><td>Чистая</td></tr>
+                            <tr><td name="kind_of_name"></td></tr>
+                            <tr><td name="name"></td></tr>
+                            <tr><td name="type_of_name"></td></tr>
+                        </table>
+                    </td>
+                    <td>
+                        <table class="type" onclick="selectName()">
+                            <tr><td><img src="../web/img/metall.jpeg"></td></tr>
+                            <tr><td name="kind_of_name"></td></tr>
+                            <tr><td name="name"></td></tr>
+                            <tr><td name="type_of_name"></td></tr>
 
                         </table>
                        
                     </td>
                     <td>
-                        <table class="type">
+                        <table class="type" onclick="selectName()">
                             <tr><td><img src="../web/img/metall.jpeg"></td></tr>
-                            <tr><td>Металл</td></tr>
-                            <tr><td>Бронза</td></tr>
-                            <tr><td>Чистая</td></tr>
-
+                            <tr><td name="kind_of_name"></td></tr>
+                            <tr><td name="name"></td></tr>
+                            <tr><td name="type_of_name"></td></tr>
                         </table>
-                       
                     </td>
                     <td>
-                        <table class="type">
+                        <table class="type" onclick="selectName()">
                             <tr><td><img src="../web/img/metall.jpeg"></td></tr>
-                            <tr><td>Металл</td></tr>
-                            <tr><td>Бронза</td></tr>
-                            <tr><td>Чистая</td></tr>
-
+                            <tr><td name="kind_of_name"></td></tr>
+                            <tr><td name="name"></td></tr>
+                            <tr><td name="type_of_name"></td></tr>
                         </table>
-                       
-                    </td>
-                    <td>
-                        <table class="type">
-                            <tr><td><img src="../web/img/metall.jpeg"></td></tr>
-                            <tr><td>Металл</td></tr>
-                            <tr><td>Бронза</td></tr>
-                            <tr><td>Чистая</td></tr>
-
-                        </table>
-                       
-                    </td>
-                    <td>
-                        <table class="type">
-                            <tr><td><img src="../web/img/metall.jpeg"></td></tr>
-                            <tr><td>Металл</td></tr>
-                            <tr><td>Бронза</td></tr>
-                            <tr><td>Чистая</td></tr>
-
-                        </table>
-                       
-                    </td>
-                   <td>
-                        <table class="type">
-                            <tr><td><img src="../web/img/metall.jpeg"></td></tr>
-                            <tr><td>Металл</td></tr>
-                            <tr><td>Бронза</td></tr>
-                            <tr><td>Чистая</td></tr>
-
-                        </table>
-                       
-                    </td>
-                    <td>
-                        <table class="type">
-                            <tr><td><img src="../web/img/metall.jpeg"></td></tr>
-                            <tr><td>Металл</td></tr>
-                            <tr><td>Бронза</td></tr>
-                            <tr><td>Чистая</td></tr>
-
-                        </table>
-                       
                     </td>
                      <td>
-                        <table class="type">
+                        <table class="type" onclick="selectName()">
                             <tr><td><img src="../web/img/metall.jpeg"></td></tr>
-                            <tr><td>Металл</td></tr>
-                            <tr><td>Бронза</td></tr>
-                            <tr><td>Чистая</td></tr>
-
+                            <tr><td name="kind_of_name"></td></tr>
+                            <tr><td name="name"></td></tr>
+                            <tr><td name="type_of_name"></td></tr>
                         </table>
-                       
-                    </td>
-                    <td>
-                        <table class="type">
-                            <tr><td><img src="../web/img/metall.jpeg"></td></tr>
-                            <tr><td>Металл</td></tr>
-                            <tr><td>Бронза</td></tr>
-                            <tr><td>Чистая</td></tr>
-
-                        </table>
-                       
-                    </td>
-                   <td>
-                        <table class="type">
-                            <tr><td><img src="../web/img/metall.jpeg"></td></tr>
-                            <tr><td>Металл</td></tr>
-                            <tr><td>Бронза</td></tr>
-                            <tr><td>Чистая</td></tr>
-
-                        </table>
-                       
-                    </td>
-                     <td>
-                        <table class="type">
-                            <tr><td><img src="../web/img/metall.jpeg"></td></tr>
-                            <tr><td>Металл</td></tr>
-                            <tr><td>Бронза</td></tr>
-                            <tr><td>Чистая</td></tr>
-
-                        </table>
-                       
                     </td>
                 </tr>
+            </table>
+            <table class="types">
+                <caption><h2>Ножки</h2></caption>  
                 <tr>
                     <td>
-                        <table class="type">
+                        <table class="type" onclick="selectName()">
                             <tr><td><img src="../web/img/metall.jpeg"></td></tr>
-                            <tr><td>Металл</td></tr>
-                            <tr><td>Бронза</td></tr>
-                            <tr><td>Чистая</td></tr>
+                            <tr><td name="kind_of_name"></td></tr>
+                            <tr><td name="name"></td></tr>
+                            <tr><td name="type_of_name"></td></tr>
+                        </table>
+                    </td>
+                    <td>
+                        <table class="type" onclick="selectName()">
+                            <tr><td><img src="../web/img/metall.jpeg"></td></tr>
+                            <tr><td name="kind_of_name"></td></tr>
+                            <tr><td name="name"></td></tr>
+                            <tr><td name="type_of_name"></td></tr>
 
                         </table>
                        
                     </td>
                     <td>
-                        <table class="type">
+                        <table class="type" onclick="selectName()">
                             <tr><td><img src="../web/img/metall.jpeg"></td></tr>
-                            <tr><td>Металл</td></tr>
-                            <tr><td>Бронза</td></tr>
-                            <tr><td>Чистая</td></tr>
-
+                            <tr><td name="kind_of_name"></td></tr>
+                            <tr><td name="name"></td></tr>
+                            <tr><td name="type_of_name"></td></tr>
                         </table>
-                       
                     </td>
                     <td>
-                        <table class="type">
+                        <table class="type" onclick="selectName()">
                             <tr><td><img src="../web/img/metall.jpeg"></td></tr>
-                            <tr><td>Металл</td></tr>
-                            <tr><td>Бронза</td></tr>
-                            <tr><td>Чистая</td></tr>
-
+                            <tr><td name="kind_of_name"></td></tr>
+                            <tr><td name="name"></td></tr>
+                            <tr><td name="type_of_name"></td></tr>
                         </table>
-                       
-                    </td>
-                    <td>
-                        <table class="type">
-                            <tr><td><img src="../web/img/metall.jpeg"></td></tr>
-                            <tr><td>Металл</td></tr>
-                            <tr><td>Бронза</td></tr>
-                            <tr><td>Чистая</td></tr>
-
-                        </table>
-                       
-                    </td>
-                    <td>
-                        <table class="type">
-                            <tr><td><img src="../web/img/metall.jpeg"></td></tr>
-                            <tr><td>Металл</td></tr>
-                            <tr><td>Бронза</td></tr>
-                            <tr><td>Чистая</td></tr>
-
-                        </table>
-                       
-                    </td>
-                   <td>
-                        <table class="type">
-                            <tr><td><img src="../web/img/metall.jpeg"></td></tr>
-                            <tr><td>Металл</td></tr>
-                            <tr><td>Бронза</td></tr>
-                            <tr><td>Чистая</td></tr>
-
-                        </table>
-                       
-                    </td>
-                    <td>
-                        <table class="type">
-                            <tr><td><img src="../web/img/metall.jpeg"></td></tr>
-                            <tr><td>Металл</td></tr>
-                            <tr><td>Бронза</td></tr>
-                            <tr><td>Чистая</td></tr>
-
-                        </table>
-                       
                     </td>
                      <td>
-                        <table class="type">
+                        <table class="type" onclick="selectName()">
                             <tr><td><img src="../web/img/metall.jpeg"></td></tr>
-                            <tr><td>Металл</td></tr>
-                            <tr><td>Бронза</td></tr>
-                            <tr><td>Чистая</td></tr>
-
+                            <tr><td name="kind_of_name"></td></tr>
+                            <tr><td name="name"></td></tr>
+                            <tr><td name="type_of_name"></td></tr>
                         </table>
-                       
                     </td>
                     <td>
-                        <table class="type">
+                        <table class="type" onclick="selectName()">
                             <tr><td><img src="../web/img/metall.jpeg"></td></tr>
-                            <tr><td>Металл</td></tr>
-                            <tr><td>Бронза</td></tr>
-                            <tr><td>Чистая</td></tr>
-
+                            <tr><td name="kind_of_name"></td></tr>
+                            <tr><td name="name"></td></tr>
+                            <tr><td name="type_of_name"></td></tr>
                         </table>
-                       
                     </td>
-                   <td>
-                        <table class="type">
+                    <td>
+                        <table class="type" onclick="selectName()">
                             <tr><td><img src="../web/img/metall.jpeg"></td></tr>
-                            <tr><td>Металл</td></tr>
-                            <tr><td>Бронза</td></tr>
-                            <tr><td>Чистая</td></tr>
-
+                            <tr><td name="kind_of_name"></td></tr>
+                            <tr><td name="name"></td></tr>
+                            <tr><td name="type_of_name"></td></tr>
                         </table>
-                       
-                    </td>
-                     <td>
-                        <table class="type">
-                            <tr><td><img src="../web/img/metall.jpeg"></td></tr>
-                            <tr><td>Металл</td></tr>
-                            <tr><td>Бронза</td></tr>
-                            <tr><td>Чистая</td></tr>
-
-                        </table>
-                       
                     </td>
                 </tr>
-        </table>
+            </table>        
     </div>
 </section>
 
@@ -1178,7 +1219,12 @@ function showFun() {
 		arrow.classList.toggle('rotated');
     } else {
         document.getElementById('wrap_types' ).style.display = 'block';
-    
+        if(visibleNames) {
+            document.getElementById('wrap_names' ).style.display = 'none';
+            visibleNames = false;
+
+        }
+        
         for (var i = 0; i <= greys.length - 1; i++) {
             greys[i].style.display = 'block';
         }
@@ -1204,6 +1250,11 @@ function showNames() {
 		arrowName.classList.toggle('rotated');
         document.getElementById('wrap_names' ).style.display = 'block';
 
+        if (visible) {
+            document.getElementById('wrap_types' ).style.display = 'none';
+            visible = false;
+        }
+
         for (var i = 0; i <= greys.length - 1; i++) {
             greys[i].style.display = 'block';
         }
@@ -1228,7 +1279,7 @@ function clock() {
     setTimeout("clock()", 1000);
 }
 
-function selectType(name, desc, src) {
+function selectType(type, name, desc, src) {
 
     $("#img_type").attr("src", "../web/img/" + src);
 
@@ -1254,16 +1305,64 @@ function selectType(name, desc, src) {
     document.getElementById('selected_type').setAttribute('style', 'padding:0');
 	visible = false;
     type_selected = true;
+
+    document.getElementById('select_type_in_name').innerText = type;
+    document.getElementById('select_title_in_name').innerText = name;
+    document.getElementById('select_desc_in_name').innerText = desc;
+    $("#select_img_in_name").attr("src", "../web/img/" + src);
+    generateNames(name + " " + desc);
+    
 }
 
 function selectName(name) {
-    console.log(name);
+    
 
     document.getElementById('nonselected_name').setAttribute('class', 'hidden');
     document.getElementById('selected_name').setAttribute('class', 'select_nm');
     document.getElementById('selected_name').setAttribute('style', 'padding:0');
 
     type_selected = true;
+}
+
+
+function generateNames(selected_type_title) {
+    var first_index_count = 30;//30
+    var second_index_count = 26;
+    var third_index_count = 5;
+    var forth_index_count = 7;
+
+    var names = ['Щит под дерево с просветом', 'Квадрат под дерево с просветом', 'Круг под дерево с просветом', 'Щит под дерево с орнаментом', 'Квадрат под дерево с орнаментом', 'Круг под дерево с орнаментом', '8 граней с орнаментом', '8 граней с желобом', '8 граней под гравировку', 'Спаси и сохрани с надписью', 'Спаси и сохрани основа с орнаментом', 'Спаси и сохрани под гравировку', 'Щит европа стандартный', 'Щит европа с орнаментом', 'Круг косичка', 'Квадрат косичка', 'Прямоугольная косичка', 'Прямоугольник готика под бриллиант', 'под премиум круглый', 'под премиум квадратный', 'Щит ФСБ', 'Омниа квадрат', 'Омниа круг', 'Щит облегченный', 'Фантом', 'Созвездие круг большой', 'Созвездие фон', 'Круг малый', 'Пупырки', 'под винтажный куб', 'Геральдика под монограмму', 'Геральдика классическая', 'Геральдика ребристая с камнями', 'Геральдика под эмаль со сферами по периметру', 'Геральдика под эмаль с орнаментом по ободку', 'Геральдика <br> Щит и меч', 'Круг орел', 'Фантом', 'под премиум круглый', 'под премиум квадратный', 'Лев плоский (царь зверей)', 'Щит под гравировку', 'Лев классический (царь зверей)', 'Лев античный (царь зверей)', 'Тигр (царь зверей)', 'Лис (царь зверей)', 'Бульдог (царь зверей)', 'Волк (царь зверей)', 'Медведь (царь зверей)', '8 граней под гравировку большая', '8 граней под гравировку малая', 'Грани характера под гравировку круглая', 'Грани характера <br> Звери', 'Грани характера <br> Георгий победоносец', 'Грани характера <br> Рыбы', 'Грани характера <br> Оружие', 'Созвездие <br> Круг большой', 'Созвездие <br> Круг малый', 'Фантом', 'под винтажный куб', 'Лев плоский (царь зверей)', 'Цельнолитая рефленая', 'малая поворотная', 'Задняя часть малой поворотной ножки', 'Пружина малой поворотной ножки', 'Большая поворотная', 'Задняя часть большой поворотной ножки', 'Пружина большой поворотной ножки'];
+
+    var kind_of_name = document.getElementsByName('kind_of_name');
+    var name = document.getElementsByName('name');
+    var type_of_name = document.getElementsByName('type_of_name');
+
+    
+    for (var i = 0; i <= first_index_count - 1; i++) {
+        kind_of_name[i].innerText = 'Основы';
+    }
+    for (var i = first_index_count; i <= first_index_count + second_index_count - 1; i++) {
+        kind_of_name[i].innerText = 'Накладки';   
+    }
+
+    for (var i = first_index_count + second_index_count; i <= third_index_count + first_index_count + second_index_count - 1; i++) {
+        kind_of_name[i].innerText = 'Задние части';   
+    }
+
+    for (var i = third_index_count + first_index_count + second_index_count; i <= forth_index_count + third_index_count + first_index_count + second_index_count - 1; i++) {
+        kind_of_name[i].innerText = 'Ножки';   
+    }
+
+    for (var i = 0; i < type_of_name.length; i++) {
+        type_of_name[i].innerText = selected_type_title;
+    }
+
+    for (var i = 0; i < name.length; i++) {
+        name[i].innerHTML= names[i];
+    }
+    
+
+
 }
 
 
