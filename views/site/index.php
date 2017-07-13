@@ -602,7 +602,7 @@ $today = date("d.m.y");
                     </td>
                 </tr>          
             </table>
-            <table class="types" valign="top">
+            <table class="types" name="type_1">
                 <caption><h2>Основы</h2></caption>
                 <tr>
                     <td class="name_td">
@@ -885,7 +885,7 @@ $today = date("d.m.y");
                     </td>
                 </tr>
             </table>
-            <table class="types">
+            <table class="types" name="type_1">
                 <caption><h2>Накладки</h2></caption>
                 <tr>
                     <td>
@@ -1134,7 +1134,7 @@ $today = date("d.m.y");
                     </td>
                 </tr>
             </table>
-            <table class="types">
+            <table class="types" name="type_1">
                 <caption><h2>Задние части</h2></caption>  
                 <tr>
                     <td>
@@ -1186,7 +1186,7 @@ $today = date("d.m.y");
                     </td>
                 </tr>
             </table>
-            <table class="types">
+            <table class="types" name="type_1">
                 <caption><h2>Ножки</h2></caption>  
                 <tr>
                     <td>
@@ -1330,6 +1330,7 @@ function showFun() {
         }
         
         show_greys_types();
+        hide_greys_names();
 
         visible = true;
 		arrow.classList.toggle('rotated');
@@ -1355,6 +1356,7 @@ function showNames() {
         }
 
         show_greys_names();
+        hide_greys_types();
 
         visibleNames = true;
     }
@@ -1407,7 +1409,7 @@ function selectType(type, name, desc, src) {
     document.getElementById('select_title_in_name').innerText = name;
     document.getElementById('select_desc_in_name').innerText = desc;
     $("#select_img_in_name").attr("src", "../web/img/" + src);
-    generateNames(name + " " + desc);
+    generateNames(name, name + " " + desc);
     
 }
 
@@ -1431,39 +1433,54 @@ function selectName(number) {
 }
 
 
-function generateNames(selected_type_title) {
-    var first_index_count = 30;//30
-    var second_index_count = 26;
-    var third_index_count = 5;
-    var forth_index_count = 7;
+function generateNames(type, selected_type_title) {
 
-    var name = document.getElementsByName('name');
+    var type_1 = document.getElementsByName('type_1');
 
-    
-    for (var i = 0; i <= first_index_count - 1; i++) {
-        kind_of_name[i].innerText = 'Основы';
-    }
-    for (var i = first_index_count; i <= first_index_count + second_index_count - 1; i++) {
-        kind_of_name[i].innerText = 'Накладки';   
-    }
+    if (type == "Деталь") {
+        for (var i = 0; i < type_1.length; i++) {
+            type_1[i].style.display = 'block';
+        }
 
-    for (var i = first_index_count + second_index_count; i <= third_index_count + first_index_count + second_index_count - 1; i++) {
-        kind_of_name[i].innerText = 'Задние части';   
-    }
+        var first_index_count = 30;//30
+        var second_index_count = 26;
+        var third_index_count = 5;
+        var forth_index_count = 7;
 
-    for (var i = third_index_count + first_index_count + second_index_count; i <= forth_index_count + third_index_count + first_index_count + second_index_count - 1; i++) {
-        kind_of_name[i].innerText = 'Ножки';   
-    }
+        var name = document.getElementsByName('name');
 
-    for (var i = 0; i < type_of_name.length; i++) {
-        type_of_name[i].innerText = selected_type_title;
-    }
-
-    for (var i = 0; i < name.length; i++) {
-        name[i].innerHTML = names[i];
         
-        desc[i].style.display = 'none';
-        desc[i].innerHTML = descs[i];
+        for (var i = 0; i <= first_index_count - 1; i++) {
+            kind_of_name[i].innerText = 'Основы';
+        }
+        for (var i = first_index_count; i <= first_index_count + second_index_count - 1; i++) {
+            kind_of_name[i].innerText = 'Накладки';   
+        }
+
+        for (var i = first_index_count + second_index_count; i <= third_index_count + first_index_count + second_index_count - 1; i++) {
+            kind_of_name[i].innerText = 'Задние части';   
+        }
+
+        for (var i = third_index_count + first_index_count + second_index_count; i <= forth_index_count + third_index_count + first_index_count + second_index_count - 1; i++) {
+            kind_of_name[i].innerText = 'Ножки';   
+        }
+
+        for (var i = 0; i < type_of_name.length; i++) {
+            type_of_name[i].innerText = selected_type_title;
+        }
+
+        for (var i = 0; i < name.length; i++) {
+            name[i].innerHTML = names[i];
+            
+            desc[i].style.display = 'none';
+            desc[i].innerHTML = descs[i];
+        }
+    } else {
+
+        for (var i = 0; i < type_1.length; i++) {
+            type_1[i].style.display = 'none';
+        }
+        
     }
 }
 
