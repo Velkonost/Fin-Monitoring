@@ -66,40 +66,20 @@ class SiteController extends Controller
         ];
     }
 
-    /**
-     * Displays homepage.
-     *
-     * @return string
-     */
-	public function actionShow()
-	{
-		$all = Metals::find()->all();
-		
-		return $this->render('main',
-            ['all'=>$all]);
-	}
-<<<<<<< Updated upstream
-	
-	public function actionMain()
-	{
-		
-		return $this->render('mainbtns',
-            []);
-	}
-    public function actionIndex()
-=======
 
     public function actionIndex() {
         return $this->render('index');
     }
 
     public function actionView() {
-        return $this->render('view');
+        $all = Metals::find()->all();
+        
+        return $this->render('view',
+            ['all'=>$all]);
 
     }
 
     public function actionAdd()
->>>>>>> Stashed changes
     {
         $form = new FormAdd();
         if (($form->load(Yii::$app->request->post())) && ($form->validate())){
@@ -154,67 +134,5 @@ class SiteController extends Controller
 	
         return $this->render('add',
             [ 'form' => $form, 'operations'=>$items, 'froms'=>$items2, 'tos'=>$items3, 'statuses'=>$items4]);
-    }
-
-    /**
-     * Login action.
-     *
-     * @return Response|string
-     */
-    public function actionLogin()
-    {
-        if (!Yii::$app->user->isGuest) {
-            return $this->goHome();
-        }
-
-        $model = new LoginForm();
-        if ($model->load(Yii::$app->request->post()) && $model->login()) {
-            return $this->goBack();
-        }
-        return $this->render('login', [
-            'model' => $model,
-        ]);
-    }
-
-    /**
-     * Logout action.
-     *
-     * @return Response
-     */
-	 
-	 
-    public function actionLogout()
-    {
-        Yii::$app->user->logout();
-
-        return $this->goHome();
-    }
-
-    /**
-     * Displays contact page.
-     *
-     * @return Response|string
-     */
-    public function actionContact()
-    {
-        $model = new ContactForm();
-        if ($model->load(Yii::$app->request->post()) && $model->contact(Yii::$app->params['adminEmail'])) {
-            Yii::$app->session->setFlash('contactFormSubmitted');
-
-            return $this->refresh();
-        }
-        return $this->render('contact', [
-            'model' => $model,
-        ]);
-    }
-
-    /**
-     * Displays about page.
-     *
-     * @return string
-     */
-    public function actionAbout()
-    {
-        return $this->render('about');
     }
 }
