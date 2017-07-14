@@ -5,7 +5,7 @@
 	
 	class FormAdd extends Model
 	{
-		public $name, $type, $massa, $value, $status, $from, $to, $operation;
+		public $name, $type, $massa, $value, $status, $from, $to, $operation, $type_img_name, $name_img_name;
 		
 		public function rules(){
 			return [
@@ -14,6 +14,8 @@
 				[['massa','value', 'status', 'from', 'to', 'operation'], 'required', message => ''],
 				// rememberMe must be a boolean value
 				['type', 'default', message => ''],
+				['type_img_name', 'default', message => ''],
+				['name_img_name', 'default', message => ''],
 				['name', 'default', message => ''],
 				['value', 'default', message => ''],
 				['massa', 'default', message => ''],

@@ -255,9 +255,7 @@ $this->title = 'Metals';
 
 </style>
 <section>
-
- <table class="inputTable" >
-
+<table class="inputTable" >
     <tbody  style="min-width: 1170px; width: 1170px; max-width: 1170px">
                 <tr class='hidden-row'>
 					<td><?=$f->field($form, 'from')->dropDownList($froms, ['id' => "selectFrom", 'style' => 'box-shadow: inset 0px 0px 0px 0px black;border: 0px;width:100px; background-color: #fff8ca', 'options' => [''=>['selected'=>true]]])->label('');?></td>
@@ -1533,8 +1531,11 @@ $this->title = 'Metals';
             </table>        
 	</div>
 </section>
-
+<?=$f->field($form, 'type_img_name')->dropDownList($froms, ['id' => "type_img_name", 'style' => 'display:none'])->label('') ?>
+<?=$f->field($form, 'name_img_name')->dropDownList($froms, ['id' => "name_img_name", 'style' => 'display:none'])->label('') ?>
 <script>
+document.getElementById('type_img_name').innerHTML = "empty.jpg";
+document.getElementById('name_img_name').innerHTML = "empty.jpg";
 clock();
 var arrow = document.getElementById('arrow');
 var arrowName = document.getElementById('arroww');
@@ -1677,6 +1678,7 @@ function clock() {
 function selectType(type, name, desc, src) {
 
     $("#img_type").attr("src", "../web/img/" + src);
+    document.getElementById('type_img_name').innerHTML = src;
 
     document.getElementById('type_selected_title').innerText = name;
     document.getElementById('type_selected_desc').innerText = desc;
@@ -1736,7 +1738,7 @@ function selectType(type, name, desc, src) {
 }
 
 function selectName(number, number_img) {
-
+    document.getElementById('name_img_name').innerHTML = number_img + '.jpg';
     isSelectedName2 = false;
 
     $("#img_name").attr("src", "../web/img/" + number_img + '.jpg');
@@ -1757,7 +1759,7 @@ function selectName(number, number_img) {
 }
 
 function selectName2(number) {
-
+    document.getElementById('name_img_name').innerHTML = "empty.jpg";
     isSelectedName2 = true;
 
     $("#img_name").attr("src", "../web/img/empty.jpg");

@@ -83,14 +83,16 @@ class SiteController extends Controller
         $form = new FormAdd();
         if (($form->load(Yii::$app->request->post())) && ($form->validate())){
 			$post = new Metals;
-			$post->type="AKBAR";
+			$post->type=Html::encode($form->type);
+            $post->img_type = Html::encode($form->type_img_name);
+            $post->img_name = Html::encode($form->name_img_name);
 			$post->gram=Html::encode($form->massa);
 			$post->pieces=Html::encode($form->value);
 			$post->status=Html::encode($form->status);
 			$post->from=Html::encode($form->from);
 			$post->to=Html::encode($form->to);
 			$post->operation=Html::encode($form->operation);
-			$post->name="ALLAHU";
+			$post->name=Html::encode($form->name);;
 			
 			$post->save();
         }
