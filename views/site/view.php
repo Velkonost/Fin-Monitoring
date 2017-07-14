@@ -1,5 +1,5 @@
 <head>
-	<meta charset="utf-8">
+    <meta charset="utf-8">
 </head>
 <?php
 
@@ -12,20 +12,18 @@ use yii\helpers;
 use yii\web\helpers\CHtml;
 /* @var $this yii\web\View */
 
-$this->title = 'Склад';
+$this->title = 'Metals';
 
 
 ?>
 
-
 <table class="inputTable" >
-
     <tbody  style="min-width: 1170px; width: 1170px; max-width: 1170px">
                 <tr class='hidden-row'>
-					<td style = 'text-align: center;width:100px'>От кого</td>
+                    <td style = 'text-align: center;width:100px'>От кого</td>
                     <td style = 'text-align: center;width:100px'>Кому</td>
-					<td style="max-width: 58.5px; min-width: 58.5px;text-align: center; padding: 0">Дата</td>
-					<td style="max-width: 58.5px; min-width: 58.5px;text-align: center; padding: 0">Время</td>
+                    <td style="max-width: 58.5px; min-width: 58.5px;text-align: center; padding: 0">Дата</td>
+                    <td style="max-width: 58.5px; min-width: 58.5px;text-align: center; padding: 0">Время</td>
                     <td style = 'text-align: center;width:215px'>Тип</td>
                     <td style = 'text-align: center;width:215px'>Наименование</td>
                     <td style="text-align: center;width:100px;">Операция</td>
@@ -33,24 +31,32 @@ $this->title = 'Склад';
                     <td style="text-align: center;width:70px">Штук</td>
                     <td style="text-align: center;width:100px">Статус</td>
                 </tr>
-				<?php
-					foreach($all as $key){
-						echo "<tr class='hidden-row'>";
-						echo "<td style='text-align: center;'>".$key->from."</td>";
-						echo "<td style='text-align: center;'>".$key->to."</td>";
-						echo "<td style='text-align: center;'>".$key->date."</td>";
-						echo "<td style='text-align: center;'>".$key->time."</td>";
-						?>
-						 <td class = "select_tp" style="padding:0" id="selected_type"><div class="in_selected_type"><img id="img_type" src="../web/img/<?=$key->img_type?>" class="selected_type_img"><div id="type_selected"><h6 id="type_selected_title" style="margin-top: 0px"><?=$key->type?></h6><p id="type_selected_desc"></p> </div></div></td>
-						 <td class = "select_nm" style="padding:0" id="selected_name"><div class="in_selected_name"><img id="img_name" src="../web/img/<?=$key->img_name?>" class="selected_name_img"><div id="name_selected"><h6 id="name_selected_title" style="margin-top: 0px"><?=$key->name?></h6><p style="margin-bottom: 3px; font-size: 11px" id="name_selected_desc"></p><p style="margin: 0;font-size: 11px" id="name_selected_type"></p> </div></div></td>
-						<?php
-						echo "<td style='text-align: center;'>".$key->operation."</td>";
-						echo "<td style='text-align: center;'>".$key->massa."</td>";
-						echo "<td style='text-align: center;'>".$key->value."</td>";
-						echo "<td style='text-align: center;'>".$key->status."</td>";
-						echo "</tr>";
-					}
-				?>
+                <?php
+                    foreach($all as $key){
+                        echo "<tr class='hidden-row'>";
+                        echo "<td style='text-align: center;'>".$key->from."</td>";
+                        echo "<td style='text-align: center;'>".$key->to."</td>";
+                        echo "<td style='text-align: center;'>".$key->date."</td>";
+                        echo "<td style='text-align: center;'>".$key->time."</td>";
+                        ?>
+                         <td class = "select_tp" style="padding:0" id="selected_type"><div class="in_selected_type"><img id="img_type" src="../web/img/<?=$key->img_type?>" class="selected_type_img"><div id="type_selected"><h6 id="type_selected_title" style="margin-top: 0px"><?=$key->type_title?></h6>
+                         <h6 id="type_selected_title" style="margin-top: 0px"><?=$key->type_desc?></h6>
+                         <p id="type_selected_desc"></p> </div></div></td>
+                         
+                         
+                         <td class = "select_nm" style="padding:0" id="selected_name"><div class="in_selected_name"><img id="img_name" src="../web/img/<?=$key->img_name?>" class="selected_name_img"><div id="name_selected">
+                         <h6 id="name_selected_title" style="margin-top: 0px"><?=$key->name_title?></h6>
+                         <h6 id="name_selected_title" style="margin-top: 0px"><?=$key->name_desc?></h6>
+                         <h6 id="name_selected_title" style="margin-top: 0px"><?=$key->name_type?></h6>
+                         <p style="margin-bottom: 3px; font-size: 11px" id="name_selected_desc"></p><p style="margin: 0;font-size: 11px" id="name_selected_type"></p> </div></div></td>
+                        <?php
+                        echo "<td style='text-align: center;'>".$key->operation."</td>";
+                        echo "<td style='text-align: center;'>".$key->massa."</td>";
+                        echo "<td style='text-align: center;'>".$key->value."</td>";
+                        echo "<td style='text-align: center;'>".$key->status."</td>";
+                        echo "</tr>";
+                    }
+                ?>
     </tbody>
 </table>
 
@@ -133,19 +139,19 @@ $this->title = 'Склад';
         width: 1170px;      
 
 
-		display: none;
-		
+        display: none;
+        
         margin-top: 30px;
         width: 100%;
         position: relative;
         left: 0;
     }
-	.wrap_names {
+    .wrap_names {
         min-width: 1170px;
         width: 1170px;
 
-		display: none;
-		
+        display: none;
+        
         margin-top: 30px;
         
         position: relative;
@@ -177,9 +183,9 @@ $this->title = 'Склад';
     -ms-transform : rotate(180deg); 
     -o-transform : rotate(180deg); 
     transform : rotate(180deg); 
-	}
+    }
 
-	#arroww {
+    #arroww {
         display: inline-block;
     }
 

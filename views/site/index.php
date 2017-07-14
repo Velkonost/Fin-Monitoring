@@ -12,13 +12,15 @@ use yii\helpers;
 use yii\web\helpers\CHtml;
 /* @var $this yii\web\View */
 
-$this->title = 'Склад';
+$this->title = 'Metals';
 
 
 ?>
 
-<button class = 'btn_submit' style = "text-decoration: none;"><span style="text-align:center;">Добавить</span></button>
-<button class = 'btn_submit' style = "text-decoration: none; display:inline-block; margin-bottom: 20px"><span style="text-align:center;">Смотреть</span></button>
+<button class = 'btn_submit' onclick = "return location.href = 'http://good-lp.ru/metall/web/index.php?r=site/show'" style = "text-decoration: none;"><span style="text-align:center;">Показать товары</span></button>
+<button class = 'btn_submit'  onclick = "return location.href = 'http://good-lp.ru/metall/web/index.php?r=site/index'" style = "text-decoration: none; display:inline-block; margin-bottom: 20px"><span style="text-align:center;">Добавить товары</span></button>
+
+
 
 <style type="text/css">
 
@@ -226,12 +228,12 @@ $this->title = 'Склад';
     }
 
     .btn_submit {
-        margin-left: 45%;
+        margin-left: 40%;
         margin-top: 45px;
         font-family: inherit;
         font-size: 18px;
         background-color: #FCDA33;
-        width: 150px;
+        width: 300px;
         height: 50px;
         text-align: center;
         display: inline-block;

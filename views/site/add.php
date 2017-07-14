@@ -12,11 +12,8 @@ use yii\helpers;
 use yii\web\helpers\CHtml;
 /* @var $this yii\web\View */
 
-$this->title = 'Metals';
+$this->title = 'Склад';
 
-// date_default_timezone_set('Europe/Moscow + 3');
-
-// $today = date("d.m.y");
 
 ?>
 <?php $f = ActiveForm::begin()?>
