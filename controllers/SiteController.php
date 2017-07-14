@@ -71,12 +71,19 @@ class SiteController extends Controller
      *
      * @return string
      */
-	public function actionMain()
+	public function actionShow()
 	{
 		$all = Metals::find()->all();
 		
 		return $this->render('main',
             ['all'=>$all]);
+	}
+	
+	public function actionMain()
+	{
+		
+		return $this->render('mainbtns',
+            []);
 	}
     public function actionIndex()
     {

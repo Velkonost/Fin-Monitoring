@@ -17,46 +17,8 @@ $this->title = 'Metals';
 
 ?>
 
-
-<table class="inputTable" >
-
-    <tbody  style="min-width: 1170px; width: 1170px; max-width: 1170px">
-                <tr class='hidden-row'>
-					<td style = 'text-align: center;width:100px'>От кого</td>
-                    <td style = 'text-align: center;width:100px'>Кому</td>
-					<td style="max-width: 58.5px; min-width: 58.5px;text-align: center; padding: 0">Дата</td>
-					<td style="max-width: 58.5px; min-width: 58.5px;text-align: center; padding: 0">Время</td>
-                    <td style = 'text-align: center;width:215px'>Тип</td>
-                    <td style = 'text-align: center;width:215px'>Наименование</td>
-                    <td style="text-align: center;width:100px;">Операция</td>
-                    <td style="text-align: center;width:70px">Грамм</td>
-                    <td style="text-align: center;width:70px">Штук</td>
-                    <td style="text-align: center;width:100px">Статус</td>
-                </tr>
-				<?php
-					foreach($all as $key){
-						echo "<tr class='hidden-row'>";
-						echo "<td style='text-align: center;'>".$key->from."</td>";
-						echo "<td style='text-align: center;'>".$key->to."</td>";
-						echo "<td style='text-align: center;'>".$key->date."</td>";
-						echo "<td style='text-align: center;'>".$key->time."</td>";
-						?>
-						 <td class = "select_tp" style="padding:0" id="selected_type"><div class="in_selected_type"><img id="img_type" src="../web/img/<?=$key->img_type?>" class="selected_type_img"><div id="type_selected"><h6 id="type_selected_title" style="margin-top: 0px"><?=$key->type?></h6><p id="type_selected_desc"></p> </div></div></td>
-						 <td class = "select_nm" style="padding:0" id="selected_name"><div class="in_selected_name"><img id="img_name" src="../web/img/<?=$key->img_name?>" class="selected_name_img"><div id="name_selected"><h6 id="name_selected_title" style="margin-top: 0px"><?=$key->name?></h6><p style="margin-bottom: 3px; font-size: 11px" id="name_selected_desc"></p><p style="margin: 0;font-size: 11px" id="name_selected_type"></p> </div></div></td>
-						<?php
-						echo "<td style='text-align: center;'>".$key->operation."</td>";
-						echo "<td style='text-align: center;'>".$key->massa."</td>";
-						echo "<td style='text-align: center;'>".$key->value."</td>";
-						echo "<td style='text-align: center;'>".$key->status."</td>";
-						echo "</tr>";
-					}
-				?>
-    </tbody>
-</table>
-
-
-
-
+<button class = 'btn_submit' style = "text-decoration: none;"><span style="text-align:center;">TEXT</span></button>
+<button class = 'btn_submit' style = "text-decoration: none; display:inline-block; margin-bottom: 20px"><span style="text-align:center;">TEXT</span></button>
 
 
 
