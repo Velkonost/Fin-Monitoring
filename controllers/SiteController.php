@@ -78,6 +78,7 @@ class SiteController extends Controller
 		return $this->render('main',
             ['all'=>$all]);
 	}
+<<<<<<< Updated upstream
 	
 	public function actionMain()
 	{
@@ -86,6 +87,19 @@ class SiteController extends Controller
             []);
 	}
     public function actionIndex()
+=======
+
+    public function actionIndex() {
+        return $this->render('index');
+    }
+
+    public function actionView() {
+        return $this->render('view');
+
+    }
+
+    public function actionAdd()
+>>>>>>> Stashed changes
     {
         $form = new FormAdd();
         if (($form->load(Yii::$app->request->post())) && ($form->validate())){
@@ -138,7 +152,7 @@ class SiteController extends Controller
 			'Брак' => 'Брак',
 		];
 	
-        return $this->render('index',
+        return $this->render('add',
             [ 'form' => $form, 'operations'=>$items, 'froms'=>$items2, 'tos'=>$items3, 'statuses'=>$items4]);
     }
 
