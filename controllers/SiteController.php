@@ -90,47 +90,52 @@ class SiteController extends Controller
         $form = new FormAdd();
         if (($form->load(Yii::$app->request->post())) && ($form->validate())){
 			$post = new Metals;
-			$post->type=Html::encode($form->type);
+			$post->type_title = Html::encode($form->type_title_send);
+            $post->type_desc = Html::encode($form->type_desc_send);
             $post->img_type = Html::encode($form->type_img_name);
             $post->img_name = Html::encode($form->name_img_name);
-			$post->gram=Html::encode($form->massa);
-			$post->pieces=Html::encode($form->value);
+			$post->massa=Html::encode($form->massa);
+			$post->value=Html::encode($form->value);
 			$post->status=Html::encode($form->status);
 			$post->from=Html::encode($form->from);
 			$post->to=Html::encode($form->to);
-			$post->operation=Html::encode($form->operation);
-			$post->name=Html::encode($form->name);;
+			$post->operation = Html::encode($form->operation);
+			$post->name_title = Html::encode($form->name_title_send);
+            $post->name_desc = Html::encode($form->name_desc_send);
+            $post->name_type = Html::encode($form->name_type_send);
+            $post->date = Html::encode($form->date_send);
+            $post->time = Html::encode($form->time_send);
 			
 			$post->save();
         }
 		
 		$items = [
 			'' => 'Операция',
-			'0' => 'Расход',
-			'1' => 'Приход',
+			'Расход' => 'Расход',
+			'Приход' => 'Приход',
 		];
 		$items2 = [
 			'' => 'От кого',
-			'0' => 'Анна',
-			'1' => 'Петр',
-			'2' => 'Никита',
-			'3' => 'Галина',
-			'4' => 'Жоомарт',
-			'5' => 'Поставщик',
-			'6' => 'Остаток с прошлого месяца',
+			'Анна' => 'Анна',
+			'Петр' => 'Петр',
+			'Никита' => 'Никита',
+			'Галина' => 'Галина',
+			'Жоомарт' => 'Жоомарт',
+			'Поставщик' => 'Поставщик',
+			'Остаток с прошлого месяца' => 'Остаток с прошлого месяца',
 		];
 		$items3 = [
 			'' => 'Кому',
-			'0' => 'Анна',
-			'1' => 'Петр',
-			'2' => 'Никита',
-			'3' => 'Галина',
-			'4' => 'Жоомарт',
+			'Анна' => 'Анна',
+			'Петр' => 'Петр',
+			'Никита' => 'Никита',
+			'Галина' => 'Галина',
+			'Жоомарт' => 'Жоомарт',
 		];
 		$items4 = [
 			'' => 'Статус',
-			'0' => 'Годное',
-			'1' => 'Брак',
+			'Годное' => 'Годное',
+			'Брак' => 'Брак',
 		];
 	
         return $this->render('index',

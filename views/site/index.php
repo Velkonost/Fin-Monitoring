@@ -253,6 +253,12 @@ $this->title = 'Metals';
         height: 38px;
     }
 
+    .field-name_img_name, .field-type_img_name, .field-type_title_send, .field-type_desc_send,
+    .field-name_title_send, .field-name_desc_send, .field-name_type_send, .field-date_send, .field-time_send {
+        margin: 0 !important;
+        height: 0 !important;
+    }
+
 </style>
 <section>
 <table class="inputTable" >
@@ -286,6 +292,17 @@ $this->title = 'Metals';
                 </tr>
     </tbody>
 </table>
+<?=$f->field($form, 'type_img_name')->textInput(['id' => 'type_img_name', 'style' => 'display:none; height:0', 'type'=>'text'])->label('')?>
+<?=$f->field($form, 'name_img_name')->textInput(['id' => 'name_img_name', 'style' => 'display:none; height:0', 'type'=>'text'])->label('')?>
+<?=$f->field($form, 'type_title_send')->textInput(['id' => 'type_title_send', 'style' => 'display:none; height:0', 'type'=>'text'])->label('')?>
+<?=$f->field($form, 'type_desc_send')->textInput(['id' => 'type_desc_send', 'style' => 'display:none; height:0', 'type'=>'text'])->label('')?>
+<?=$f->field($form, 'name_title_send')->textInput(['id' => 'name_title_send', 'style' => 'display:none; height:0', 'type'=>'text'])->label('')?>
+<?=$f->field($form, 'name_desc_send')->textInput(['id' => 'name_desc_send', 'style' => 'display:none; height:0', 'type'=>'text'])->label('')?>
+<?=$f->field($form, 'name_type_send')->textInput(['id' => 'name_type_send', 'style' => 'display:none; height:0', 'type'=>'text'])->label('')?>
+<?=$f->field($form, 'date_send')->textInput(['id' => 'date_send', 'style' => 'display:none; height:0', 'type'=>'text'])->label('')?>
+<?=$f->field($form, 'time_send')->textInput(['id' => 'time_send', 'style' => 'display:none; height:0', 'type'=>'text'])->label('')?>
+
+<!-- <?=$f->field($form, 'name_img_name')->dropDownList($froms, ['id' => "name_img_name", 'style' => 'display:none'])->label('') ?> -->
 
 <?= Html::submitButton('Ввод', ['id'=>'future', 'name' => 'button_save', 'class' => 'btn_submit']) ?>
 <?php ActiveForm::end(); ?>
@@ -1531,11 +1548,20 @@ $this->title = 'Metals';
             </table>        
 	</div>
 </section>
-<?=$f->field($form, 'type_img_name')->dropDownList($froms, ['id' => "type_img_name", 'style' => 'display:none'])->label('') ?>
-<?=$f->field($form, 'name_img_name')->dropDownList($froms, ['id' => "name_img_name", 'style' => 'display:none'])->label('') ?>
+
 <script>
-document.getElementById('type_img_name').innerHTML = "empty.jpg";
-document.getElementById('name_img_name').innerHTML = "empty.jpg";
+document.getElementById('type_img_name').value = "empty.jpg";
+document.getElementById('name_img_name').value = "empty.jpg";
+document.getElementById('type_title_send').value = "";
+document.getElementById('type_desc_send').value = "";
+
+document.getElementById('name_title_send').value = "";
+document.getElementById('name_desc_send').value = "";
+document.getElementById('name_type_send').value = "";
+document.getElementById('date_send').value = "";
+document.getElementById('time_send').value = "";
+
+
 clock();
 var arrow = document.getElementById('arrow');
 var arrowName = document.getElementById('arroww');
@@ -1662,8 +1688,6 @@ function clock() {
         mm = '0'+mm
     } 
 
-
-
     document.getElementById('date').innerHTML = dd + '.' + mm + '.' + yy;
    
     if (hours <= 9) hours = "0" + hours;
@@ -1672,18 +1696,32 @@ function clock() {
 
     date_time = hours + ":" + minutes;
     document.getElementById("time").innerHTML = date_time;
+
+    document.getElementById('date_send').value = dd + '.' + mm + '.' + yy;
+    document.getElementById('time_send').value = date_time;
+
     setTimeout("clock()", 1000);
 }
 
 function selectType(type, name, desc, src) {
 
+    document.getElementById('type_title_send').value = name;
+    document.getElementById('type_desc_send').value = desc;
+
     $("#img_type").attr("src", "../web/img/" + src);
-    document.getElementById('type_img_name').innerHTML = src;
+    document.getElementById('type_img_name').value = src;
 
     document.getElementById('type_selected_title').innerText = name;
     document.getElementById('type_selected_desc').innerText = desc;
 	
 	if(name == "Металл" || name == "Лигатура"){
+
+        document.getElementById('name_title_send').value = "";
+        document.getElementById('name_desc_send').value = "";
+        document.getElementById('name_type_send').value = "";
+
+        document.getElementById('selectStatus').value = '';
+
 		document.getElementById('selectStatus').style.color = "#CCCCCC";
 		$("#selectStatus").prop('disabled', 'disabled');
 		
@@ -1738,11 +1776,17 @@ function selectType(type, name, desc, src) {
 }
 
 function selectName(number, number_img) {
-    document.getElementById('name_img_name').innerHTML = number_img + '.jpg';
+
+
+    document.getElementById('name_img_name').value = number_img + '.jpg';
     isSelectedName2 = false;
 
     $("#img_name").attr("src", "../web/img/" + number_img + '.jpg');
     number--;
+
+    document.getElementById('name_title_send').value = number < 30 ? "Основы" : number < 56 ? "Накладки" : number < 61 ? "Задние части" : "Ножки";
+    document.getElementById('name_desc_send').value = names[number];
+    document.getElementById('name_type_send').value = document.getElementById('select_title_in_name').innerHTML + " " + document.getElementById('select_desc_in_name').innerHTML;
 
     document.getElementById('name_selected_title').innerText = number < 30 ? "Основы" : number < 56 ? "Накладки" : number < 61 ? "Задние части" : "Ножки";
     document.getElementById('name_selected_desc').innerHTML = names[number];
@@ -1759,11 +1803,18 @@ function selectName(number, number_img) {
 }
 
 function selectName2(number) {
-    document.getElementById('name_img_name').innerHTML = "empty.jpg";
+    number--;
+
+    document.getElementById('name_title_send').value = '';
+    document.getElementById('name_desc_send').value = names2[number];
+    document.getElementById('name_type_send').value = document.getElementById('select_title_in_name').innerHTML + " " + document.getElementById('select_desc_in_name').innerHTML;
+
+
+    document.getElementById('name_img_name').value = "empty.jpg";
     isSelectedName2 = true;
 
     $("#img_name").attr("src", "../web/img/empty.jpg");
-    number--;
+    
 
     document.getElementById('name_selected_title').style.display = 'none';
     document.getElementById('name_selected_desc').innerHTML = '<h6 style="margin-top:0;margin-bottom:0">' + names2[number] + '</h6>';
