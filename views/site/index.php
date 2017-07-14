@@ -14,9 +14,9 @@ use yii\web\helpers\CHtml;
 
 $this->title = 'Metals';
 
-date_default_timezone_set('Europe/Moscow + 3');
+// date_default_timezone_set('Europe/Moscow + 3');
 
-$today = date("d.m.y");
+// $today = date("d.m.y");
 
 ?>
 <?php $f = ActiveForm::begin()?>
@@ -109,13 +109,17 @@ $today = date("d.m.y");
         background-color: #f1f2f3;
     }
 
-    td[name="name"], td[name="type_of_name"], td[name="desc"] {
+    td[name="name"], td[name="name_2"], td[name="type_of_name"], td[name="desc"], td[name="type_of_name_2"], td[name="desc_2"] {
         max-width: 100px;
         
     }
 
     td[name="name"] {
         height: 37px;
+    }
+
+    td[name="name_2"] {
+        height: 48px;
     }
 
     #arrow {
@@ -259,14 +263,14 @@ $today = date("d.m.y");
 					<td><?=$f->field($form, 'from')->dropDownList($froms, ['id' => "selectFrom", 'style' => 'box-shadow: inset 0px 0px 0px 0px black;border: 0px;width:100px; background-color: #fff8ca', 'options' => [''=>['selected'=>true]]])->label('');?></td>
                     <td><?=$f->field($form, 'to')->dropDownList($tos, ['id' => "selectTo", 'style' => 'box-shadow: inset 0px 0px 0px 0px black;border: 0px;width:100px; background-color: #fff8ca', 'options' => [''=>['selected'=>true]]])->label('');?></td>
 
-                    <td style="max-width: 58.5px; min-width: 58.5px;text-align: center; padding: 0"><?=$today?></td>
+                    <td id="date" style="max-width: 58.5px; min-width: 58.5px;text-align: center; padding: 0"></td>
 
                     <td style="max-width: 58.5px; min-width: 58.5px;text-align: center; padding: 0"><div id="time"></div></td>
 
 					
                     <td id="nonselected_type"><div  class="testType" onclick="showFun()" id = "selectType"><span style="display: inline-block;">Тип</span><div id="arrow">&#9660;</div></div></td>
 
-                    <td id="selected_type" class="hidden"><div onclick="showFun()" class="in_selected_type"><img id="img_type" src="../web/img/metall.jpeg" class="selected_type_img"><div id="type_selected"><h6 id="type_selected_title" style="margin-top: 0px"></h6><p id="type_selected_desc"></p> </div></div></td>
+                    <td id="selected_type" class="hidden"><div onclick="showFun()" class="in_selected_type"><img id="img_type" class="selected_type_img"><div id="type_selected"><h6 id="type_selected_title" style="margin-top: 0px"></h6><p id="type_selected_desc"></p> </div></div></td>
 					
 
 					<td id="nonselected_name"><div onclick="showNames()" id = "selectName"><span style="display: inline-block;">Наименование</span><div id="arroww">&#9660;</div></div></td>
@@ -841,7 +845,7 @@ $today = date("d.m.y");
                     </td>
                     <td class="name_td">
                         <table class="type" onclick="selectName('26', '999')">
-                            <tr><td><img src="../web/img/metall.jpeg"></td></tr>
+                            <tr><td><img src="../web/img/empty.jpg"></td></tr>
                             <tr><td name="kind_of_name"></td></tr>
                             <tr><td name="name"></td></tr>
                             <tr><td name="desc"></td></tr>
@@ -850,7 +854,7 @@ $today = date("d.m.y");
                     </td>
                    <td class="name_td">
                         <table class="type" onclick="selectName('27', '999')">
-                            <tr><td><img src="../web/img/metall.jpeg"></td></tr>
+                            <tr><td><img src="../web/img/empty.jpg"></td></tr>
                             <tr><td name="kind_of_name"></td></tr>
                             <tr><td name="name"></td></tr>
                             <tr><td name="desc"></td></tr>
@@ -859,7 +863,7 @@ $today = date("d.m.y");
                     </td>
                    <td class="name_td">
                         <table class="type" onclick="selectName('28', '999')">
-                            <tr><td><img src="../web/img/metall.jpeg"></td></tr>
+                            <tr><td><img src="../web/img/empty.jpg"></td></tr>
                             <tr><td name="kind_of_name"></td></tr>
                             <tr><td name="name"></td></tr>
                             <tr><td name="desc"></td></tr>
@@ -877,7 +881,7 @@ $today = date("d.m.y");
                     </td>
                      <td class="name_td">
                         <table class="type" onclick="selectName('30', '999')">
-                            <tr><td><img src="../web/img/metall.jpeg"></td></tr>
+                            <tr><td><img src="../web/img/empty.jpg"></td></tr>
                             <tr><td name="kind_of_name"></td></tr>
                             <tr><td name="name"></td></tr>
                             <tr><td name="desc"></td></tr>
@@ -994,7 +998,7 @@ $today = date("d.m.y");
                 <tr>
                     <td>
                         <table class="type" onclick="selectName('42', '999')">
-                            <tr><td><img src="../web/img/metall.jpeg"></td></tr>
+                            <tr><td><img src="../web/img/empty.jpg"></td></tr>
                             <tr><td name="kind_of_name"></td></tr>
                             <tr><td name="name"></td></tr>
                             <tr><td name="desc"></td></tr>
@@ -1003,7 +1007,7 @@ $today = date("d.m.y");
                     </td>
                     <td>
                         <table class="type" onclick="selectName('43', '999')">
-                            <tr><td><img src="../web/img/metall.jpeg"></td></tr>
+                            <tr><td><img src="../web/img/empty.jpg"></td></tr>
                             <tr><td name="kind_of_name"></td></tr>
                             <tr><td name="name"></td></tr>
                             <tr><td name="desc"></td></tr>
@@ -1014,7 +1018,7 @@ $today = date("d.m.y");
                     </td>
                     <td>
                         <table class="type" onclick="selectName('44', '999')">
-                            <tr><td><img src="../web/img/metall.jpeg"></td></tr>
+                            <tr><td><img src="../web/img/empty.jpg"></td></tr>
                             <tr><td name="kind_of_name"></td></tr>
                             <tr><td name="name"></td></tr>
                             <tr><td name="desc"></td></tr>
@@ -1023,7 +1027,7 @@ $today = date("d.m.y");
                     </td>
                     <td>
                         <table class="type" onclick="selectName('45', '999')">
-                            <tr><td><img src="../web/img/metall.jpeg"></td></tr>
+                            <tr><td><img src="../web/img/empty.jpg"></td></tr>
                             <tr><td name="kind_of_name"></td></tr>
                             <tr><td name="name"></td></tr>
                             <tr><td name="desc"></td></tr>
@@ -1032,7 +1036,7 @@ $today = date("d.m.y");
                     </td>
                    <td>
                         <table class="type" onclick="selectName('46', '999')">
-                            <tr><td><img src="../web/img/metall.jpeg"></td></tr>
+                            <tr><td><img src="../web/img/empty.jpg"></td></tr>
                             <tr><td name="kind_of_name"></td></tr>
                             <tr><td name="name"></td></tr>
                             <tr><td name="desc"></td></tr>
@@ -1041,7 +1045,7 @@ $today = date("d.m.y");
                     </td>
                    <td>
                         <table class="type" onclick="selectName('47', '999')">
-                            <tr><td><img src="../web/img/metall.jpeg"></td></tr>
+                            <tr><td><img src="../web/img/empty.jpg"></td></tr>
                             <tr><td name="kind_of_name"></td></tr>
                             <tr><td name="name"></td></tr>
                             <tr><td name="desc"></td></tr>
@@ -1050,7 +1054,7 @@ $today = date("d.m.y");
                     </td>
                     <td>
                         <table class="type" onclick="selectName('48', '999')">
-                            <tr><td><img src="../web/img/metall.jpeg"></td></tr>
+                            <tr><td><img src="../web/img/empty.jpg"></td></tr>
                             <tr><td name="kind_of_name"></td></tr>
                             <tr><td name="name"></td></tr>
                             <tr><td name="desc"></td></tr>
@@ -1059,7 +1063,7 @@ $today = date("d.m.y");
                     </td>
                      <td>
                         <table class="type" onclick="selectName('49', '999')">
-                            <tr><td><img src="../web/img/metall.jpeg"></td></tr>
+                            <tr><td><img src="../web/img/empty.jpg"></td></tr>
                             <tr><td name="kind_of_name"></td></tr>
                             <tr><td name="name"></td></tr>
                             <tr><td name="desc"></td></tr>
@@ -1068,7 +1072,7 @@ $today = date("d.m.y");
                     </td>
                     <td>
                         <table class="type" onclick="selectName('50', '999')">
-                            <tr><td><img src="../web/img/metall.jpeg"></td></tr>
+                            <tr><td><img src="../web/img/empty.jpg"></td></tr>
                             <tr><td name="kind_of_name"></td></tr>
                             <tr><td name="name"></td></tr>
                             <tr><td name="desc"></td></tr>
@@ -1077,7 +1081,7 @@ $today = date("d.m.y");
                     </td>
                    <td>
                         <table class="type" onclick="selectName('51', '999')">
-                            <tr><td><img src="../web/img/metall.jpeg"></td></tr>
+                            <tr><td><img src="../web/img/empty.jpg"></td></tr>
                             <tr><td name="kind_of_name"></td></tr>
                             <tr><td name="name"></td></tr>
                             <tr><td name="desc"></td></tr>
@@ -1086,7 +1090,7 @@ $today = date("d.m.y");
                     </td>
                      <td>
                         <table class="type" onclick="selectName('52', '999')">
-                            <tr><td><img src="../web/img/metall.jpeg"></td></tr>
+                            <tr><td><img src="../web/img/empty.jpg"></td></tr>
                             <tr><td name="kind_of_name"></td></tr>
                             <tr><td name="name"></td></tr>
                             <tr><td name="desc"></td></tr>
@@ -1097,7 +1101,7 @@ $today = date("d.m.y");
                 <tr>
                     <td>
                         <table class="type" onclick="selectName('53', '999')">
-                            <tr><td><img src="../web/img/metall.jpeg"></td></tr>
+                            <tr><td><img src="../web/img/empty.jpg"></td></tr>
                             <tr><td name="kind_of_name"></td></tr>
                             <tr><td name="name"></td></tr>
                             <tr><td name="desc"></td></tr>
@@ -1106,7 +1110,7 @@ $today = date("d.m.y");
                     </td>
                     <td>
                         <table class="type" onclick="selectName('54', '999')">
-                            <tr><td><img src="../web/img/metall.jpeg"></td></tr>
+                            <tr><td><img src="../web/img/empty.jpg"></td></tr>
                             <tr><td name="kind_of_name"></td></tr>
                             <tr><td name="name"></td></tr>
                             <tr><td name="desc"></td></tr>
@@ -1117,7 +1121,7 @@ $today = date("d.m.y");
                     </td>
                     <td>
                         <table class="type" onclick="selectName('55', '999')">
-                            <tr><td><img src="../web/img/metall.jpeg"></td></tr>
+                            <tr><td><img src="../web/img/empty.jpg"></td></tr>
                             <tr><td name="kind_of_name"></td></tr>
                             <tr><td name="name"></td></tr>
                             <tr><td name="desc"></td></tr>
@@ -1126,7 +1130,7 @@ $today = date("d.m.y");
                     </td>
                     <td>
                         <table class="type" onclick="selectName('56', '999')">
-                            <tr><td><img src="../web/img/metall.jpeg"></td></tr>
+                            <tr><td><img src="../web/img/empty.jpg"></td></tr>
                             <tr><td name="kind_of_name"></td></tr>
                             <tr><td name="name"></td></tr>
                             <tr><td name="desc"></td></tr>
@@ -1221,7 +1225,7 @@ $today = date("d.m.y");
                     </td>
                     <td>
                         <table class="type" onclick="selectName('65', '999')">
-                            <tr><td><img src="../web/img/metall.jpeg"></td></tr>
+                            <tr><td><img src="../web/img/empty.jpg"></td></tr>
                             <tr><td name="kind_of_name"></td></tr>
                             <tr><td name="name"></td></tr>
                             <tr><td name="desc"></td></tr>
@@ -1248,7 +1252,7 @@ $today = date("d.m.y");
                     </td>
                     <td>
                         <table class="type" onclick="selectName('68', '999')">
-                            <tr><td><img src="../web/img/metall.jpeg"></td></tr>
+                            <tr><td><img src="../web/img/empty.jpg"></td></tr>
                             <tr><td name="kind_of_name"></td></tr>
                             <tr><td name="name"></td></tr>
                             <tr><td name="desc"></td></tr>
@@ -1256,68 +1260,277 @@ $today = date("d.m.y");
                         </table>
                     </td>
                 </tr>
-            </table>        
-			<table class="types" name="type_2">
-                <caption><h2>Основы</h2></caption>
+            </table> 
+            <table class="types" name="type_2">
+                <caption><h2></h2></caption>  
                 <tr>
-                    <td class="name_td">
-                        <table class="type" onclick="selectName('1', '1')">
-							<tr><td><img src="../web/img/null.jpg"></td></tr>
-                            <tr><td name="kind_of_name"></td></tr>
-                            <tr><td name="name"></td></tr>
-                            <tr><td name="desc"></td></tr>
-                            <tr><td name="type_of_name"></td></tr>
+                    <td>
+                        <table class="type" onclick="selectName2('1')">
+                            <tr><td><img src="../web/img/empty.jpg"></td></tr>
+                            <tr><td name="kind_of_name_2"></td></tr>
+                            <tr><td name="name_2"></td></tr>
+                            <tr><td name="desc_2"></td></tr>
+                            <tr><td name="type_of_name_2"></td></tr>
                         </table>
-                    </td>       
-					<td class="name_td">
-                        <table class="type" onclick="selectName('1', '1')">
-							<tr><td><img src="../web/img/null.jpg"></td></tr>
-                            <tr><td name="kind_of_name"></td></tr>
-                            <tr><td name="name"></td></tr>
-                            <tr><td name="desc"></td></tr>
-                            <tr><td name="type_of_name"></td></tr>
+                    </td>
+                    <td>
+                        <table class="type" onclick="selectName2('2')">
+                            <tr><td><img src="../web/img/empty.jpg"></td></tr>
+                            <tr><td name="kind_of_name_2"></td></tr>
+                            <tr><td name="name_2"></td></tr>
+                            <tr><td name="desc_2"></td></tr>
+                            <tr><td name="type_of_name_2"></td></tr>
                         </table>
-                    </td>       
-					<td class="name_td">
-                        <table class="type" onclick="selectName('1', '1')">
-							<tr><td><img src="../web/img/null.jpg"></td></tr>
-                            <tr><td name="kind_of_name"></td></tr>
-                            <tr><td name="name"></td></tr>
-                            <tr><td name="desc"></td></tr>
-                            <tr><td name="type_of_name"></td></tr>
+                    </td>
+                    <td>
+                        <table class="type" onclick="selectName2('3')">
+                            <tr><td><img src="../web/img/empty.jpg"></td></tr>
+                            <tr><td name="kind_of_name_2"></td></tr>
+                            <tr><td name="name_2"></td></tr>
+                            <tr><td name="desc_2"></td></tr>
+                            <tr><td name="type_of_name_2"></td></tr>
                         </table>
-                    </td>       
-					</tr>     
-					<tr>
-						<td class="name_td">
-                        <table class="type" onclick="selectName('1', '1')">
-							<tr><td><img src="../web/img/null.jpg"></td></tr>
-                            <tr><td name="kind_of_name"></td></tr>
-                            <tr><td name="name"></td></tr>
-                            <tr><td name="desc"></td></tr>
-                            <tr><td name="type_of_name"></td></tr>
+                    </td>
+                    <td>
+                        <table class="type" onclick="selectName2('4')">
+                            <tr><td><img src="../web/img/empty.jpg"></td></tr>
+                            <tr><td name="kind_of_name_2"></td></tr>
+                            <tr><td name="name_2"></td></tr>
+                            <tr><td name="desc_2"></td></tr>
+                            <tr><td name="type_of_name_2"></td></tr>
                         </table>
-                    </td>       
-					<td class="name_td">
-                        <table class="type" onclick="selectName('1', '1')">
-							<tr><td><img src="../web/img/null.jpg"></td></tr>
-                            <tr><td name="kind_of_name"></td></tr>
-                            <tr><td name="name"></td></tr>
-                            <tr><td name="desc"></td></tr>
-                            <tr><td name="type_of_name"></td></tr>
+                    </td>
+                     <td>
+                        <table class="type" onclick="selectName2('5')">
+                            <tr><td><img src="../web/img/empty.jpg"></td></tr>
+                            <tr><td name="kind_of_name_2"></td></tr>
+                            <tr><td name="name_2"></td></tr>
+                            <tr><td name="desc_2"></td></tr>
+                            <tr><td name="type_of_name_2"></td></tr>
                         </table>
-                    </td>       
-					<td class="name_td">
-                        <table class="type" onclick="selectName('1', '1')">
-							<tr><td><img src="../web/img/null.jpg"></td></tr>
-                            <tr><td name="kind_of_name"></td></tr>
-                            <tr><td name="name"></td></tr>
-                            <tr><td name="desc"></td></tr>
-                            <tr><td name="type_of_name"></td></tr>
+                    </td>
+                    <td>
+                        <table class="type" onclick="selectName2('6')">
+                            <tr><td><img src="../web/img/empty.jpg"></td></tr>
+                            <tr><td name="kind_of_name_2"></td></tr>
+                            <tr><td name="name_2"></td></tr>
+                            <tr><td name="desc_2"></td></tr>
+                            <tr><td name="type_of_name_2"></td></tr>
                         </table>
-                    </td>       
+                    </td>
+                    <td>
+                        <table class="type" onclick="selectName2('7')">
+                            <tr><td><img src="../web/img/empty.jpg"></td></tr>
+                            <tr><td name="kind_of_name_2"></td></tr>
+                            <tr><td name="name_2"></td></tr>
+                            <tr><td name="desc_2"></td></tr>
+                            <tr><td name="type_of_name_2"></td></tr>
+                        </table>
+                    </td>
+                    <td>
+                        <table class="type" onclick="selectName2('8')">
+                            <tr><td><img src="../web/img/empty.jpg"></td></tr>
+                            <tr><td name="kind_of_name_2"></td></tr>
+                            <tr><td name="name_2"></td></tr>
+                            <tr><td name="desc_2"></td></tr>
+                            <tr><td name="type_of_name_2"></td></tr>
+                        </table>
+                    </td>
+                    <td>
+                        <table class="type" onclick="selectName2('9')">
+                            <tr><td><img src="../web/img/empty.jpg"></td></tr>
+                            <tr><td name="kind_of_name_2"></td></tr>
+                            <tr><td name="name_2"></td></tr>
+                            <tr><td name="desc_2"></td></tr>
+                            <tr><td name="type_of_name_2"></td></tr>
+                        </table>
+                    </td>
+                    <td>
+                        <table class="type" onclick="selectName2('10')">
+                            <tr><td><img src="../web/img/empty.jpg"></td></tr>
+                            <tr><td name="kind_of_name_2"></td></tr>
+                            <tr><td name="name_2"></td></tr>
+                            <tr><td name="desc_2"></td></tr>
+                            <tr><td name="type_of_name_2"></td></tr>
+                        </table>
+                    </td>
+                    <td>
+                        <table class="type" onclick="selectName2('11')">
+                            <tr><td><img src="../web/img/empty.jpg"></td></tr>
+                            <tr><td name="kind_of_name_2"></td></tr>
+                            <tr><td name="name_2"></td></tr>
+                            <tr><td name="desc_2"></td></tr>
+                            <tr><td name="type_of_name_2"></td></tr>
+                        </table>
+                    </td>
                 </tr>
-            </table>
+                <tr>
+                    <td>
+                        <table class="type" onclick="selectName2('12')">
+                            <tr><td><img src="../web/img/empty.jpg"></td></tr>
+                            <tr><td name="kind_of_name_2"></td></tr>
+                            <tr><td name="name_2"></td></tr>
+                            <tr><td name="desc_2"></td></tr>
+                            <tr><td name="type_of_name_2"></td></tr>
+                        </table>
+                    </td>
+                    <td>
+                        <table class="type" onclick="selectName2('13')">
+                            <tr><td><img src="../web/img/empty.jpg"></td></tr>
+                            <tr><td name="kind_of_name_2"></td></tr>
+                            <tr><td name="name_2"></td></tr>
+                            <tr><td name="desc_2"></td></tr>
+                            <tr><td name="type_of_name_2"></td></tr>
+                        </table>
+                    </td>
+                    <td>
+                        <table class="type" onclick="selectName2('14')">
+                            <tr><td><img src="../web/img/empty.jpg"></td></tr>
+                            <tr><td name="kind_of_name_2"></td></tr>
+                            <tr><td name="name_2"></td></tr>
+                            <tr><td name="desc_2"></td></tr>
+                            <tr><td name="type_of_name_2"></td></tr>
+                        </table>
+                    </td>
+                    <td>
+                        <table class="type" onclick="selectName2('15')">
+                            <tr><td><img src="../web/img/empty.jpg"></td></tr>
+                            <tr><td name="kind_of_name_2"></td></tr>
+                            <tr><td name="name_2"></td></tr>
+                            <tr><td name="desc_2"></td></tr>
+                            <tr><td name="type_of_name_2"></td></tr>
+                        </table>
+                    </td>
+                     <td>
+                        <table class="type" onclick="selectName2('16')">
+                            <tr><td><img src="../web/img/empty.jpg"></td></tr>
+                            <tr><td name="kind_of_name_2"></td></tr>
+                            <tr><td name="name_2"></td></tr>
+                            <tr><td name="desc_2"></td></tr>
+                            <tr><td name="type_of_name_2"></td></tr>
+                        </table>
+                    </td>
+                    <td>
+                        <table class="type" onclick="selectName2('17')">
+                            <tr><td><img src="../web/img/empty.jpg"></td></tr>
+                            <tr><td name="kind_of_name_2"></td></tr>
+                            <tr><td name="name_2"></td></tr>
+                            <tr><td name="desc_2"></td></tr>
+                            <tr><td name="type_of_name_2"></td></tr>
+                        </table>
+                    </td>
+                    <td>
+                        <table class="type" onclick="selectName2('18')">
+                            <tr><td><img src="../web/img/empty.jpg"></td></tr>
+                            <tr><td name="kind_of_name_2"></td></tr>
+                            <tr><td name="name_2"></td></tr>
+                            <tr><td name="desc_2"></td></tr>
+                            <tr><td name="type_of_name_2"></td></tr>
+                        </table>
+                    </td>
+                    <td>
+                        <table class="type" onclick="selectName2('19')">
+                            <tr><td><img src="../web/img/empty.jpg"></td></tr>
+                            <tr><td name="kind_of_name_2"></td></tr>
+                            <tr><td name="name_2"></td></tr>
+                            <tr><td name="desc_2"></td></tr>
+                            <tr><td name="type_of_name_2"></td></tr>
+                        </table>
+                    </td>
+                    <td>
+                        <table class="type" onclick="selectName2('20')">
+                            <tr><td><img src="../web/img/empty.jpg"></td></tr>
+                            <tr><td name="kind_of_name_2"></td></tr>
+                            <tr><td name="name_2"></td></tr>
+                            <tr><td name="desc_2"></td></tr>
+                            <tr><td name="type_of_name_2"></td></tr>
+                        </table>
+                    </td>
+                    <td>
+                        <table class="type" onclick="selectName2('21')">
+                            <tr><td><img src="../web/img/empty.jpg"></td></tr>
+                            <tr><td name="kind_of_name_2"></td></tr>
+                            <tr><td name="name_2"></td></tr>
+                            <tr><td name="desc_2"></td></tr>
+                            <tr><td name="type_of_name_2"></td></tr>
+                        </table>
+                    </td>
+                    <td>
+                        <table class="type" onclick="selectName2('22')">
+                            <tr><td><img src="../web/img/empty.jpg"></td></tr>
+                            <tr><td name="kind_of_name_2"></td></tr>
+                            <tr><td name="name_2"></td></tr>
+                            <tr><td name="desc_2"></td></tr>
+                            <tr><td name="type_of_name_2"></td></tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <table class="type" onclick="selectName2('23')">
+                            <tr><td><img src="../web/img/empty.jpg"></td></tr>
+                            <tr><td name="kind_of_name_2"></td></tr>
+                            <tr><td name="name_2"></td></tr>
+                            <tr><td name="desc_2"></td></tr>
+                            <tr><td name="type_of_name_2"></td></tr>
+                        </table>
+                    </td>
+                    <td>
+                        <table class="type" onclick="selectName2('24')">
+                            <tr><td><img src="../web/img/empty.jpg"></td></tr>
+                            <tr><td name="kind_of_name_2"></td></tr>
+                            <tr><td name="name_2"></td></tr>
+                            <tr><td name="desc_2"></td></tr>
+                            <tr><td name="type_of_name_2"></td></tr>
+                        </table>
+                    </td>
+                    <td>
+                        <table class="type" onclick="selectName2('25')">
+                            <tr><td><img src="../web/img/empty.jpg"></td></tr>
+                            <tr><td name="kind_of_name_2"></td></tr>
+                            <tr><td name="name_2"></td></tr>
+                            <tr><td name="desc_2"></td></tr>
+                            <tr><td name="type_of_name_2"></td></tr>
+                        </table>
+                    </td>
+                    <td>
+                        <table class="type" onclick="selectName2('26')">
+                            <tr><td><img src="../web/img/empty.jpg"></td></tr>
+                            <tr><td name="kind_of_name_2"></td></tr>
+                            <tr><td name="name_2"></td></tr>
+                            <tr><td name="desc_2"></td></tr>
+                            <tr><td name="type_of_name_2"></td></tr>
+                        </table>
+                    </td>
+                     <td>
+                        <table class="type" onclick="selectName2('27')">
+                            <tr><td><img src="../web/img/empty.jpg"></td></tr>
+                            <tr><td name="kind_of_name_2"></td></tr>
+                            <tr><td name="name_2"></td></tr>
+                            <tr><td name="desc_2"></td></tr>
+                            <tr><td name="type_of_name_2"></td></tr>
+                        </table>
+                    </td>
+                    <td>
+                        <table class="type" onclick="selectName2('28')">
+                            <tr><td><img src="../web/img/empty.jpg"></td></tr>
+                            <tr><td name="kind_of_name_2"></td></tr>
+                            <tr><td name="name_2"></td></tr>
+                            <tr><td name="desc_2"></td></tr>
+                            <tr><td name="type_of_name_2"></td></tr>
+                        </table>
+                    </td>
+                    <td>
+                        <table class="type" onclick="selectName2('29')">
+                            <tr><td><img src="../web/img/empty.jpg"></td></tr>
+                            <tr><td name="kind_of_name_2"></td></tr>
+                            <tr><td name="name_2"></td></tr>
+                            <tr><td name="desc_2"></td></tr>
+                            <tr><td name="type_of_name_2"></td></tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>        
 	</div>
 </section>
 
@@ -1332,8 +1545,12 @@ var visibleNames = false;
 
 var usingName = true;
 
+var showGreyNamesAllowed = true;
+
 var type_selected = false;
 var name_selected = false;
+
+var isSelectedName2;
 
 var greys_types = document.getElementsByName('grey_table_types');
 var greys_names = document.getElementsByName('grey_table_names');
@@ -1347,10 +1564,6 @@ var names_short = ['Щит под дерево', 'Квадрат под дере
 
 var descs = ['с просветом', ' с просветом', 'с просветом', 'с орнаментом', 'с орнаментом', 'с орнаментом', 'с орнаментом', 'с желобом', 'под гравировку', 'с надписью', 'основа с орнаментом', 'под гравировку', 'стандартный', 'с орнаментом', ' ', ' ', ' ', 'под бриллиант', 'круглый', 'квадратный', ' ', ' ', ' ', ' ', ' ', 'большой', ' ', ' ', ' ', ' ', 'куб', 'под монограмму', 'с камнями', 'со сферами по периметру', 'с орнаментом по ободку', 'Щит и меч', ' ', ' ', ' ', ' ', '(царь зверей)', ' ', '(царь зверей)', '(царь зверей)', '(царь зверей)', '(царь зверей)', '(царь зверей)', '(царь зверей)', '(царь зверей)', 'большая', 'малая', 'под гравировку круглая', 'Звери', 'Георгий победоносец', 'Рыбы', 'Оружие', 'Круг большой', 'Круг малый', ' ', ' ', '(царь зверей)', ' ', ' ', ' ', ' ', ' ', ' ', ' '];
 
-var kind_of_name = document.getElementsByName('kind_of_name');
-var name = document.getElementsByName('name');
-var desc = document.getElementsByName('desc');
-var type_of_name = document.getElementsByName('type_of_name');
 
 hide_greys_types();
 hide_greys_names();
@@ -1374,9 +1587,10 @@ function hide_greys_names() {
 }
 
 function show_greys_names() {
-    for (var i = 0; i <= greys_names.length - 1; i++) {
-        greys_names[i].style.display = 'block';
-    }
+    if (showGreyNamesAllowed)
+        for (var i = 0; i <= greys_names.length - 1; i++) {
+            greys_names[i].style.display = 'block';
+        }
 }
 
 
@@ -1420,7 +1634,7 @@ function showNames() {
             document.getElementById('wrap_types' ).style.display = 'none';
             visible = false;
         }
-
+        greys_names[0].style.display = 'block';
         show_greys_names();
         hide_greys_types();
 
@@ -1435,6 +1649,21 @@ function clock() {
     var minutes = d.getMinutes();
     var seconds = d.getSeconds();
 
+    var dd = d.getDate();
+    var mm = d.getMonth()+1; //January is 0!
+    var yy = d.getFullYear().toString().substr(-2);
+
+    if(dd < 10) {
+        dd = '0'+dd
+    } 
+
+    if(mm < 10) {
+        mm = '0'+mm
+    } 
+
+
+
+    document.getElementById('date').innerHTML = dd + '.' + mm + '.' + yy;
    
     if (hours <= 9) hours = "0" + hours;
     if (minutes <= 9) minutes = "0" + minutes;
@@ -1456,7 +1685,9 @@ function selectType(type, name, desc, src) {
 		document.getElementById('selectStatus').style.color = "#CCCCCC";
 		$("#selectStatus").prop('disabled', 'disabled');
 		
-		
+		document.getElementById('nonselected_name').setAttribute('class', '');
+        document.getElementById('selected_name').setAttribute('class', 'hidden');
+
 		document.getElementById('selectName').style.color = "#CCCCCC";
 		$("#selectName").prop('disabled', 'disabled');
 		
@@ -1470,6 +1701,20 @@ function selectType(type, name, desc, src) {
 		$("#selectName").removeAttr("disabled");
 		document.getElementById('selectName').style.color = "#3d3d3d";
 	}
+
+    if (name == "Деталь") {
+        if (isSelectedName2) {
+            document.getElementById('nonselected_name').setAttribute('class', '');
+            document.getElementById('selected_name').setAttribute('class', 'hidden');
+        } 
+        showGreyNamesAllowed = true;
+    } else {
+        if (!isSelectedName2) {
+            document.getElementById('nonselected_name').setAttribute('class', '');
+            document.getElementById('selected_name').setAttribute('class', 'hidden');
+        } 
+        showGreyNamesAllowed = false;
+    }
 	
 	document.getElementById('wrap_types' ).style.display = 'none';
 
@@ -1492,12 +1737,34 @@ function selectType(type, name, desc, src) {
 
 function selectName(number, number_img) {
 
+    isSelectedName2 = false;
 
     $("#img_name").attr("src", "../web/img/" + number_img + '.jpg');
     number--;
 
     document.getElementById('name_selected_title').innerText = number < 30 ? "Основы" : number < 56 ? "Накладки" : number < 61 ? "Задние части" : "Ножки";
     document.getElementById('name_selected_desc').innerHTML = names[number];
+    document.getElementById('name_selected_type').innerHTML = document.getElementById('select_title_in_name').innerHTML + " " + document.getElementById('select_desc_in_name').innerHTML;
+
+    document.getElementById('nonselected_name').setAttribute('class', 'hidden');
+    document.getElementById('selected_name').setAttribute('class', 'select_nm');
+    document.getElementById('selected_name').setAttribute('style', 'padding:0');
+    document.getElementById('wrap_names' ).style.display = 'none';
+    hide_greys_names();
+
+    type_selected = true;
+    visibleNames = false;
+}
+
+function selectName2(number) {
+
+    isSelectedName2 = true;
+
+    $("#img_name").attr("src", "../web/img/empty.jpg");
+    number--;
+
+    document.getElementById('name_selected_title').style.display = 'none';
+    document.getElementById('name_selected_desc').innerHTML = '<h6 style="margin-top:0;margin-bottom:0">' + names2[number] + '</h6>';
     document.getElementById('name_selected_type').innerHTML = document.getElementById('select_title_in_name').innerHTML + " " + document.getElementById('select_desc_in_name').innerHTML;
 
     document.getElementById('nonselected_name').setAttribute('class', 'hidden');
@@ -1517,6 +1784,11 @@ function generateNames(type, selected_type_title) {
     var type_2 = document.getElementsByName('type_2');
 
     if (type == "Деталь") {
+        var kind_of_name = document.getElementsByName('kind_of_name');
+        var name = document.getElementsByName('name');
+        var desc = document.getElementsByName('desc');
+        var type_of_name = document.getElementsByName('type_of_name');
+
 		for (var i = 0; i < type_2.length; i++) {
             type_2[i].style.display = 'none';
         }
@@ -1557,12 +1829,17 @@ function generateNames(type, selected_type_title) {
             desc[i].style.display = 'none';
             desc[i].innerHTML = descs[i];
         }
-    } else{
-		var name = document.getElementsByName('name');
-		
+    } else {
+		var name = document.getElementsByName('name_2');
+        var desc = document.getElementsByName('desc_2');
+		var kind_of_name = document.getElementsByName('kind_of_name_2');
+        var type_of_name = document.getElementsByName('type_of_name_2');
+
+
 		var names2 = ['Фантом (задняя часть с малой поворотной ножкой)','Фантом основа с покрытием','Созвездие (основа + задняя часть с малой поворотной ножкой)','Круг малый  (основа + задняя часть с малой поворотной ножкой)','Щит под дерево с орнаментом (основа + ножка)','Круг под дерево с орнаментом (основа + ножка)','Квадрат под дерево с орнаментом (основа + ножка)','Щит под дерево с просветом  (основа + ножка)','Круг под дерево с просветом (основа + ножка)', 'Квадрат под дерево с просветом (основа + ножка)', '8 граней с орнаментом (основа + ножка)', '8 граней с орнаментом (основа + ножка)', '8 граней с орнаментом (основа + ножка)', 'Щит европа стандартный (основа + ножка)','Щит европа стандартный (основа + ножка)','Щит европа стандартный (основа + ножка)', 'Прямоугольник косичка (основа + ножка)', 'Круг косичка (основа + ножка)', 'Спаси и сохрани с орнаментом (основа + ножка)','Спаси и сохрани под гравировку (основа + ножка)','Спаси и сохрани с надписью (основа + ножка)', 'Премиум квадратный (основа + ножка)','Накладка под премиум квадратный (отполированная)','Премиум круглый (основа + ножка)','Накладка под премиум круглый (отполированная)','Винтажный куб (основа + ножка)','Омниа круг (основа + ножка)','Омниа квадрат (основа + ножка)','Прямоугольник готика под бриллиант (основа + ножка)'];
 
 		
+        //29
         for (var i = 0; i < type_1.length; i++) {
             type_1[i].style.display = 'none';
         }
@@ -1571,19 +1848,20 @@ function generateNames(type, selected_type_title) {
         }
 		
 		for (var i = 0; i <= 3; i++) {
-            kind_of_name[i].innerText = 'Основы';
+            kind_of_name[i].style.display = 'none';
         }
 		
 		
 		for (var i = 0; i < name.length; i++) {
-            name[i].innerHTML =names2[i];
+            name[i].innerHTML = names2[i];
 			desc[i].style.display = 'none';
             desc[i].innerHTML = descs[i];
         }
-		console.log(names2);
+		
 		for (var i = 0; i < type_of_name.length; i++) {
             type_of_name[i].innerHTML = selected_type_title;
         }
+
     }
 }
 
