@@ -18,7 +18,7 @@ use yii\web\UploadedFile;
 use yii\data\Pagination;
 
 use app\models\FormAdd;
-use app\models\Models;
+use app\models\Metals;
 
 
 
@@ -71,11 +71,18 @@ class SiteController extends Controller
      *
      * @return string
      */
+	public function actionMain()
+	{
+		$all = Metals::find()->all();
+		
+		return $this->render('main',
+            ['all'=>$all]);
+	}
     public function actionIndex()
     {
         $form = new FormAdd();
         if (($form->load(Yii::$app->request->post())) && ($form->validate())){
-			$post = new Models;
+			$post = new Metals;
 			$post->type="AKBAR";
 			$post->gram=Html::encode($form->massa);
 			$post->pieces=Html::encode($form->value);
@@ -146,6 +153,8 @@ class SiteController extends Controller
      *
      * @return Response
      */
+	 
+	 
     public function actionLogout()
     {
         Yii::$app->user->logout();
