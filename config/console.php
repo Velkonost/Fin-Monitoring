@@ -1,7 +1,9 @@
 <?php
 
+Yii::setAlias('@tests', dirname(__DIR__) . '/tests/codeception');
+
 $params = require(__DIR__ . '/params.php');
-$db = require(__DIR__ . '/db.php');
+$db = (is_file(__DIR__ . '/local-db.php') ? require(__DIR__ . '/local-db.php') : require(__DIR__ . '/db.php'));
 
 $config = [
     'id' => 'basic-console',
@@ -21,6 +23,9 @@ $config = [
             ],
         ],
         'db' => $db,
+        'authManager' => [
+            'class' => 'yii\rbac\DbManager',
+        ],
     ],
     'params' => $params,
     /*

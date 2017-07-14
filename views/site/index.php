@@ -1,250 +1,175 @@
-<head>
-    <meta charset="utf-8">
-</head>
 <?php
 
-
-use yii\helpers\Html;
-use yii\widgets\ActiveForm;
-use app\models\Things;
-use yii\helpers\Url;
-use yii\helpers;
-use yii\web\helpers\CHtml;
 /* @var $this yii\web\View */
+/* @var $infoBlockData array */
+/* @var $statisticsData array */
+/* @var $calendar boolean */
+/* @var $period string */
 
-$this->title = 'Metals';
+use yii\helpers\Url;
+use app\assets\DiagramAsset;
+use app\assets\SiteAsset;
+use app\assets\AirAsset;
 
+AirAsset::register($this);
+DiagramAsset::register($this);
+SiteAsset::register($this);
 
+$this->title = 'Home';
+
+$buttons = [
+    'today' => 'Сегодня',
+    'yesterday' => 'Вчера',
+    'week' => 'Неделя',
+    'month' => 'Месяц',
+    '3month' => '3 Месяца',
+    'year' => 'Год',
+];
+
+$groupDropList = [
+    'gr_day' => 'день',
+    'gr_3days' => 'три дня',
+    'gr_week' => 'неделя',
+    'gr_month' => 'месяц',
+];
+
+$infoBlockData = $statisticsData;
+//$infoBlockData = array_merge($infoBlockData, $statisticsData);
+//$infoBlockData = $infoBlockData + $statisticsData;
+//var_dump($statisticsData);
+//var_dump($infoBlockData); exit();
+echo $this->render('main_menu', ['user' => $user]);
 ?>
 
-<button class = 'btn_submit' onclick = "return location.href = 'http://good-lp.ru/metall/web/index.php?r=site/show'" style = "text-decoration: none;"><span style="text-align:center;">Показать товары</span></button>
-<button class = 'btn_submit'  onclick = "return location.href = 'http://good-lp.ru/metall/web/index.php?r=site/index'" style = "text-decoration: none; display:inline-block; margin-bottom: 20px"><span style="text-align:center;">Добавить товары</span></button>
+
+
+<div class="row intro-logo">
+    <div class="col-xs-12">
+        <a href="<?= Yii::$app->homeUrl ?>" title="">
+            <img src="/images/index/logo-intro-sistem.jpg">
+        </a>
+    </div>
+</div>
+
+<div class="site-index">
 
 
 
-<style type="text/css">
+    <?php if ($user->hasRole(['superadmin'])) { ?>
+        <!-- Diagram-->
+        <div class="row diagram-container" data-url="<?= Url::to(['site/diagram']) ?>">
+            <div class="col-xs-12 col-sm-6 col-md-8">
+                <div class="filters row">
+                    <div class="col-xs-12 col-md-3">
+                        <div class="btn-group calendar-input" role="group">
+                            <input value="<?= $calendar ? $period : '' ?>"  id="custom-period" name="custom_period" data-date="<?= $calendar ? $period : '' ?>">
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-md-9">
+                        <div class="btn-group diagram_buttons" role="group" aria-label="...">
+                            <div class="btn-group fixed-periods">
+                                <?php foreach ($buttons as $id => $name) { ?>
+                                    <button type="button" class="btn btn-default period-buttons <?= $id == $period ? 'active' : false ?>" period="<?= $id ?>"><?= $name ?></button>
+                                <?php } ?>
+                            </div>
+                        </div>
+                        <div class="btn-group" role="group">
+                            <button type="button" class="btn grouping-btn btn-default dropdown-toggle diagram-dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                день <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <?php foreach($groupDropList as $id => $item) { ?>
+                                    <li><a href="javascript:void(0)" class="group_by" id="group_by_<?= $id ?>"><?= $item ?></a></li>
+                                <?php } ?>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div id="main_chart">
 
-    .inputTable {
-        margin: 0 auto; 
-        text-align: left;
-        border-collapse: separate; 
-        border-spacing: 2px;
-        
-    }
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-4">
+                <div class=" row">
 
-    .inputTable td {
-        background-color: #fff8ca;
-        padding-left: 5px;
-        padding-right: 5px;
+                    <div class="col-xs-6 caption"><a  href="#">Основные данные</a></div>
+                    <div class="col-xs-3 caption"><a  href="<?= Url::toRoute(['money/statistics']) ?>">Коллекции</a></div>
+                    <div class="col-xs-3 caption"><a  href="<?= Url::toRoute(['manager/']) ?>">Менеджеры</a></div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-4">
+                <div class="main-page-right_block-caption row">
+                    <div class="col-xs-6"></div>
+                    <div class="fact col-xs-2 caption">факт</div>
+                    <div class="col-xs-2"></div>
+                    <div class="plan col-xs-2 caption">план</div>
+                </div>
+                <!-- 1 block -->
+                <form id="right_block_form" data-url="<?= Url::to(['site/get-stat-info']) ?>">
+                    <?php $i = 0;
+                    foreach ($infoBlockData as $type => $data) { ?>
+                        <div class="main-page-right_block">
+                            <input type="checkbox" class="caption-checkbox" id="diagram_param_caption_<?= $type ?>"/>
+                            <div class="main-page-right_block-header bg-color-<?= $type ?>">
+                                <?= $data['label'] ?> <i class="fa fa-caret-down" aria-hidden="true"></i>
+                                <?php if ($type == 'cities') { ?>
+                                    <div class="main-page-right_block-header-citiesLids">Лиды</div>
+                                    <div class="main-page-right_block-header-citiesTrade">Продажи</div>
+                                <?php } ?>
+                            </div>
+                            <div class="main-page-right_block-body">
+                                <?php
+                                foreach ($data['rows'] as $row_key => $row) {
+                                    if (isset($row['for_day'])) { $i++;
+                                        ?>
+                                        <div class="main-page-right_block-body-line row">
+                                            <div class="main-page-right_block-body-line-label col-xs-6">
+                                                <div class="main-page-right_block-body-line-label-name id-<?= $i?>">
+                                                    <input type="checkbox" class="mainPage-rightBlock-body-Checkbox ch-<?=$i?> cb-<?= $type ?>" value="<?= $type ?>_<?= $row_key ?>"
+                                                           name="<?= $type ?>_<?= $row_key ?>"
+                                                           id="diagram_item_params_<?= $type ?>_<?= $row_key ?>"
+                                                           color ="<?= $i ?>"
+                                                    />
+                                                    <span><?= $row['name'] ?></span>
+                                                </div>
+                                                <div class="main-page-right_block-body-line-label-comments">
+                                                    <div>Среднее за период: <span class="av_<?= $type ?>_<?= $row_key ?>"><?= $row['for_day'] ?></span></div>
+                                                    <div>Всего за 30 дней: <span class=""><?= $row['for30days'] ?></span></div>
+                                                </div>
+                                            </div>
+                                            <div class="main-page-right_block-body-line-fact col-xs-2">
+                                                <div class="fact-value fv_<?= $type ?>_<?= $row_key ?>">
+                                                    0
+                                                </div>
+                                            <span class="main-page-right_block-body-line-fact-status fc_<?= $type ?>_<?= $row_key ?>">
+                                                <?= $row['fact']['change'] ?>
+                                            </span>
+                                            </div>
+                                            <div class="main-page-right_block-body-line-percent ratio_<?= $type ?>_<?= $row_key ?> col-xs-2"><?= $row['ratio'] ?></div>
+                                            <?php if ($type != 'cities') { ?>
+                                                <div class="main-page-right_block-body-line-plan col-xs-2"><?= $row['plan'] ?></div>
+                                            <?php  } else { ?>
+                                                <div class="main-page-right_block-body-line-fact col-xs-2">
+                                                    <div class="fact-value fpv_<?= $type ?>_<?= $row_key ?>">
+                                                        0
+                                                    </div>
+                                                <span class="main-page-right_block-body-line-fact-status fpc_<?= $type ?>_<?= $row_key ?>">
+                                                        <?= $row['plan']['change'] ?>
+                                                    </span>
+                                                </div>
+                                            <?php } ?>
+                                        </div>
+                                        <?php
+                                    }
+                                }
+                                ?>
+                            </div>
+                        </div>
+                    <?php } ?>
+                </form>
+                <!-- end one block-->
+            </div>
+        </div>
+    <?php } ?>
 
-        min-height: 73px;
-        max-height: 73px;
-        height: 73px;
-    }
-
-    .types td img {
-        max-width: 110px;
-        min-width: 110px;
-
-        min-height: 110px;
-        max-height: 110px;   
-    }
-
-
-
-    .types {
-        border-collapse: separate; 
-        border-spacing: 1px;
-        margin-top: 20px;
-        /* margin-left: 8%; */
-    }
-
-    .types td{
-        font-size: 11px;
-        line-height: 12px;
-        /* padding-bottom: 20px; */
-    }
-  
-    h2 {
-        color: black;
-        font-weight: normal;
-        margin-bottom: 5px;
-        letter-spacing: 3px;
-        font-style: normal;
-
-    }
-    .type {
-        margin-bottom: 20px;
-    }
-
-    .wrap_types {
-        min-width: 1170px;
-        width: 1170px;      
-
-
-        display: none;
-        
-        margin-top: 30px;
-        width: 100%;
-        position: relative;
-        left: 0;
-    }
-    .wrap_names {
-        min-width: 1170px;
-        width: 1170px;
-
-        display: none;
-        
-        margin-top: 30px;
-        
-        position: relative;
-        left: 0;
-    }
-
-    div[name="grey_table_types"], div[name="grey_table_names"] {
-
-        /* width: 100%; */
-        background-color: #f1f2f3;
-    }
-
-    td[name="name"], td[name="type_of_name"], td[name="desc"] {
-        max-width: 100px;
-        
-    }
-
-    td[name="name"] {
-        height: 37px;
-    }
-
-    #arrow {
-        display: inline-block;
-    }
-
-    #arrow.rotated {
-    -webkit-transform : rotate(180deg); 
-    -moz-transform : rotate(180deg); 
-    -ms-transform : rotate(180deg); 
-    -o-transform : rotate(180deg); 
-    transform : rotate(180deg); 
-    }
-
-    #arroww {
-        display: inline-block;
-    }
-
-    #arroww.rotated {
-        -webkit-transform : rotate(180deg); 
-        -moz-transform : rotate(180deg); 
-        -ms-transform : rotate(180deg); 
-        -o-transform : rotate(180deg); 
-        transform : rotate(180deg); 
-    }
-
-    .hidden {
-        display: none;
-    }
-
-    .select_tp {
-        padding-left: 0;
-        padding-right: 0;
-        width: 215px;
-        min-width: 215px;
-        max-width: 215px;
-    }
-
-    #nonselected_type {
-        width:215px; 
-        min-width: 215px;
-        max-width: 215px;
-    }
-    
-    #selectType {
-        width:215px;
-        text-align: center;
-    }
-
-    .in_selected_type {
-        display: inline-block;
-        max-height: 73px; 
-        width: 100%;
-    }
-    .selected_type_img {
-        height: 73px; 
-        width: 73px; 
-        display: inline-block; 
-        vertical-align: top;
-    }
-
-    #type_selected{
-        margin: 5px;
-
-        width: 130px;
-        display: inline-block; 
-        font-size: 14px;
-        margin-left: 5px;
-        line-height: 14px;
-    }
-
-    #nonselected_name {
-        width:215px; 
-        min-width: 215px;
-        max-width: 215px;
-        text-align: center;
-    }
-
-
-    .select_nm {
-        padding-left: 0;
-        padding-right: 0;
-        width: 215px;
-        min-width: 215px;
-        max-width: 215px;
-    }
-    
-    #selectName {
-        width:215px;
-        text-align: center;
-    }
-
-    .in_selected_name {
-        display: inline-block;
-        max-height: 73px; 
-        width: 100%;
-    }
-    .selected_name_img {
-        height: 73px; 
-        width: 73px; 
-        display: inline-block; 
-        vertical-align: top;
-    }
-
-    #name_selected{
-        margin: 2px;
-        width: 135px;
-        display: inline-block; 
-        font-size: 12px;
-        margin-left: 5px;
-        line-height: 14px;
-    }
-
-    .btn_submit {
-        margin-left: 40%;
-        margin-top: 45px;
-        font-family: inherit;
-        font-size: 18px;
-        background-color: #FCDA33;
-        width: 300px;
-        height: 50px;
-        text-align: center;
-        display: inline-block;
-
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-    }
-
-    .name_td {
-        height: 38px;
-    }
-
-</style>
+</div>

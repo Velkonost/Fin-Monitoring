@@ -1,7 +1,17 @@
 <?php
 
 $params = require(__DIR__ . '/params.php');
-$db = require(__DIR__ . '/db.php');
+
+$cookieDomain = explode('.', $_SERVER['HTTP_HOST']);
+$_last = count($cookieDomain) - 1;
+$cookieDomain = '.' . $cookieDomain[$_last-1] . '.' . $cookieDomain[$_last];
+// $cookieDomain = explode('.', $_SERVER['HTTP_HOST']);
+// $_last = count($cookieDomain) - 1;
+// if ($_last > 0) {
+// $cookieDomain = '.' . $cookieDomain[$_last-1] . '.' . $cookieDomain[$_last];
+// } else {
+// $cookieDomain = '.' .$_SERVER['HTTP_HOST'];
+// }
 
 $config = [
     'id' => 'basic',
@@ -10,7 +20,9 @@ $config = [
     'components' => [
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
-            'cookieValidationKey' => 'asdjjaskjdpasjpdasjpjdpasjpdjajskdkasjpodjowjqpo',
+            'cookieValidationKey' => 't-lnKmnKme3E8f5mZa_5ooOx4lS7NWhv',
+            'baseUrl'=> '',
+
         ],
         'cache' => [
             'class' => 'yii\caching\FileCache',
@@ -18,6 +30,9 @@ $config = [
         'user' => [
             'identityClass' => 'app\models\User',
             'enableAutoLogin' => true,
+        ],
+        'authManager' => [
+            'class' => 'yii\rbac\DbManager',
         ],
         'errorHandler' => [
             'errorAction' => 'site/error',
@@ -38,34 +53,48 @@ $config = [
                 ],
             ],
         ],
-        'db' => $db,
-        /*
+        'db' => (is_file(__DIR__ . '/local-db.php') ? require(__DIR__ . '/local-db.php') : require(__DIR__ . '/db.php')),
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
+                'users' => 'user/index',
+                'factory' => 'erp/index',
+                'factory/view' => 'erp/view',
+                'factory/delete' => 'erp/delete',
+                'factory/update-status' => 'erp/update-status',
             ],
         ],
-        */
+        'session' => [
+            'cookieParams' => [
+                'domain' => $cookieDomain,
+                'httpOnly' => true,
+            ],
+        ],
+        'assetManager' => [
+            'appendTimestamp' => true,
+        ],
+    ],
+    'modules' => [
+
     ],
     'params' => $params,
+    'on beforeRequest' => function () {
+        //exit("TECH");
+    }
 ];
 
-// if (YII_ENV_DEV) {
-//     // configuration adjustments for 'dev' environment
-//     $config['bootstrap'][] = 'debug';
-//     $config['modules']['debug'] = [
-//         'class' => 'yii\debug\Module',
-//         // uncomment the following to add your IP if you are not connecting from localhost.
-//         //'allowedIPs' => ['127.0.0.1', '::1'],
-//     ];
+if (YII_ENV_DEV) {
+    // configuration adjustments for 'dev' environment
+    $config['bootstrap'][] = 'debug';
+    $config['modules']['debug'] = [
+        'class' => 'yii\debug\Module',
+    ];
 
-//     $config['bootstrap'][] = 'gii';
-//     $config['modules']['gii'] = [
-//         'class' => 'yii\gii\Module',
-//         // uncomment the following to add your IP if you are not connecting from localhost.
-//         //'allowedIPs' => ['127.0.0.1', '::1'],
-//     ];
-// }
+    $config['bootstrap'][] = 'gii';
+    $config['modules']['gii'] = [
+        'class' => 'yii\gii\Module',
+    ];
+}
 
 return $config;
